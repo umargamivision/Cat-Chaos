@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+public class InputManager : MonoBehaviour
+{
+    public List<InputEvent> inputEvents = new List<InputEvent>();
+
+    private void Update()
+    {
+        // Check for keyboard inputs in each frame
+        foreach (var inputEvent in inputEvents)
+        {
+            inputEvent.CheckInput();
+        }
+    }
+
+    [Serializable]
+    public class InputEvent
+    {
+        [Header("Input Configuration")]
+        public InputType inputType;      // Custom enum for input categories
+        public Button button;           // UI Button reference
+        public KeyCode keyCode;         // Keyboard key for the action
+        public UnityEvent OnInvoke;     // Events to invoke when the input is triggered
+
+        /// <summary>
+        /// Binds the UI button's click event to the action.
+        /// </summary>
+        public void BindButton()
+        {
+            if (button != null)
+            {
+                button.onClick.AddListener(() => OnInvoke.Invoke());
+            }
+        }
+
+        /// <summary>
+        /// Checks both keyboard and UI button inputs for triggering the action.
+        /// </summary>
+        public void CheckInput()
+        {
+            // Check for keyboard input
+            if (ControlFreak2.CF2Input.GetKeyDown(keyCode))
+            {
+                OnInvoke.Invoke();
+            }
+        }
+    }
+
+    private void Start()
+    {
+        // Bind UI buttons at the start
+        foreach (var inputEvent in inputEvents)
+        {
+            inputEvent.BindButton();
+        }
+    }
+}
+
+public enum InputType
+{
+    Attack, Grab, Pause
+}

@@ -1,0 +1,45 @@
+Converting script [1 / 6]	[/InputManager.cs]
+	Fragments : 1
+		[ 0] : Line:   46	InputMethod   GetKeyDown          	(keyCode)
+
+Converting script [2 / 6]	[/Game Data/Player/FirstPersonController.cs]
+	Fragments : 6
+		[ 0] : Line:   35	Other mod.	[Cursor.lockState]
+		[ 1] : Line:   82	InputMethod   GetButtonDown       	("Jump")
+		[ 2] : Line:  102	InputMethod   GetAxis             	("Mouse X")
+		[ 3] : Line:  103	InputMethod   GetAxis             	("Mouse Y")
+		[ 4] : Line:  114	InputMethod   GetAxis             	("Horizontal")
+		[ 5] : Line:  115	InputMethod   GetAxis             	("Vertical")
+
+Converting script [3 / 6]	[/Game Data/Player/PlayerLook.cs]
+	Fragments : 2
+		[ 0] : Line:   11	InputMethod   GetAxis             	("Mouse X")
+		[ 1] : Line:   12	InputMethod   GetAxis             	("Mouse Y")
+
+Converting script [4 / 6]	[/Game Data/Player/PlayerMovement.cs]
+	Fragments : 3
+		[ 0] : Line:   16	InputMethod   GetAxis             	("Horizontal")
+		[ 1] : Line:   16	InputMethod   GetAxis             	("Vertical")
+		[ 2] : Line:   19	InputMethod   GetButtonDown       	("Jump")
+
+Converting script [5 / 6]	[/Game Data/Scripts/GameManager.cs]
+	Fragments : 2
+		[ 0] : Line:   29	Other mod.	[Cursor.lockState]
+		[ 1] : Line:   30	Other mod.	[Cursor.visible]
+
+Converting script [6 / 6]	[/Game Data/Scripts/Grabber.cs]
+	Fragments : 2
+		[ 0] : Line:   73	InputMethod   GetMouseButtonDown  	(0)
+		[ 1] : Line:   75	InputProperty mousePosition       
+
+
+6 scripts modified!
+Overwriting actual scripts...
+	[0 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//InputManager.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//InputManager.cs]
+	[1 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//Game Data/Player/FirstPersonController.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//Game Data/Player/FirstPersonController.cs]
+	[2 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//Game Data/Player/PlayerLook.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//Game Data/Player/PlayerLook.cs]
+	[3 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//Game Data/Player/PlayerMovement.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//Game Data/Player/PlayerMovement.cs]
+	[4 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//Game Data/Scripts/GameManager.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//Game Data/Scripts/GameManager.cs]
+	[5 / 6] from  [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/CF2-Data/Script-Backups/2025-01-15-16-08/Assets-After//Game Data/Scripts/Grabber.cs] to [/Users/umar/Desktop/Unity/Projects/Cat-Chaos-Game/Assets//Game Data/Scripts/Grabber.cs]
+
+Overwriting COMPLETED!
