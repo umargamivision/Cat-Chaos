@@ -10,7 +10,6 @@ public class TapDetector : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent<Vector2> OnTap; // Invoked with screen position of the tap
-
     private Vector2 initialTouchPosition;
     private float touchStartTime;
 

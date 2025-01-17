@@ -34,7 +34,7 @@ public class QuestUI : MonoBehaviour
     {
         if(currentTask!=null) UnSubscribeEvents(currentTask);
         //PlayCompleteAnimation(true);
-        if(task!=null)StartCoroutine(UpdateTaskDelay(task,delay));
+        if(task!=null)CoroutineManager.Instance.StartCoroutine(UpdateTaskDelay(task,delay));
     }
     public IEnumerator UpdateTaskDelay(Task _task, float delay)
     {

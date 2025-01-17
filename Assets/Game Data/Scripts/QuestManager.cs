@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Ommy.Singleton;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class QuestManager : Singleton<QuestManager>
 {
@@ -18,7 +17,6 @@ public class QuestManager : Singleton<QuestManager>
         {
             UpdateQuest();
         }));
-
         UpdateQuest();
     }
     public void UpdateQuest()

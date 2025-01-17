@@ -23,7 +23,7 @@ public class StateManager : MonoBehaviour
     }
     public void ChangeState(IState newState)
     {
-        if(currentState == newState) return;
+        if (currentState == newState) return;
         if (currentState != null)
         {
             currentState.Exit();
@@ -43,7 +43,7 @@ public class StateManager : MonoBehaviour
     }
     public void SetDefaultState()
     {
-        if(currentState!=null)currentState.Exit();
+        if (currentState != null) currentState.Exit();
         currentState = defaultState;
         currentState.Enter();
     }
@@ -56,144 +56,125 @@ public class StateManager : MonoBehaviour
     {
         currentState?.FixedUpdate();
     }
-}
-
-public interface IState
-{
-    void Enter();
-    void Update();
-    void FixedUpdate(); // For physics-based updates
-    void Exit();
-}
-
-public class IdleState : IState
-{
-    private readonly StateManager stateManager;
-
-    public IdleState(StateManager stateManager)
+    public class IdleState : IState
     {
-        this.stateManager = stateManager;
+        private readonly StateManager stateManager;
+
+        public IdleState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
+
+        public void Enter()
+        {
+            Debug.Log("Entering Idle State");
+            stateManager.animator.SetBool(StateManager.WalkParam, false);
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void FixedUpdate()
+        {
+            // Handle physics logic, if any
+        }
+
+        public void Exit()
+        {
+            Debug.Log("Exiting Idle State");
+        }
     }
 
-    public void Enter()
+    public class WalkState : IState
     {
-        Debug.Log("Entering Idle State");
-        stateManager.animator.SetBool(StateManager.WalkParam, false);
+        private readonly StateManager stateManager;
+
+        public WalkState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
+
+        public void Enter()
+        {
+            Debug.Log("Entering Walk State");
+            stateManager.animator.SetBool(StateManager.WalkParam, true);
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void FixedUpdate()
+        {
+            // Apply running physics logic
+        }
+
+        public void Exit()
+        {
+            Debug.Log("Exiting Run State");
+        }
     }
 
-    public void Update()
+    public class JumpState : IState
     {
-
+        private readonly StateManager stateManager;
+        public JumpState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
+        public void Enter()
+        {
+            Debug.Log("Entering Jump State");
+            stateManager.animator.SetTrigger(StateManager.JumpParam);
+            // Add jump force
+        }
+        public void Update()
+        {
+        }
+        public void FixedUpdate()
+        {
+        }
+        public void Exit()
+        {
+            Debug.Log("Exiting Jump State");
+        }
+        private bool IsGrounded()
+        {
+            // Replace with actual grounded logic
+            return Physics.Raycast(stateManager.transform.position, Vector3.down, 0.1f);
+        }
     }
 
-    public void FixedUpdate()
+    public class AttackState : IState
     {
-        // Handle physics logic, if any
-    }
+        private readonly StateManager stateManager;
 
-    public void Exit()
-    {
-        Debug.Log("Exiting Idle State");
-    }
-}
+        public AttackState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
 
-public class WalkState : IState
-{
-    private readonly StateManager stateManager;
+        public void Enter()
+        {
+            Debug.Log("Entering Attack State");
+            stateManager.animator.SetTrigger(StateManager.AttackParam);
+            // Trigger attack animation
+        }
 
-    public WalkState(StateManager stateManager)
-    {
-        this.stateManager = stateManager;
-    }
+        public void Update()
+        {
+        }
 
-    public void Enter()
-    {
-        Debug.Log("Entering Walk State");
-        stateManager.animator.SetBool(StateManager.WalkParam, true);
-    }
+        public void FixedUpdate()
+        {
+        }
 
-    public void Update()
-    {
-
-    }
-
-    public void FixedUpdate()
-    {
-        // Apply running physics logic
-    }
-
-    public void Exit()
-    {
-        Debug.Log("Exiting Run State");
-    }
-}
-
-public class JumpState : IState
-{
-    private readonly StateManager stateManager;
-
-    public JumpState(StateManager stateManager)
-    {
-        this.stateManager = stateManager;
-    }
-
-    public void Enter()
-    {
-        Debug.Log("Entering Jump State");
-        stateManager.animator.SetTrigger(StateManager.JumpParam);
-        // Add jump force
-    }
-
-    public void Update()
-    {
-
-    }
-
-    public void FixedUpdate()
-    {
-        // Apply gravity, if needed
-    }
-
-    public void Exit()
-    {
-        Debug.Log("Exiting Jump State");
-    }
-
-    private bool IsGrounded()
-    {
-        // Replace with actual grounded logic
-        return Physics.Raycast(stateManager.transform.position, Vector3.down, 0.1f);
-    }
-}
-
-public class AttackState : IState
-{
-    private readonly StateManager stateManager;
-
-    public AttackState(StateManager stateManager)
-    {
-        this.stateManager = stateManager;
-    }
-
-    public void Enter()
-    {
-        Debug.Log("Entering Attack State");
-        stateManager.animator.SetTrigger(StateManager.AttackParam);
-        // Trigger attack animation
-    }
-
-    public void Update()
-    {
-        // Logic for attacking
-    }
-
-    public void FixedUpdate()
-    {
-        // Apply attack-specific physics, if needed
-    }
-
-    public void Exit()
-    {
-        Debug.Log("Exiting Attack State");
+        public void Exit()
+        {
+            Debug.Log("Exiting Attack State");
+        }
     }
 }

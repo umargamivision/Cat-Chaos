@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44abfd27d9c1347649b180a875ad10e1, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
+  levelNo: 1
   requireXP: 25
   tasks:
   - {fileID: 11400000, guid: d3ffdd581dd7d40c99a9a1a8c4cfde71, type: 2}
