@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Ommy.SaveData;
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
 public class LevelsManager : MonoBehaviour
 {
@@ -18,10 +18,16 @@ public class LevelsManager : MonoBehaviour
     public void SetupLevel()
     {
         QuestManager.Instance.Init(currentLevelData);
+        foreach (var item in levelObjects)
+        {
+            item.SetActive(false);
+        }
         levelObjects[currentLevel].SetActive(true);
     }
     public void OnLevelComplete()
     {
+        SaveData.Instance.Level++;
+        SetupLevel();
         print("Level complete success");
     }
 }

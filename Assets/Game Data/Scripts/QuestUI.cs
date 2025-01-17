@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Ommy.Attribute;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Ommy.Attribute;
 public class QuestUI : MonoBehaviour
 {
     [Header("Quest Data")]

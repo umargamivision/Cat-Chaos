@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using Ommy.Singleton;
 using UnityEngine;
@@ -72,6 +73,7 @@ public class Grabber : Singleton<Grabber>
 
     public void InputThrowGrabbable(Vector2 tapPos)
     {
+        if(currentGrabbable == null) return;
         Ray screenRay = playerCamera.ScreenPointToRay(tapPos);
 
         // Raycast to determine the throw target
