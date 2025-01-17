@@ -1,9 +1,10 @@
 using System.Security.Cryptography;
+using Cinemachine;
 using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     public Animator animator;
-    public IState idle, walk, jump, attack;
+    public IState idle, walk, jump, attack,underAttack;
     public IState currentState;
     public IState defaultState;
     public const string WalkParam = "isWalking";
@@ -13,6 +14,7 @@ public class StateManager : MonoBehaviour
     private void Start()
     {
         // Initialize states
+        underAttack = new UnderAttackState(this); 
         idle = new IdleState(this);
         walk = new WalkState(this);
         jump = new JumpState(this);
@@ -147,7 +149,30 @@ public class StateManager : MonoBehaviour
             return Physics.Raycast(stateManager.transform.position, Vector3.down, 0.1f);
         }
     }
+    public class UnderAttackState : IState
+    {
+        private readonly StateManager stateManager;
 
+        public UnderAttackState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
+        public void Enter()
+        {
+        }
+
+        public void Exit()
+        {
+        }
+
+        public void FixedUpdate()
+        {
+        }
+
+        public void Update()
+        {
+        }
+    }
     public class AttackState : IState
     {
         private readonly StateManager stateManager;
