@@ -5,4 +5,5 @@ public class PlayerController : Singleton<PlayerController>
 {
     public CinemachineVirtualCamera playerCam;
     public FirstPersonController firstPersonController;
+    public Transform catLookWhileAttack;
 }

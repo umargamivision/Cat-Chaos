@@ -3,6 +3,7 @@ using Cinemachine;
 using UnityEngine;
 public class StateManager : MonoBehaviour
 {
+    public PlayerController playerController;
     public Animator animator;
     public IState idle, walk, jump, attack,underAttack;
     public IState currentState;

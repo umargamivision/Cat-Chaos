@@ -12522,6 +12522,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 759939956}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1029107069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4138878239954172285, guid: f4acf43f557ed48d0acb3f6af5f42670,
+    type: 3}
+  m_PrefabInstance: {fileID: 759939956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029107063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ae8d1811a9d43328399e1a3c760cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1029107072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12535,6 +12547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+  playerCam: {fileID: 1759906761}
+  firstPersonController: {fileID: 1029107069}
 --- !u!64 &1029176977
 MeshCollider:
   m_ObjectHideFlags: 0
