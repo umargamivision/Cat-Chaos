@@ -4,17 +4,26 @@ using UnityEngine;
 using DG.Tweening;
 public class PlayerController : Singleton<PlayerController>
 {
-
+    public StateManager stateManager;
     public CinemachineVirtualCamera playerCam;
     public FirstPersonController firstPersonController;
+    public Grabber grabber;
     public bool lookAtGranny;
     public Transform grannyAttackLookPoint;
     public Transform grannyCatchPoint;
-    public void LookAtToGranny()
+    private void OnEnable() 
     {
-
+        InputManager.Instance.inputEvents.Find((f)=>f.inputType==InputType.Attack).OnInvoke.AddListener(Attack);    
+        InputManager.Instance.inputEvents.Find((f)=>f.inputType==InputType.Grab).OnInvoke.AddListener(Grab);    
     }
-
+    public void Attack()
+    {
+        stateManager.ChangeState(stateManager.attack);
+    }
+    public void Grab()
+    {
+        grabber.OnGrab();
+    }
     public void GrannyCatch()
     {
         firstPersonController.enabled = false;

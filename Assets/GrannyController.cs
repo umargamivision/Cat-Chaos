@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Ommy.Animation;
-using Ommy.Attribute;
 using UnityEngine;
 public class GrannyController : MonoBehaviour
 {

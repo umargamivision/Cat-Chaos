@@ -10,6 +10,7 @@ public class GrannyStateManager : MonoBehaviour
     public float chaseSpeed=1;
     public float attackDistance=5;
     public float chaseDistanceLimit;
+    public int chaseCoolDownTime;
     public WayPointSystem wayPointSystem;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
@@ -26,7 +27,7 @@ public class GrannyStateManager : MonoBehaviour
     }
     public void Update()
     {
-        CheckChaseThresould();
+        //CheckChaseThresould();
         animator.SetFloat("MoveSpeed", navMeshAgent.speed);
         currentState.UpdateState(this);
     }

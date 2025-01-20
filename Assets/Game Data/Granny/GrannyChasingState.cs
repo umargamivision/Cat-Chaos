@@ -1,13 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GrannyChasingState : GrannyBaseState
 {
+    GrannyStateManager grannyStateManager;
+    Coroutine chaseCoolDownCoroutine;
     public override void EnterState(GrannyStateManager stateManager)
     {
+        grannyStateManager = stateManager;
         stateManager.animator.SetTrigger("AngryPointingGesture"); // Normalize speed to be between 0 and 1
         stateManager.navMeshAgent.speed = stateManager.chaseSpeed;
+        if(chaseCoolDownCoroutine!=null)
+        {
+            CoroutineManager.Instance.StopCor(chaseCoolDownCoroutine);
+        }
+        chaseCoolDownCoroutine = CoroutineManager.Instance.StartCor
+        (
+            ChaseCoolDownTimer(stateManager.chaseCoolDownTime,
+            OnCoolDown
+        ));
+    }
+    public void OnCoolDown()
+    {
+        grannyStateManager.SwitchState(grannyStateManager.grannyPatrollingState);
     }
     public override void ExitState(GrannyStateManager stateManager)
     {
@@ -17,7 +34,7 @@ public class GrannyChasingState : GrannyBaseState
     }
     public override void UpdateState(GrannyStateManager stateManager)
     {
-        stateManager.animator.SetFloat("MoveSpeed",stateManager.navMeshAgent.speed); // Normalize speed to be between 0 and 1
+        //stateManager.animator.SetFloat("MoveSpeed",stateManager.navMeshAgent.speed); // Normalize speed to be between 0 and 1
         Vector3 playerPos = PlayerController.Instance.transform.position;
         stateManager.navMeshAgent.SetDestination(playerPos);
         if (Vector3.Distance(stateManager.transform.position,playerPos)<stateManager.attackDistance)
@@ -25,5 +42,16 @@ public class GrannyChasingState : GrannyBaseState
             stateManager.SwitchState(stateManager.grannyAttackState);
             //stateManager.wayPointSystem.OnReachWayPoint();
         }
+    }
+    public IEnumerator ChaseCoolDownTimer(int coolDownTime, Action onCoolDown)
+    {
+        int chaseTime=0;
+        while(coolDownTime>=chaseTime)
+        {
+            yield return new WaitForSeconds(1);
+            chaseTime++;
+            Debug.Log("chase time : "+chaseTime);
+        }
+        onCoolDown.Invoke();
     }
 }

@@ -4,7 +4,6 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Ommy.Attribute;
 public class QuestUI : MonoBehaviour
 {
     [Header("Quest Data")]

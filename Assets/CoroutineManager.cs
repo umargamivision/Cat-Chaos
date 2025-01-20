@@ -13,4 +13,8 @@ public class CoroutineManager : MonoBehaviour
     {
         return StartCoroutine(coroutine);
     }
+    public void StopCor(Coroutine coroutine)
+    {
+        StopCoroutine(coroutine);
+    }
 }
