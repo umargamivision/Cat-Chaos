@@ -27,6 +27,6 @@ namespace Ommy.Animation
     }
     public enum StateMachineEventType
     {
-        Release, Charging, Pick
+        GrannyAttackDone,GrannyAttackStart,
     }
 }

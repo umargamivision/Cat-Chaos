@@ -7543,7 +7543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701384566}
   m_Layer: 0
-  m_Name: ----Managers----
+  m_Name: "\u2013\u2013\u2013\u2013\u2013\u2013Managers\u2013\u2013\u2013\u2013\u2013\u2013\u2013"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7891,6 +7891,16 @@ PrefabInstance:
       objectReference: {fileID: 931636145}
     - target: {fileID: 1421440178278328936, guid: f4acf43f557ed48d0acb3f6af5f42670,
         type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1515892354}
+    - target: {fileID: 1421440178278328936, guid: f4acf43f557ed48d0acb3f6af5f42670,
+        type: 3}
+      propertyPath: useMobileInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421440178278328936, guid: f4acf43f557ed48d0acb3f6af5f42670,
+        type: 3}
       propertyPath: inputEvents.Array.data[0].button
       value: 
       objectReference: {fileID: 931636147}
@@ -7899,6 +7909,11 @@ PrefabInstance:
       propertyPath: inputEvents.Array.data[1].button
       value: 
       objectReference: {fileID: 1028151008}
+    - target: {fileID: 6555775920842686424, guid: f4acf43f557ed48d0acb3f6af5f42670,
+        type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1721062424}
     - target: {fileID: 6555775920842686424, guid: f4acf43f557ed48d0acb3f6af5f42670,
         type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -9457,7 +9472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &894094618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9781,7 +9796,7 @@ Transform:
   m_GameObject: {fileID: 911332688}
   serializedVersion: 2
   m_LocalRotation: {x: -0.3826835, y: 0, z: 0, w: 0.9238795}
-  m_LocalPosition: {x: 0, y: 0.28465402, z: -0.000000074505806}
+  m_LocalPosition: {x: 0, y: 0.28465402, z: -0.000000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12549,6 +12564,9 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   playerCam: {fileID: 1759906761}
   firstPersonController: {fileID: 1029107069}
+  lookAtGranny: 0
+  grannyAttackLookPoint: {fileID: 1721062424}
+  grannyCatchPoint: {fileID: 1814355052}
 --- !u!64 &1029176977
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15679,6 +15697,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1783559374650583632, guid: 45cd1bf6b32895f47a26bce22126a57d, type: 3}
+--- !u!114 &1515892354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3881087803549984439, guid: ec536a7718376554185e4a856d5ae230,
+    type: 3}
+  m_PrefabInstance: {fileID: 239887983}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42844a4fccbd54746b90cade4ff70f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1538283305
 GameObject:
   m_ObjectHideFlags: 0
@@ -17088,6 +17118,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7493814774873460391, guid: 45cd1bf6b32895f47a26bce22126a57d, type: 3}
+--- !u!1 &1721062423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1721062424}
+  m_Layer: 0
+  m_Name: granny look point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1721062424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721062423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.567, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1805868303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725352885
 GameObject:
   m_ObjectHideFlags: 0
@@ -18161,6 +18222,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 543450652167987729}
+  - {fileID: 1721062424}
+  - {fileID: 1814355052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1805868304
@@ -18247,6 +18310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b5bc9557b6240c38d0eaa566326302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateMachineEventListner: {fileID: 919132148447656110}
+  playerController: {fileID: 1029107072}
   grannyStateManager: {fileID: 1805868308}
 --- !u!114 &1805868308
 MonoBehaviour:
@@ -18263,9 +18328,11 @@ MonoBehaviour:
   patrollingSpeed: 0.2
   chaseSpeed: 1
   attackDistance: 1
+  chaseDistanceLimit: 4
   wayPointSystem: {fileID: 1261841420}
   navMeshAgent: {fileID: 1805868305}
   animator: {fileID: 919132148447656108}
+  distanceWithPlayer: 0
 --- !u!64 &1807134081
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18288,6 +18355,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5358859419904654655, guid: 45cd1bf6b32895f47a26bce22126a57d, type: 3}
+--- !u!1 &1814355051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814355052}
+  m_Layer: 0
+  m_Name: granny catch Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814355052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814355051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.567, z: 0.803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1805868303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1815734294
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21445,6 +21543,7 @@ GameObject:
   - component: {fileID: 543450652167987729}
   - component: {fileID: 919132148447656108}
   - component: {fileID: 919132148447656109}
+  - component: {fileID: 919132148447656110}
   m_Layer: 0
   m_Name: Granny_Rigged
   m_TagString: Untagged
@@ -21559,6 +21658,21 @@ MonoBehaviour:
   - {fileID: 2807446875246230908}
   - {fileID: 5720555228153608314}
   - {fileID: 4261499281794945192}
+--- !u!114 &919132148447656110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148447656107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9b940d2816a60489f8b33d79e3a51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEventInvoke:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1014829801373416918
 Transform:
   m_ObjectHideFlags: 0
