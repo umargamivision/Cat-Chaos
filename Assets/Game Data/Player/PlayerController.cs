@@ -2,19 +2,28 @@ using Cinemachine;
 using Ommy.Singleton;
 using UnityEngine;
 using DG.Tweening;
+using Ommy.FadeSystem;
+using System.Collections;
 public class PlayerController : Singleton<PlayerController>
 {
     public StateManager stateManager;
     public CinemachineVirtualCamera playerCam;
     public FirstPersonController firstPersonController;
     public Grabber grabber;
-    public bool lookAtGranny;
     public Transform grannyAttackLookPoint;
+    public bool gotoGrannyHand;
     public Transform grannyCatchPoint;
-    private void OnEnable() 
+    public Transform spawnPoint;
+    private void OnEnable()
     {
-        InputManager.Instance.inputEvents.Find((f)=>f.inputType==InputType.Attack).OnInvoke.AddListener(Attack);    
-        InputManager.Instance.inputEvents.Find((f)=>f.inputType==InputType.Grab).OnInvoke.AddListener(Grab);    
+        InputManager.Instance.inputEvents.Find((f) => f.inputType == InputType.Attack).OnInvoke.AddListener(Attack);
+        InputManager.Instance.inputEvents.Find((f) => f.inputType == InputType.Grab).OnInvoke.AddListener(Grab);
+    }
+    public void Respawn()
+    {
+        firstPersonController.enabled = true;
+        transform.SetPositionAndRotation(spawnPoint.position,spawnPoint.rotation);
+        ScreenFader.Instance.FadeIn();
     }
     public void Attack()
     {
@@ -35,10 +44,13 @@ public class PlayerController : Singleton<PlayerController>
         playerCam.LookAt = grannyAttackLookPoint;
 
         // Move the player to the granny's catch point
-        transform.DOMove(grannyCatchPoint.position, 1f).OnComplete(() =>
+        if (gotoGrannyHand)
         {
-            Debug.Log("Granny Catch completed!");
-        });
+            transform.DOMove(grannyCatchPoint.position, 1f).OnComplete(() =>
+            {
+                Debug.Log("Granny Catch completed!");
+            });
+        }
     }
 
     private void SetCameraAimToHardLookAt()
@@ -56,6 +68,17 @@ public class PlayerController : Singleton<PlayerController>
     public void TakeGrannyDamage()
     {
         //firstPersonController.enabled = false;
+        playerCam.m_LookAt = null;
+        transform.transform.DORotate(new Vector3(0, 0, 90), 0.5f).OnComplete(()=>
+        {
+            StartCoroutine(DeathAndRespawn());
+        });
         Debug.Log("Damage taken from granny");
+    }
+    public IEnumerator DeathAndRespawn()
+    {
+        yield return ScreenFader.Instance.FadeOut();
+        yield return new WaitForSeconds(1);
+        Respawn();
     }
 }

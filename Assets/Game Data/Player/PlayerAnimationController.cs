@@ -5,7 +5,7 @@ public class StateManager : MonoBehaviour
 {
     public PlayerController playerController;
     public Animator animator;
-    public IState idle, walk, jump, attack,underAttack;
+    public IState idle, walk, jump, attack, underAttack, death;
     public IState currentState;
     public IState defaultState;
     public const string WalkParam = "isWalking";
@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
     {
         // Initialize states
         underAttack = new UnderAttackState(this); 
+        death = new DeathState(this); 
         idle = new IdleState(this);
         walk = new WalkState(this);
         jump = new JumpState(this);
@@ -201,6 +202,35 @@ public class StateManager : MonoBehaviour
         public void Exit()
         {
             Debug.Log("Exiting Attack State");
+        }
+    }
+    public class DeathState : IState
+    {
+        private readonly StateManager stateManager;
+
+        public DeathState(StateManager stateManager)
+        {
+            this.stateManager = stateManager;
+        }
+
+        public void Enter()
+        {
+            Debug.Log("Entering Death State");
+            stateManager.animator.speed=0;
+            // Trigger attack animation
+        }
+
+        public void Update()
+        {
+        }
+
+        public void FixedUpdate()
+        {
+        }
+
+        public void Exit()
+        {
+            Debug.Log("Exiting Death State");
         }
     }
 }

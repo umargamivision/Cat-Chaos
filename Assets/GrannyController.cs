@@ -35,6 +35,7 @@ public class GrannyController : MonoBehaviour
     }
     public void GiveCatDamage()
     {
+        
         playerController.TakeGrannyDamage();
     }
 }

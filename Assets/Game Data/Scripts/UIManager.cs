@@ -5,6 +5,7 @@ using Ommy.Singleton;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 public class UIManager : Singleton<UIManager>
 {
     [Header("Panels")]
@@ -22,5 +23,9 @@ public class UIManager : Singleton<UIManager>
     {
         levelNoTxt.text = $"Level "+levelNo;
         levelFillImg.DOFillAmount(fillAmount,0.2f);
+    }
+    public void RestartClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

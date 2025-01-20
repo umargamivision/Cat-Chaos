@@ -28,13 +28,15 @@ namespace Ommy.FadeSystem
                 FadeIn();
             }
         }
-        public  void FadeIn()
+        public Coroutine FadeIn()
         {
             StartFadeCoroutine(1.0f, 0.0f);
+            return currentFadeCoroutine;
         }
-        public  void FadeOut()
+        public Coroutine FadeOut()
         {
             StartFadeCoroutine(0.0f, 1.0f);
+            return currentFadeCoroutine;
         }
 
         public  void FadeInOut()
@@ -43,7 +45,7 @@ namespace Ommy.FadeSystem
             StartCoroutine(WaitAndStartFadeOut());
         }
 
-        private void StartFadeCoroutine(float startAlpha, float targetAlpha)
+        public void StartFadeCoroutine(float startAlpha, float targetAlpha)
         {
             if (currentFadeCoroutine != null)
             {
