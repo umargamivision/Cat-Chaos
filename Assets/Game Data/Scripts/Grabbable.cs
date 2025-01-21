@@ -8,9 +8,19 @@ using UnityEngine.Events;
 
 public sealed class Grabbable : IGrabbable
 {
+    public Outline outline;
     public Rigidbody rb;
     public Grabbable(bool canGrab) : base(canGrab)
     {
+    }
+    private void OnEnable() 
+    {
+        if(outline==null) outline = GetComponent<Outline>();
+        outline.enabled = false;    
+    }
+    public void OnFocus(bool focus)
+    {
+        outline.enabled = focus;
     }
     public override void Grab()
     {

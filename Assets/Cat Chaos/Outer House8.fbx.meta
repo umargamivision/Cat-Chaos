@@ -3,22 +3,12 @@ guid: 122e5bbe33e1db545b88bf10ff5eca9d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LivingRoom5
-    second: {fileID: 2100000, guid: 7281cef948105400e91b8604031f5e5c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: houses_low_poly_house
-    second: {fileID: 2100000, guid: 7b72b6fa8da424b30a094c0f7c504cff, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

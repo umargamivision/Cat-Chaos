@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/Level", order = 1)]
 public class LevelData : ScriptableObject
 {
+    public TimelineType startTimeline,endTimeline;
     public int levelNo;
     public int requireXP;
     public List<Task> tasks;

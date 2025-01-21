@@ -23,8 +23,7 @@ public class LevelsManager : MonoBehaviour
     }
     public void SetupLevel()
     {
-        QuestManager.Instance.Init(currentLevelData);
-        UIManager.Instance.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
+        GamePlayManager.Instance.SetupLevel(currentLevelData);
         foreach (var item in levelObjects)
         {
             item.SetActive(false);

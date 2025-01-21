@@ -93,10 +93,10 @@ public class Grabber : Singleton<Grabber>
 
         if (Physics.Raycast(ray, out raycastHit, detectionLength))
         {
-            if (raycastHit.collider.TryGetComponent(out Grabbable detectedGrabbable))
+            if (raycastHit.collider.TryGetComponent(out Grabbable _detectedGrabbable))
             {
+                detectedGrabbable = _detectedGrabbable;
                 DetectedGrabbable(true);
-                HandleDetectedGrabbable(detectedGrabbable);
             }
             else
             {
@@ -111,22 +111,12 @@ public class Grabber : Singleton<Grabber>
 
     public void DetectedGrabbable(bool detect)
     {
+        if(detectedGrabbable)
+        {
+            detectedGrabbable.OnFocus(detect);
+        } 
         OnDetectGrabbable.Invoke(detect);
     }
-
-    /// <summary>
-    /// Handles logic when a grabbable object is detected.
-    /// </summary>
-    /// <param name="grabbable">The detected grabbable object.</param>
-    private void HandleDetectedGrabbable(Grabbable grabbable)
-    {
-        this.detectedGrabbable = grabbable;
-        // Implementation for handling detected grabbable (e.g., highlighting or UI prompts).
-    }
-
-    /// <summary>
-    /// Clears the reference to the current grabbable object.
-    /// </summary>
     private void ClearCurrentGrabbable()
     {
         if (currentGrabbable == null) return;

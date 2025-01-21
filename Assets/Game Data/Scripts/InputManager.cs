@@ -9,8 +9,6 @@ using UnityEngine.UI;
 public class InputManager : Singleton<InputManager>
 {
     [Header("Input Settings")]
-    //public bool useMobileInput;       // Reference to the joystick component
-    public Joystick joystick;
     public List<InputEvent> inputEvents = new List<InputEvent>();
 
     /// <summary>
@@ -18,19 +16,6 @@ public class InputManager : Singleton<InputManager>
     /// </summary>
     public float GetAxis(string axis)
     {
-        // switch (axis)
-        // {
-        //     case "Horizontal":
-        //         if(useMobileInput) return joystick.Horizontal;
-        //         break;
-        //     case "Vertical":
-        //         if(useMobileInput) return joystick.Vertical;
-        //         break;
-        //     case "Mouse X":
-        //         break;
-        //     case "Mouse Y":
-        //         break;
-        // }
         return CF2Input.GetAxis(axis);
     }
     private void OnEnable()

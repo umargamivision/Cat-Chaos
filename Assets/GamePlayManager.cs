@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ommy.Singleton;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Playables;
 
-public class GamePlayManager : MonoBehaviour
+public class GamePlayManager : Singleton<GamePlayManager>
 {
     public event Action onComplete;
     public event Action onReset;
@@ -12,11 +14,15 @@ public class GamePlayManager : MonoBehaviour
 
     public PlayerController playerController;
     public GrannyController grannyController;
+    public QuestManager questManager;
     public LevelsManager levelsManager;
     public UIManager uIManager;
-    public void Start()
+    public TimelineManager timelineManager;
+    public void SetupLevel(LevelData levelData)
     {
-
+        questManager.Init(levelData);
+        timelineManager.PlayTimeline(levelData.startTimeline);
+        uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
     }
     public void ResetData()
     {
