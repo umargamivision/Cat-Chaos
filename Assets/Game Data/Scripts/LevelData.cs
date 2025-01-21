@@ -18,6 +18,7 @@ public class LevelData : ScriptableObject
     public int currentXP;
     public void ResetLevel()
     {
+        hasCompleted = false;
         progress = 0;
         currentXP = 0;
         foreach (var task in tasks)
