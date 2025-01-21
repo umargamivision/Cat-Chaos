@@ -17,6 +17,7 @@ public sealed class Grabbable : IGrabbable
     }
     private void OnEnable()
     {
+        state=State.Idle;
         if (outline == null) outline = GetComponent<Outline>();
         outline.enabled = false;
     }
@@ -30,6 +31,7 @@ public sealed class Grabbable : IGrabbable
             transform.localScale = scaleOnGrab;
         isGrabbed = true;
         rb.isKinematic = true;
+        state=State.Grab;
         OnGrab.Invoke();
     }
     public void Release()
@@ -49,6 +51,7 @@ public sealed class Grabbable : IGrabbable
             rb.isKinematic = false;
             rb.AddForce(direction * force, ForceMode.Impulse);
             transform.parent = null;
+            state=State.Throw;
             OnThrow.Invoke();
         }
     }
@@ -68,7 +71,7 @@ public abstract class IGrabbable : MonoBehaviour
     public abstract void Grab();
     private void OnCollisionEnter(Collision other) 
     {
-        
+        if(state == State.Throw)
         OnThrowCollision.Invoke();    
     }
     public abstract void Throw(Vector3 direction, float force);

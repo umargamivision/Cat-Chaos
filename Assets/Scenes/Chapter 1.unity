@@ -1797,10 +1797,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls: []
   isGrabbed: 0
@@ -4832,10 +4836,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3469287837141214101}
@@ -9278,10 +9286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls: []
   isGrabbed: 0
@@ -9662,10 +9674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls: []
   isGrabbed: 0
@@ -25648,10 +25664,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls: []
   isGrabbed: 0
@@ -27784,10 +27804,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8163b53cc79d45c091689a0820b3a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   OnGrab:
     m_PersistentCalls:
       m_Calls: []
   OnThrow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThrowCollision:
     m_PersistentCalls:
       m_Calls: []
   isGrabbed: 0
