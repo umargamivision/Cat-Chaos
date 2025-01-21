@@ -15,18 +15,22 @@ public class LevelData : ScriptableObject
     public bool hasCompleted;
     public float progress;
     public int currentXP;
-    public void ResetData()
+    public void ResetLevel()
     {
         progress = 0;
         currentXP = 0;
+        foreach (var task in tasks)
+        {
+            task.ResetValues();
+        }
     }
     private void Reset() 
     {
-        ResetData();    
+        ResetLevel();    
     }
     private void OnEnable()
     {
-        ResetData();
+        ResetLevel();
         foreach (var item in tasks)
         {
             item.OnComplete.AddListener(OnCompleteTask);

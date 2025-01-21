@@ -10,6 +10,7 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Panels")]
     public GameObject gamePlay;
+    public GameObject completePanel, failPanel, pausePanel;
 
     [Header("Texts")]
     public TMP_Text levelNoTxt;
@@ -19,6 +20,23 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Buttons")]
     public GameObject grabButton;
+    public void Pause(bool pause)
+    {
+        Time.timeScale = pause? 0:1;
+        pausePanel.SetActive(pause);
+    }
+    public void LevelComplete()
+    {
+        completePanel.SetActive(true);
+    }
+    public void LevelFail()
+    {
+        failPanel.SetActive(true);
+    }
+    public void HomeClick()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void UpdateLevelBar(int levelNo, float fillAmount)
     {
         levelNoTxt.text = $"Level "+levelNo;
@@ -27,5 +45,9 @@ public class UIManager : Singleton<UIManager>
     public void RestartClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void ResetLevel()
+    {
+
     }
 }

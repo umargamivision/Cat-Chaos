@@ -17,6 +17,10 @@ public class LevelsManager : MonoBehaviour
         currentLevelData.OnTaskComplete.AddListener(OnTaskComplete);
         SetupLevel();
     }
+    public void ResetLevel()
+    {
+        currentLevelData.ResetLevel();
+    }
     public void SetupLevel()
     {
         QuestManager.Instance.Init(currentLevelData);

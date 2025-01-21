@@ -23,6 +23,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         firstPersonController.enabled = true;
         transform.SetPositionAndRotation(spawnPoint.position,spawnPoint.rotation);
+        playerCam.transform.localEulerAngles = Vector3.right*135;
         ScreenFader.Instance.FadeIn();
     }
     public void Attack()
