@@ -29,13 +29,19 @@ public class GrannyController : MonoBehaviour
     {
         grannyStateManager.SwitchState(grannyStateManager.grannyChasingState);
     }
+    private void OnCollisionEnter(Collision other) 
+    {
+        if(other.transform.CompareTag("Item"))
+        {
+            ChasePlayer();
+        }
+    }
     public void GrannyCatch()
     {
         playerController.GrannyCatch();
     }
     public void GiveCatDamage()
     {
-        
         playerController.TakeGrannyDamage();
     }
 }

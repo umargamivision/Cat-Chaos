@@ -10,7 +10,7 @@ public sealed class Grabbable : IGrabbable
 {
     public bool setScaleOnGrab;
     public Vector3 scaleOnGrab;
-    public Outline outline;
+    public QuickOutline outline;
     public Rigidbody rb;
     public Grabbable(bool canGrab) : base(canGrab)
     {
@@ -18,12 +18,16 @@ public sealed class Grabbable : IGrabbable
     private void OnEnable()
     {
         state=State.Idle;
-        if (outline == null) outline = GetComponent<Outline>();
-        outline.enabled = false;
+        if (outline == null) 
+        {
+            TryGetComponent<QuickOutline>(out QuickOutline o);
+            outline = o;
+        }
+        if(outline)outline.enabled = false;
     }
     public void OnFocus(bool focus)
     {
-        outline.enabled = focus;
+        if(outline)outline.enabled = focus;
     }
     public override void Grab()
     {

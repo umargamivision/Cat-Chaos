@@ -10,7 +10,7 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Panels")]
     public GameObject gamePlay;
-    public GameObject completePanel, failPanel, pausePanel;
+    public GameObject completePanel, failPanel, pausePanel,settingPanel,shopPanel;
 
     [Header("Texts")]
     public TMP_Text levelNoTxt;
@@ -36,6 +36,18 @@ public class UIManager : Singleton<UIManager>
     public void HomeClick()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void HintClick()
+    {
+
+    }
+    public void SettingClick()
+    {
+        settingPanel.SetActive(true);
+    }
+    public void ShopClick()
+    {
+        shopPanel.SetActive(true);
     }
     public void UpdateLevelBar(int levelNo, float fillAmount)
     {

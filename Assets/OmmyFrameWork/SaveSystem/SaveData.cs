@@ -39,10 +39,11 @@ public sealed class SaveData
     public bool Haptic = true;
     [Space]
     public int Level  = 0;
-    public int Coins  = 0;
+    public int Fishs  = 0;
     public int Keys = 0;
     public int GameTutorial = 0;
     public int CurrentGameTutorialStep = 0;
+    public List<ShopItemData> shopItemDatas;
 
     [HideInInspector]
     public string HashOfSaveData = null;
@@ -60,13 +61,14 @@ public sealed class SaveData
         Haptic = data.Haptic;
 
         Level  = data.Level;
-        Coins  = data.Coins;
+        Fishs  = data.Fishs;
         playerFireRateUpgradeIndex = data.playerFireRateUpgradeIndex;
         playerDamageRateUpgradeIndex = data.playerDamageRateUpgradeIndex;
         currentWeaponIndex = data.currentWeaponIndex;
         Keys = data.Keys;
         GameTutorial = data.GameTutorial;
         CurrentGameTutorialStep = data.CurrentGameTutorialStep;
+        shopItemDatas = data.shopItemDatas;
    //     CurrentWorldIndex = data.CurrentWorldIndex;
 
     }//CopyConstructor() end

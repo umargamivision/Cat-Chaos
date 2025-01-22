@@ -1,41 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Ommy.SaveData;
 using Ommy.Singleton;
 using UnityEngine;
 using Cursor = UnityEngine.Cursor;
 
 public class GameManager : Singleton<GameManager>
 {
-    [Header("Settings")]
-    [SerializeField] private bool lockCursor = true;
-
     private new void Awake()
     {
         base.Awake(); // Ensure Singleton initialization if needed.
         Application.targetFrameRate = 30;
     }
-
-    private void Start()
+    [InspectorButton]
+    public void SetFishs(int value)
     {
-        SetCursorLockState(lockCursor);
+        Fishs = value;
     }
-
-    /// <summary>
-    /// Sets the cursor lock state based on the given value.
-    /// </summary>
-    /// <param name="shouldLock">True to lock the cursor, false to unlock.</param>
-    public void SetCursorLockState(bool shouldLock)
+    [InspectorButton]
+    public void SetKeys(int value)
     {
-        Cursor.lockState = shouldLock ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.visible = !shouldLock;
+        Keys = value;
     }
-
-    /// <summary>
-    /// Toggles the cursor lock state at runtime.
-    /// </summary>
-    public void ToggleCursorLockState()
+    public int Fishs
     {
-        lockCursor = !lockCursor;
-        SetCursorLockState(lockCursor);
+        get
+        {
+            return SaveData.Instance.Fishs;
+        }
+        set
+        {
+            SaveData.Instance.Fishs = value;
+        }
     }
-}    
+    public int Keys
+    {
+        get
+        {
+            return SaveData.Instance.Keys;
+        }
+        set
+        {
+            SaveData.Instance.Keys = value;
+        }
+    }
+}
