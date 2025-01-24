@@ -53,6 +53,10 @@ public class UIManager : Singleton<UIManager>
     {
         settingPanel.SetActive(true);
     }
+    public void SleepClick()
+    {
+        
+    }
     public void ShopClick()
     {
         shopPanel.SetActive(true);
