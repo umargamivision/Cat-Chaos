@@ -16,7 +16,7 @@ MonoBehaviour:
   countsForCompletion: 1
   taskCounts: 0
   xp: 25
-  discription: Open the refrigerator door
+  discription: "Throw Granny\u2019s favorite crab out of aquarium"
   prerequisites: []
   OnExecute:
     m_PersistentCalls:

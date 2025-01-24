@@ -44,6 +44,7 @@ public class LevelsManager : MonoBehaviour
     }
     public void OnLevelComplete()
     {
+        GamePlayManager.Instance.OnCompleteLevel(currentLevelData);
         UpdateCurrentLevel();
         CoroutineManager.Instance.StartCor(NextLevel());
     }

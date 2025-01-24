@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Task 2
   m_EditorClassIdentifier: 
   complete: 0
-  countsForCompletion: 1
+  countsForCompletion: 3
   taskCounts: 0
   xp: 25
-  discription: Climb on window
+  discription: Throw 3 pieces of poop around the house
   prerequisites: []
   OnExecute:
     m_PersistentCalls:

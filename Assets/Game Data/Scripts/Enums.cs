@@ -20,4 +20,7 @@ public enum ItemType
     bottle,
     bowl,
     key,
+    poop,
+    crab,
+    bird,
 }

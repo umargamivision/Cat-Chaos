@@ -28,6 +28,10 @@ public class GamePlayManager : Singleton<GamePlayManager>
         timelineManager.PlayTimeline(levelData.startDirector);
         uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
     }
+    public void OnCompleteLevel(LevelData levelData)
+    {
+        timelineManager.PlayTimeline(levelData.endDirector);
+    }
     public void ResetData()
     {
         uIManager.ResetLevel();

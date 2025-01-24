@@ -9,6 +9,7 @@ public class Door : MonoBehaviour, IDoor
 {
     public bool hasKey = true;
     public bool isOpen = false;
+    public bool localRotation;
     public bool triggerOtherDoor;
     public Vector3 openRotation = new Vector3(0, 90, 0);
     public Vector3 closeRotation = new Vector3(0, 0, 0);
@@ -39,7 +40,11 @@ public class Door : MonoBehaviour, IDoor
         }
 
         // Add your door opening logic here
-        if (!triggerOtherDoor) transform.DORotate(openRotation, 1.0f); // Rotate door to open position
+        if (!triggerOtherDoor) 
+        {
+            if(localRotation)transform.DOLocalRotate(openRotation, 1.0f); // Rotate door to open position
+            else transform.DORotate(openRotation, 1.0f); // Rotate door to open position
+        }
         Debug.Log("Door is opened");
         isOpen = true;
         onOpen.Invoke();
@@ -48,7 +53,11 @@ public class Door : MonoBehaviour, IDoor
     public void Close()
     {
         // Add your door closing logic here
-        if (!triggerOtherDoor) transform.DORotate(closeRotation, 1.0f); // Rotate door to close position
+        if (!triggerOtherDoor) 
+        {
+            if(localRotation)transform.DOLocalRotate(closeRotation, 1.0f); // Rotate door to close position
+            else transform.DORotate(closeRotation, 1.0f); // Rotate door to close position
+        }
         Debug.Log("Door is closed");
         isOpen = false;
         onClose.Invoke();
