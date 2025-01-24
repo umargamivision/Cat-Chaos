@@ -7,15 +7,19 @@ using System;
 public class LevelsManager : MonoBehaviour
 {
     public float loadNextLevelDelay;
-    public int currentLevel => SaveData.Instance.Level;
+    //public int currentLevel => SaveData.Instance.Level;
+    public int currentLevel;
     public List<GameObject> levelObjects;
     public List<LevelData> levelDatas;
-    public LevelData currentLevelData => levelDatas[currentLevel];
+    //public LevelData currentLevelData => levelDatas[currentLevel];
+    public LevelData currentLevelData;
     private void OnEnable() 
     {
-        currentLevelData.OnLevelComplete.AddListener(OnLevelComplete);
-        currentLevelData.OnTaskComplete.AddListener(OnTaskComplete);
         SetupLevel();
+    }
+    private void OnDisable() 
+    {
+        currentLevelData.UnSubscribeEvents();
     }
     public void ResetLevel()
     {
@@ -23,17 +27,36 @@ public class LevelsManager : MonoBehaviour
     }
     public void SetupLevel()
     {
+        currentLevelData.UnSubscribeEvents();
+        currentLevel = SaveData.Instance.Level;
+        currentLevelData = levelDatas[currentLevel];
+        currentLevelData.SubscribeEvents();
+        currentLevelData.OnLevelComplete.AddListener(OnLevelComplete);
+        currentLevelData.OnTaskComplete.AddListener(OnTaskComplete);
+
         GamePlayManager.Instance.SetupLevel(currentLevelData);
         foreach (var item in levelObjects)
         {
             item.SetActive(false);
         }
-        levelObjects[currentLevel].SetActive(true);
+        ResetLevel();
+        levelObjects[currentLevel].SetActive(true);        
     }
     public void OnLevelComplete()
     {
-        SaveData.Instance.Level++;
+        UpdateCurrentLevel();
         CoroutineManager.Instance.StartCor(NextLevel());
+    }
+    public void UpdateCurrentLevel()
+    {
+        SaveData.Instance.Level++;
+        SaveSystem.SaveProgress();
+        currentLevel = SaveData.Instance.Level;
+        currentLevelData = levelDatas[currentLevel];
+    }
+    public void ShowIndicators(bool show)
+    {
+        currentLevelData.CurrentTaskProp().items.ForEach(f=>f.ShowIndicator(show));
     }
     public void OnTaskComplete()
     {

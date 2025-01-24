@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using DG.Tweening;
 using Ommy.Singleton;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,17 +11,11 @@ public class Grabber : Singleton<Grabber>
 {
     [Header("Item Detection")]
     [SerializeField] private Transform grabberPoint;
-    [SerializeField] private Transform origin;
-
-    [Header("Settings")]
-    [SerializeField] private float detectionLength = 5f;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float grabDuration = 0.5f;
     public UnityEvent<bool> OnDetectGrabbable;
 
     private Grabbable currentGrabbable, detectedGrabbable;
-    private Ray ray;
-    private RaycastHit raycastHit;
 
     public Camera playerCamera;
 
@@ -44,7 +39,7 @@ public class Grabber : Singleton<Grabber>
     public void OnGrab(Grabbable grabbable)
     {
         if (grabbable == null) return;
-
+        if (currentGrabbable != null) currentGrabbable.Throw(initialTouchPosition,throwForce);
         currentGrabbable = grabbable;
         currentGrabbable.Grab();
         currentGrabbable.transform.SetParent(grabberPoint);
@@ -62,18 +57,12 @@ public class Grabber : Singleton<Grabber>
     {
         OnGrab(detectedGrabbable);
     }
-
-    private void Update()
-    {
-        PerformDetection();
-        //InputThrowGrabbable();
-    }
     private Vector2 initialTouchPosition; // Store the starting position of the touch
     public float maxSwipeThreshold = 50f; // Maximum distance to consider as a tap
 
     public void InputThrowGrabbable(Vector2 tapPos)
     {
-        if(currentGrabbable == null) return;
+        if (currentGrabbable == null) return;
         Ray screenRay = playerCamera.ScreenPointToRay(tapPos);
 
         // Raycast to determine the throw target
@@ -86,22 +75,12 @@ public class Grabber : Singleton<Grabber>
     /// <summary>
     /// Performs the raycasting detection logic to identify grabbable objects.
     /// </summary>
-    private void PerformDetection()
+    public void PerformDetection(IGrabbable grabbable)
     {
-        ray.origin = origin.position;
-        ray.direction = origin.forward;
-
-        if (Physics.Raycast(ray, out raycastHit, detectionLength))
+        if(grabbable!=null)
         {
-            if (raycastHit.collider.TryGetComponent(out Grabbable _detectedGrabbable))
-            {
-                detectedGrabbable = _detectedGrabbable;
-                DetectedGrabbable(true);
-            }
-            else
-            {
-                DetectedGrabbable(false);
-            }
+            detectedGrabbable = grabbable as Grabbable;
+            DetectedGrabbable(true);
         }
         else
         {
@@ -111,10 +90,10 @@ public class Grabber : Singleton<Grabber>
 
     public void DetectedGrabbable(bool detect)
     {
-        if(detectedGrabbable)
+        if (detectedGrabbable)
         {
             detectedGrabbable.OnFocus(detect);
-        } 
+        }
         OnDetectGrabbable.Invoke(detect);
     }
     private void ClearCurrentGrabbable()
@@ -123,13 +102,5 @@ public class Grabber : Singleton<Grabber>
 
         currentGrabbable.transform.SetParent(null);
         currentGrabbable = null;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (origin == null) return;
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(origin.position, origin.position + origin.forward * detectionLength);
     }
 }

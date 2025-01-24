@@ -27,6 +27,21 @@ public class TimelineManager : Singleton<TimelineManager>
             currentTL.Play();
         }
     }
+    public void PlayTimeline(PlayableDirector playableDirector)
+    {
+        var TL = timelineProps.Find(f => f.playableDirector == playableDirector);
+        if (TL != null)
+        {
+            currentTL = TL;
+
+            TL.playableDirector.played += OnPlay;
+            TL.playableDirector.paused += OnPause;
+            TL.playableDirector.stopped += OnStop;
+
+            Debug.Log(TL.timelineType + " start playing");
+            currentTL.Play();
+        }
+    }
     public void StopTimeLine()
     {
         if (currentTL != null)

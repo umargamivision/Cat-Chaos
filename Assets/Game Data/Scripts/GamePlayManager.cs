@@ -25,7 +25,7 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public void SetupLevel(LevelData levelData)
     {
         questManager.Init(levelData);
-        timelineManager.PlayTimeline(levelData.startTimeline);
+        timelineManager.PlayTimeline(levelData.startDirector);
         uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
     }
     public void ResetData()
@@ -44,5 +44,10 @@ public class GamePlayManager : Singleton<GamePlayManager>
     {
         uIManager.LevelComplete();
         Debug.Log("game complete");
+    }
+
+    public void ShowIndicators(bool show)
+    {
+        levelsManager.ShowIndicators(show);
     }
 }

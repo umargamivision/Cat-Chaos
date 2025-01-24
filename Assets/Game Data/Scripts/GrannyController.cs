@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using Ommy.Animation;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class GrannyController : MonoBehaviour
     public StateMachineEventListner stateMachineEventListner;
     public PlayerController playerController;
     public GrannyStateManager grannyStateManager;
+    public GrannyItemCollision grannyItemCollision;
     private void OnEnable() 
     {
         stateMachineEventListner.OnEventInvoke.AddListener(OnAnimationEventInvoke);
@@ -34,6 +36,10 @@ public class GrannyController : MonoBehaviour
         if(other.transform.CompareTag("Item"))
         {
             ChasePlayer();
+        }
+        if(other.transform.TryGetComponent<Item>(out Item item))
+        {
+            grannyItemCollision.CollideWith(item.itemType);
         }
     }
     public void GrannyCatch()

@@ -20,6 +20,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Buttons")]
     public GameObject grabButton;
+    public Button doorButton;
     public void Pause(bool pause)
     {
         Time.timeScale = pause? 0:1;
@@ -39,7 +40,14 @@ public class UIManager : Singleton<UIManager>
     }
     public void HintClick()
     {
-
+        GamePlayManager.Instance.ShowIndicators(true);
+    }
+    public void OnDoorDetected(IDoor door)
+    {
+        doorButton.gameObject.SetActive(door!=null);
+        if(door==null) return;
+        doorButton.onClick.RemoveAllListeners();
+        doorButton.onClick.AddListener(door.Toggle);
     }
     public void SettingClick()
     {

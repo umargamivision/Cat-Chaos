@@ -16,7 +16,7 @@ MonoBehaviour:
   countsForCompletion: 3
   taskCounts: 0
   xp: 25
-  discription: break 3 objects
+  discription: break 3 bottle
   prerequisites:
   - {fileID: 11400000, guid: f19ab6cf0fce34ca68219bc358a1f471, type: 2}
   OnExecute:

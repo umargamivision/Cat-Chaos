@@ -1,15 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Events;
-[CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/Level", order = 1)]
-public class LevelData : ScriptableObject
+using UnityEngine.Playables;
+[Serializable]
+public class LevelData
 {
-    public TimelineType startTimeline,endTimeline;
+    [Serializable]
+    public class TaskProp
+    {
+        public Task task;
+        public List<Item> items;
+    }
+    //public TimelineType startTimeline,endTimeline;
+    public PlayableDirector startDirector,endDirector;
     public int levelNo;
     public int requireXP;
-    public List<Task> tasks;
+    public List<TaskProp> tasks;
     public UnityEvent OnLevelComplete, OnTaskComplete;
     [Space(10)]
     [Header("Debug")]
@@ -23,26 +33,30 @@ public class LevelData : ScriptableObject
         currentXP = 0;
         foreach (var task in tasks)
         {
-            task.ResetValues();
+            task.task.ResetValues();
         }
+    }
+    public TaskProp CurrentTaskProp()
+    {
+        return tasks.Find(f=>!f.task.complete);
     }
     private void Reset() 
     {
         ResetLevel();    
     }
-    private void OnEnable()
+    public void SubscribeEvents()
     {
         ResetLevel();
         foreach (var item in tasks)
         {
-            item.OnComplete.AddListener(OnCompleteTask);
+            item.task.OnComplete.AddListener(OnCompleteTask);
         }
     }
-    private void OnDisable()
+    public void UnSubscribeEvents()
     {
         foreach (var task in tasks)
         {
-            task.OnComplete.RemoveListener(OnCompleteTask);
+            task.task.OnComplete.RemoveListener(OnCompleteTask);
         }
     }
     private void UpdateProgress()
@@ -52,7 +66,7 @@ public class LevelData : ScriptableObject
         int completedTasks = 0;
         foreach (var task in tasks)
         {
-            if (task.complete) completedTasks++;
+            if (task.task.complete) completedTasks++;
         }
 
         progress = (float)completedTasks / tasks.Count;
@@ -65,7 +79,7 @@ public class LevelData : ScriptableObject
         XPManager.Instance.AddXP(xp); // Add XP to global pool
         UpdateProgress();
         OnTaskComplete.Invoke();
-        if (currentXP >= requireXP)
+        if (progress >= 1)
         {
             hasCompleted = true;
             OnLevelComplete.Invoke();
