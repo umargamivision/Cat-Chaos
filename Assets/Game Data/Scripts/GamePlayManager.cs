@@ -54,4 +54,9 @@ public class GamePlayManager : Singleton<GamePlayManager>
     {
         levelsManager.ShowIndicators(show);
     }
+
+    public void Sleep()
+    {
+        //timelineManager.PlayTimeline()
+    }
 }

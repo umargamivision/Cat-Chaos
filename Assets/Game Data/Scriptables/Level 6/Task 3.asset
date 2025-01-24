@@ -16,10 +16,10 @@ MonoBehaviour:
   countsForCompletion: 1
   taskCounts: 0
   xp: 25
-  discription: "Throw Granny\u2019s favorite crab out of aquarium"
+  discription: "Go to the second Floor and Sleep on granny\u2019s bed"
   prerequisites:
-  - {fileID: 11400000, guid: 39378d9ee484f462b9cc2598f7d70ead, type: 2}
-  - {fileID: 11400000, guid: 923e5e1f4bfe24250b4f47fefdc2360d, type: 2}
+  - {fileID: 11400000, guid: 8ac182251d7ee4fd083a547fc43c5c8f, type: 2}
+  - {fileID: 11400000, guid: 84e6d80e5fc324c35816d7a70b717951, type: 2}
   OnExecute:
     m_PersistentCalls:
       m_Calls: []

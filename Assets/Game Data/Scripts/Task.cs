@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "NewTask", menuName = "ScriptableObjects/Task", order = 1)]
 public class Task : ScriptableObject
 {
+    public TimelineType completeTimeline;
     public bool complete;
     public int countsForCompletion;
     public int taskCounts;
@@ -68,6 +69,7 @@ public class Task : ScriptableObject
         if (taskCounts >= countsForCompletion)
         {
             complete = true;
+            TimelineManager.Instance.PlayTimeline(completeTimeline);
             OnComplete.Invoke(xp);
         }
     }

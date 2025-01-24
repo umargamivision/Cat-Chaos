@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b6d2b96932480c89f308b98afb0e2, type: 3}
   m_Name: Task 2
   m_EditorClassIdentifier: 
-  complete: 0
+  complete: 1
   countsForCompletion: 3
   taskCounts: 0
   xp: 25
   discription: Throw 3 pieces of poop around the house
-  prerequisites: []
+  prerequisites:
+  - {fileID: 11400000, guid: 39378d9ee484f462b9cc2598f7d70ead, type: 2}
   OnExecute:
     m_PersistentCalls:
       m_Calls: []

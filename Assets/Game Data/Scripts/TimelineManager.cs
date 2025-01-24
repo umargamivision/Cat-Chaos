@@ -88,5 +88,9 @@ public enum TimelineType
     none,
     timeline1,
     timeline2,
-    timeline3
+    timeline3,
+    PoopInFoodBox,
+    sleepOnBed,
+    sleepOnGrannyBed,
+    grannyBringPigeon
 }

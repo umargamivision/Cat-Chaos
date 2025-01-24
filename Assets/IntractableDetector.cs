@@ -15,6 +15,7 @@ public class IntractableDetector : MonoBehaviour
     public UnityEvent<RaycastHit> onRayCast;
     public UnityEvent<IGrabbable> onGrabableHit;
     public UnityEvent<IDoor> onDoorDetected;
+    public UnityEvent<ClothTear> onClothTearDetected;
     private void Update()
     {
         PerformDetection();
@@ -27,6 +28,8 @@ public class IntractableDetector : MonoBehaviour
 
         IDoor iDoor = null;
         IGrabbable iGrabbable = null;
+        ClothTear clothTear = null;
+
         if (Physics.Raycast(ray, out raycastHit, detectionLength, layerMask))
         {
             iGrabbable = raycastHit.collider.GetComponent<IGrabbable>();
@@ -34,11 +37,15 @@ public class IntractableDetector : MonoBehaviour
 
             iDoor = raycastHit.collider.GetComponent<IDoor>();
             onDoorDetected.Invoke(iDoor);
+        
+            clothTear = raycastHit.collider.GetComponent<ClothTear>();
+            onClothTearDetected.Invoke(clothTear);
         }
         else
         {
             onGrabableHit.Invoke(iGrabbable);
             onDoorDetected.Invoke(iDoor);
+            onClothTearDetected.Invoke(clothTear);
         }
     }
     private void OnDrawGizmosSelected()

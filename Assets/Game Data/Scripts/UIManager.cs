@@ -21,6 +21,8 @@ public class UIManager : Singleton<UIManager>
     [Header("Buttons")]
     public GameObject grabButton;
     public Button doorButton;
+    public Button tearButton;
+
     public void Pause(bool pause)
     {
         Time.timeScale = pause? 0:1;
@@ -49,13 +51,20 @@ public class UIManager : Singleton<UIManager>
         doorButton.onClick.RemoveAllListeners();
         doorButton.onClick.AddListener(door.Toggle);
     }
+    public void OnClothTearDetected(ClothTear cloth)
+    {
+        tearButton.gameObject.SetActive(cloth!=null);
+        if(cloth==null) return;
+        tearButton.onClick.RemoveAllListeners();
+        tearButton.onClick.AddListener(cloth.TearIt);
+    }
     public void SettingClick()
     {
         settingPanel.SetActive(true);
     }
     public void SleepClick()
     {
-        
+        GamePlayManager.Instance.Sleep();
     }
     public void ShopClick()
     {
