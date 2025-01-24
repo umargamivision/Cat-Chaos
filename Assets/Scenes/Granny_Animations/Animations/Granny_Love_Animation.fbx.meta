@@ -1,0 +1,1139 @@
+fileFormatVersion: 2
+guid: 634730c0633877f47a9687d378edf2cc
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 2
+      lastFrame: 370
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Granny_Rig:Bind_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Granny_Rig:Bind_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Granny_Love_Animation(Clone)
+      parentName: 
+      position: {x: 0.000000095367426, y: -0.005, z: 0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Joint_GRP
+      parentName: Granny_Love_Animation(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Joint_GRP
+      parentName: Granny_Rig:Joint_GRP
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Hips
+      parentName: Granny_Rig:Bind_Joint_GRP
+      position: {x: -0.000000095367426, y: 0.9121767, z: -0.014986164}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: -0.09954457, y: -0.048218, z: 0.00439599}
+      rotation: {x: 0.0018915593, y: -0.053310387, z: 0.9979482, w: 0.035409205}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftLeg
+      parentName: Granny_Rig:FK_LeftUpLeg
+      position: {x: -1.1202107e-10, y: 0.3826729, z: 5.525887e-10}
+      rotation: {x: -0.003279244, y: 0.000014998484, z: -0.0045736907, w: 0.9999842}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftFoot
+      parentName: Granny_Rig:FK_LeftLeg
+      position: {x: -4.569143e-10, y: 0.35439453, z: -0.0000000013935275}
+      rotation: {x: 0.4526971, y: -0.0012215932, z: 0.0006202023, w: 0.8916634}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftToeBase
+      parentName: Granny_Rig:FK_LeftFoot
+      position: {x: 1.9087455e-10, y: 0.17998488, z: 0.0000000017138834}
+      rotation: {x: 0.3583393, y: 0.026622, z: -0.010223061, w: 0.9331558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftToe_End
+      parentName: Granny_Rig:FK_LeftToeBase
+      position: {x: 1.3173888e-11, y: 0.06777382, z: -8.344525e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: 0.09954457, y: -0.048218, z: 0.0020696067}
+      rotation: {x: -0.0016607522, y: -0.04674378, z: 0.9982757, w: -0.035467576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightLeg
+      parentName: Granny_Rig:FK_RightUpLeg
+      position: {x: 6.239416e-10, y: 0.38216975, z: 2.016502e-10}
+      rotation: {x: -0.0146870855, y: -0.00006605867, z: 0.0044972077, w: 0.99988204}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightFoot
+      parentName: Granny_Rig:FK_RightLeg
+      position: {x: -5.7855065e-10, y: 0.35479906, z: 5.1930005e-11}
+      rotation: {x: 0.4596031, y: 0.001595952, z: -0.00082590454, w: 0.8881226}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightToeBase
+      parentName: Granny_Rig:FK_RightFoot
+      position: {x: 3.43622e-11, y: 0.18114445, z: 0.0000000018060075}
+      rotation: {x: 0.35558617, y: -0.026721163, z: 0.010170856, w: 0.9342061}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightToe_End
+      parentName: Granny_Rig:FK_RightToeBase
+      position: {x: -1.41275784e-11, y: 0.06763459, z: -6.861718e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: -0.09954457, y: -0.048218, z: 0.00439599}
+      rotation: {x: -0.11244532, y: 0.27724034, z: 0.9501676, w: 0.08760984}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftLeg
+      parentName: Granny_Rig:IK_LeftUpLeg
+      position: {x: -1.1202107e-10, y: 0.3826729, z: 5.525887e-10}
+      rotation: {x: -0.44539344, y: 0.003884338, z: -0.0010573923, w: 0.89532596}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftFoot
+      parentName: Granny_Rig:IK_LeftLeg
+      position: {x: -4.569143e-10, y: 0.35439453, z: -0.0000000013935275}
+      rotation: {x: 0.6422946, y: -0.09626603, z: 0.050378222, w: 0.7587177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftToeBase
+      parentName: Granny_Rig:IK_LeftFoot
+      position: {x: 1.9087455e-10, y: 0.17998488, z: 0.0000000017138834}
+      rotation: {x: 0.35833898, y: 0.026622003, z: -0.0102230515, w: 0.9331559}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftToe_End
+      parentName: Granny_Rig:IK_LeftToeBase
+      position: {x: 1.3173888e-11, y: 0.06777382, z: -8.344525e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:LeftLeg_IK_CTRL_GuideCurve_Cluster2Handle
+      parentName: Granny_Rig:IK_LeftLeg
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.45111173, y: -0.068579845, z: 0.88977, w: -0.010218249}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: 0.09954457, y: -0.048218, z: 0.0020696067}
+      rotation: {x: 0.07227267, y: 0.38618308, z: 0.9172045, w: -0.066145286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightLeg
+      parentName: Granny_Rig:IK_RightUpLeg
+      position: {x: 6.239416e-10, y: 0.38216975, z: 2.016502e-10}
+      rotation: {x: -0.4286988, y: -0.004382018, z: 0.00067754096, w: 0.9034366}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightFoot
+      parentName: Granny_Rig:IK_RightLeg
+      position: {x: -5.7855065e-10, y: 0.35479906, z: 5.1930005e-11}
+      rotation: {x: 0.53357035, y: -0.012773399, z: -0.013672134, w: 0.84554875}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightToeBase
+      parentName: Granny_Rig:IK_RightFoot
+      position: {x: 3.43622e-11, y: 0.18114445, z: 0.0000000018060075}
+      rotation: {x: 0.3555853, y: -0.02672116, z: 0.0101708565, w: 0.9342064}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightToe_End
+      parentName: Granny_Rig:IK_RightToeBase
+      position: {x: -1.41275784e-11, y: 0.06763459, z: -6.861718e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:RightLeg_IK_CTRL_GuideCurve_Cluster2Handle
+      parentName: Granny_Rig:IK_RightLeg
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.14109503, y: -0.06645319, z: 0.9872796, w: 0.030905336}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: 0.09954457, y: -0.048218, z: 0.0020696067}
+      rotation: {x: -0.0017079754, y: -0.046365943, z: 0.998211, w: -0.037710305}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightLeg
+      parentName: Granny_Rig:Bind_RightUpLeg
+      position: {x: 6.239416e-10, y: 0.38216975, z: 2.0165018e-10}
+      rotation: {x: -0.015460729, y: -0.008062452, z: -0.000037630456, w: 0.999848}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:RightLeg_IK_BakingLOC
+      parentName: Granny_Rig:Bind_RightLeg
+      position: {x: -0, y: 0, z: 0.19108488}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightFoot
+      parentName: Granny_Rig:Bind_RightLeg
+      position: {x: -5.785507e-10, y: 0.35479906, z: 5.193e-11}
+      rotation: {x: 0.45994967, y: 0.009868912, z: -0.0023884426, w: 0.88788694}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:RightFoot_IK_BakingLOC
+      parentName: Granny_Rig:Bind_RightFoot
+      position: {x: 0.00000010679907, y: 0.00000036937277, z: -0.0000003519061}
+      rotation: {x: -0.048901, y: 0.40462926, z: 0.91291517, w: 0.021674277}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightToeBase
+      parentName: Granny_Rig:Bind_RightFoot
+      position: {x: 3.43622e-11, y: 0.18114445, z: 0.0000000018060076}
+      rotation: {x: 0.35558617, y: -0.026721163, z: 0.010170856, w: 0.9342061}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightToe_End
+      parentName: Granny_Rig:Bind_RightToeBase
+      position: {x: -1.4127473e-11, y: 0.06763459, z: -6.8617e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftUpLeg
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: -0.09954457, y: -0.048218, z: 0.00439599}
+      rotation: {x: 0.0014423014, y: -0.052102722, z: 0.99793035, w: 0.037660606}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftLeg
+      parentName: Granny_Rig:Bind_LeftUpLeg
+      position: {x: -1.1202107e-10, y: 0.3826729, z: 5.525887e-10}
+      rotation: {x: -0.005739353, y: 0.0071980907, z: 0.000008624445, w: 0.9999576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:LeftLeg_IK_BakingLOC
+      parentName: Granny_Rig:Bind_LeftLeg
+      position: {x: -0, y: 0, z: 0.19133645}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftFoot
+      parentName: Granny_Rig:Bind_LeftLeg
+      position: {x: -4.569143e-10, y: 0.35439453, z: -0.0000000013935275}
+      rotation: {x: 0.45382935, y: -0.0092551, z: 0.0020118563, w: 0.8910383}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:LeftFoot_IK_BakingLOC
+      parentName: Granny_Rig:Bind_LeftFoot
+      position: {x: -0.00000007460895, y: 0.0000000882785, z: -0.00000019215274}
+      rotation: {x: 0.049276136, y: 0.40197384, z: 0.91406745, w: -0.021669863}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftToeBase
+      parentName: Granny_Rig:Bind_LeftFoot
+      position: {x: 1.9087455e-10, y: 0.17998488, z: 0.0000000017138831}
+      rotation: {x: 0.3583393, y: 0.026622, z: -0.010223062, w: 0.9331558}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftToe_End
+      parentName: Granny_Rig:Bind_LeftToeBase
+      position: {x: 1.3173888e-11, y: 0.06777382, z: -8.344546e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Spine
+      parentName: Granny_Rig:Bind_Hips
+      position: {x: -0, y: 0.08678543, z: -0.010988789}
+      rotation: {x: -0.06293337, y: 0, z: -0, w: 0.9980177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Spine1
+      parentName: Granny_Rig:Bind_Spine
+      position: {x: -0, y: 0.10205804, z: -1.5718367e-10}
+      rotation: {x: 2.119423e-17, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Spine2
+      parentName: Granny_Rig:Bind_Spine1
+      position: {x: -0, y: 0.11663786, z: -6.1561434e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightShoulder
+      parentName: Granny_Rig:Bind_Spine2
+      position: {x: 0.042787876, y: 0.11277352, z: -0.0019328409}
+      rotation: {x: -0.56338024, y: -0.4185517, z: 0.5858947, w: -0.4051476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightArm
+      parentName: Granny_Rig:Bind_RightShoulder
+      position: {x: 2.607212e-10, y: 0.094553456, z: 0.0000000018233803}
+      rotation: {x: 0.31426498, y: 0.032399673, z: 0.10769469, w: 0.9426503}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightForeArm
+      parentName: Granny_Rig:FK_RightArm
+      position: {x: 5.786264e-10, y: 0.24028583, z: -0.00000000467056}
+      rotation: {x: -0.10778932, y: -0.122633636, z: 0.61218685, w: 0.7736729}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_RightHand
+      parentName: Granny_Rig:FK_RightForeArm
+      position: {x: 0.000000002163074, y: 0.22720228, z: -0.0000000023076157}
+      rotation: {x: -0.14695685, y: -0.24265483, z: 0.025573432, w: 0.9585762}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightArm
+      parentName: Granny_Rig:Bind_RightShoulder
+      position: {x: 2.607212e-10, y: 0.094553456, z: 0.0000000018233803}
+      rotation: {x: -0.37399542, y: 0.2711356, z: 0.8549053, w: -0.2361139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightForeArm
+      parentName: Granny_Rig:IK_RightArm
+      position: {x: 5.786264e-10, y: 0.24028583, z: -0.00000000467056}
+      rotation: {x: 0.00001601775, y: -0.07395384, z: -0.0000001534645, w: 0.9972617}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_RightHand
+      parentName: Granny_Rig:IK_RightForeArm
+      position: {x: 0.000000002163074, y: 0.22720228, z: -0.0000000023076157}
+      rotation: {x: 0.32444927, y: -0.30852348, z: 0.12163586, w: 0.8858615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:RightForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+      parentName: Granny_Rig:IK_RightForeArm
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7072206, y: 0.08487446, z: -0.61234355, w: -0.34303173}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightArm
+      parentName: Granny_Rig:Bind_RightShoulder
+      position: {x: 2.607212e-10, y: 0.094553456, z: 0.0000000018233803}
+      rotation: {x: -0.14191644, y: 0.1672376, z: -0.011521697, w: 0.9755811}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightForeArm
+      parentName: Granny_Rig:Bind_RightArm
+      position: {x: 5.786264e-10, y: 0.24028583, z: -0.00000000467056}
+      rotation: {x: -0.021511646, y: -0.08175227, z: 0.031320956, w: 0.9959281}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:RightForeArm_IK_BakingLOC
+      parentName: Granny_Rig:Bind_RightForeArm
+      position: {x: 0.120142914, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHand
+      parentName: Granny_Rig:Bind_RightForeArm
+      position: {x: 0.000000002163074, y: 0.22720228, z: -0.0000000023076157}
+      rotation: {x: 0.09032216, y: -0.13079101, z: -0.0012829077, w: 0.9872862}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandPinky1
+      parentName: Granny_Rig:Bind_RightHand
+      position: {x: 0.025683593, y: 0.112730846, z: 0.0011721161}
+      rotation: {x: -0.010151497, y: 0.0043928917, z: -0.053115193, w: 0.99852717}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandPinky2
+      parentName: Granny_Rig:Bind_RightHandPinky1
+      position: {x: -0.00026198893, y: 0.021289809, z: -1.4026767e-10}
+      rotation: {x: 0.032440413, y: -0.00009921983, z: 0.0100633595, w: 0.99942297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandPinky3
+      parentName: Granny_Rig:Bind_RightHandPinky2
+      position: {x: 0.00021994588, y: 0.019530121, z: -4.7140673e-11}
+      rotation: {x: -0.040094137, y: -0.00020363978, z: -0.0017891059, w: 0.9991943}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandPinky4
+      parentName: Granny_Rig:Bind_RightHandPinky3
+      position: {x: 0.000042043335, y: 0.015298905, z: 8.576606e-12}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandIndex1
+      parentName: Granny_Rig:Bind_RightHand
+      position: {x: -0.027867058, y: 0.12593786, z: 0.00001605511}
+      rotation: {x: 0.037350114, y: 0.0020614981, z: 0.05507144, w: 0.99778146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandIndex2
+      parentName: Granny_Rig:Bind_RightHandIndex1
+      position: {x: 0.00050039333, y: 0.026331384, z: 3.9941944e-10}
+      rotation: {x: 0.17709474, y: -0, z: -0, w: 0.9841938}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandIndex3
+      parentName: Granny_Rig:Bind_RightHandIndex2
+      position: {x: -0.00031324368, y: 0.025196297, z: -6.936318e-12}
+      rotation: {x: -0.021271495, y: 0, z: -0, w: 0.99977374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandIndex4
+      parentName: Granny_Rig:Bind_RightHandIndex3
+      position: {x: -0.00018714713, y: 0.021583593, z: 1.7353586e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandRing1
+      parentName: Granny_Rig:Bind_RightHand
+      position: {x: 0.009702959, y: 0.12262002, z: -0.0010458765}
+      rotation: {x: 0.021560311, y: -0.002823576, z: -0.048511177, w: 0.9985859}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandRing2
+      parentName: Granny_Rig:Bind_RightHandRing1
+      position: {x: -0.000021690515, y: 0.026085807, z: 9.893745e-10}
+      rotation: {x: 0.036149792, y: -0.000028094977, z: 0.00044328367, w: 0.9993463}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandRing3
+      parentName: Granny_Rig:Bind_RightHandRing2
+      position: {x: 0.000008837398, y: 0.02630202, z: 7.161674e-11}
+      rotation: {x: 0.0394845, y: -0, z: -0, w: 0.9992202}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandRing4
+      parentName: Granny_Rig:Bind_RightHandRing3
+      position: {x: 0.000012853647, y: 0.022295741, z: 1.3225915e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandThumb1
+      parentName: Granny_Rig:Bind_RightHand
+      position: {x: -0.020156708, y: 0.041501325, z: 0.0057946867}
+      rotation: {x: 0.074749894, y: 0.008766612, z: 0.3048728, w: 0.9494146}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandThumb2
+      parentName: Granny_Rig:Bind_RightHandThumb1
+      position: {x: -0.00194106, y: 0.037149154, z: 6.43923e-10}
+      rotation: {x: 0.036834046, y: -0.0049920324, z: 0.0032199933, w: 0.9993038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandThumb3
+      parentName: Granny_Rig:Bind_RightHandThumb2
+      position: {x: -0.0015403985, y: 0.03538953, z: 8.724967e-12}
+      rotation: {x: 0.0048025213, y: 0.0001222021, z: 0.033720635, w: 0.99941975}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandThumb4
+      parentName: Granny_Rig:Bind_RightHandThumb3
+      position: {x: 0.0034814589, y: 0.033596106, z: -3.5786485e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandMiddle1
+      parentName: Granny_Rig:Bind_RightHand
+      position: {x: -0.0075195017, y: 0.12388294, z: -0.00014733117}
+      rotation: {x: -0.033428837, y: -0.000047883786, z: 0.0014316076, w: 0.99944013}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandMiddle2
+      parentName: Granny_Rig:Bind_RightHandMiddle1
+      position: {x: 0.0004927933, y: 0.031019963, z: 0.0000000020272342}
+      rotation: {x: 0.031552672, y: 0.0007355211, z: -0.010750825, w: 0.999444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandMiddle3
+      parentName: Granny_Rig:Bind_RightHandMiddle2
+      position: {x: -0.00025803843, y: 0.029110095, z: -5.205152e-12}
+      rotation: {x: 0.00861188, y: -0, z: -0, w: 0.9999629}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_RightHandMiddle4
+      parentName: Granny_Rig:Bind_RightHandMiddle3
+      position: {x: -0.00023475569, y: 0.02410591, z: 1.3758594e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftShoulder
+      parentName: Granny_Rig:Bind_Spine2
+      position: {x: -0.042787876, y: 0.112873845, z: -0.0027252254}
+      rotation: {x: 0.5584489, y: -0.42157972, z: 0.58988523, w: 0.4030395}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftArm
+      parentName: Granny_Rig:Bind_LeftShoulder
+      position: {x: -2.6293187e-10, y: 0.094553456, z: 0.0000000018230016}
+      rotation: {x: 0.33374247, y: 0.04843812, z: -0.031130573, w: 0.94090414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftForeArm
+      parentName: Granny_Rig:FK_LeftArm
+      position: {x: 4.5838616e-10, y: 0.2400709, z: 0.000000007344365}
+      rotation: {x: -0.18012916, y: -0.020071201, z: -0.5992687, w: 0.7797613}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:FK_LeftHand
+      parentName: Granny_Rig:FK_LeftForeArm
+      position: {x: -0.0000000034266965, y: 0.22744928, z: 0.000000004173109}
+      rotation: {x: -0.08928438, y: 0.441082, z: -0.036388494, w: 0.8922729}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftArm
+      parentName: Granny_Rig:Bind_LeftShoulder
+      position: {x: -2.6293187e-10, y: 0.094553456, z: 0.0000000018230016}
+      rotation: {x: 0.31302488, y: 0.35768571, z: 0.86957943, w: 0.13382074}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftForeArm
+      parentName: Granny_Rig:IK_LeftArm
+      position: {x: 4.5838616e-10, y: 0.2400709, z: 0.000000007344365}
+      rotation: {x: -0.000007183345, y: 0.04980786, z: 0.0000001537277, w: 0.99875885}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:IK_LeftHand
+      parentName: Granny_Rig:IK_LeftForeArm
+      position: {x: -0.0000000034266965, y: 0.22744928, z: 0.000000004173109}
+      rotation: {x: 0.27007362, y: 0.2917464, z: -0.05870307, w: 0.9156955}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:LeftForeArm_IK_CTRL_GuideCurve_Cluster2Handle
+      parentName: Granny_Rig:IK_LeftForeArm
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7070064, y: -0.08378917, z: 0.61225265, w: -0.34390116}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftArm
+      parentName: Granny_Rig:Bind_LeftShoulder
+      position: {x: -2.6293187e-10, y: 0.094553456, z: 0.0000000018230016}
+      rotation: {x: -0.1421844, y: -0.14304958, z: -0.00089767575, w: 0.9794487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftForeArm
+      parentName: Granny_Rig:Bind_LeftArm
+      position: {x: 4.5838616e-10, y: 0.2400709, z: 0.0000000073443656}
+      rotation: {x: -0.020689351, y: 0.05676554, z: -0.031803068, w: 0.9976665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:LeftForeArm_IK_BakingLOC
+      parentName: Granny_Rig:Bind_LeftForeArm
+      position: {x: -0.12003545, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHand
+      parentName: Granny_Rig:Bind_LeftForeArm
+      position: {x: -0.0000000034266965, y: 0.22744928, z: 0.0000000041731085}
+      rotation: {x: 0.08926532, y: 0.12703566, z: 0.006253558, w: 0.9878535}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandRing1
+      parentName: Granny_Rig:Bind_LeftHand
+      position: {x: -0.009924914, y: 0.120556764, z: -0.00025984165}
+      rotation: {x: -0.008373019, y: -0.00087951095, z: 0.047565155, w: 0.9988327}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandRing2
+      parentName: Granny_Rig:Bind_LeftHandRing1
+      position: {x: -0.000051663297, y: 0.02707344, z: 4.7908116e-10}
+      rotation: {x: 0.032447737, y: -0.00009595207, z: 0.0012012317, w: 0.99947274}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandRing3
+      parentName: Granny_Rig:Bind_LeftHandRing2
+      position: {x: 0.000024328889, y: 0.026904352, z: -5.4565703e-11}
+      rotation: {x: 0.021416126, y: -0, z: -0, w: 0.99977064}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandRing4
+      parentName: Granny_Rig:Bind_LeftHandRing3
+      position: {x: 0.000027335078, y: 0.02323872, z: -2.2021318e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandPinky1
+      parentName: Granny_Rig:Bind_LeftHand
+      position: {x: -0.026514107, y: 0.11219319, z: 0.0005315756}
+      rotation: {x: 0.0018842437, y: 0.00068740523, z: 0.05173738, w: 0.9986587}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandPinky2
+      parentName: Granny_Rig:Bind_LeftHandPinky1
+      position: {x: 0.00029529672, y: 0.022862589, z: -1.8497857e-10}
+      rotation: {x: 0.03290854, y: 0.0005038818, z: -0.008563852, w: 0.99942154}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandPinky3
+      parentName: Granny_Rig:Bind_LeftHandPinky2
+      position: {x: -0.00013927491, y: 0.018973239, z: -4.504713e-11}
+      rotation: {x: 0.020926146, y: -0, z: -0, w: 0.999781}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandPinky4
+      parentName: Granny_Rig:Bind_LeftHandPinky3
+      position: {x: -0.0001560217, y: 0.016707284, z: -1.4053866e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandMiddle1
+      parentName: Granny_Rig:Bind_LeftHand
+      position: {x: 0.0079757115, y: 0.12096539, z: 0.00012686917}
+      rotation: {x: -0.03001755, y: 0.00034147015, z: -0.011369822, w: 0.99948466}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandMiddle2
+      parentName: Granny_Rig:Bind_LeftHandMiddle1
+      position: {x: -0.00062581187, y: 0.031790324, z: 7.4024253e-10}
+      rotation: {x: 0.033096794, y: -0.0011951507, z: 0.010856607, w: 0.99939245}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandMiddle3
+      parentName: Granny_Rig:Bind_LeftHandMiddle2
+      position: {x: 0.00018071098, y: 0.029528575, z: 5.2244074e-11}
+      rotation: {x: 0.03913463, y: 0.00057116017, z: 0.0030554899, w: 0.99922913}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandMiddle4
+      parentName: Granny_Rig:Bind_LeftHandMiddle3
+      position: {x: 0.00044509803, y: 0.026023304, z: 1.2227801e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandThumb1
+      parentName: Granny_Rig:Bind_LeftHand
+      position: {x: 0.021626957, y: 0.0416066, z: 0.0069320817}
+      rotation: {x: 0.079236366, y: -0.009236815, z: -0.29548034, w: 0.9520125}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandThumb2
+      parentName: Granny_Rig:Bind_LeftHandThumb1
+      position: {x: 0.0028577144, y: 0.03781321, z: 7.24326e-10}
+      rotation: {x: 0.03422307, y: 0.0019456467, z: -0.03514486, w: 0.99879426}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandThumb3
+      parentName: Granny_Rig:Bind_LeftHandThumb2
+      position: {x: -0.00091488357, y: 0.035623275, z: 2.138175e-10}
+      rotation: {x: -0.018079212, y: 0, z: -0, w: 0.99983656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandThumb4
+      parentName: Granny_Rig:Bind_LeftHandThumb3
+      position: {x: -0.001942831, y: 0.03007168, z: 3.0105696e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandIndex1
+      parentName: Granny_Rig:Bind_LeftHand
+      position: {x: 0.028463308, y: 0.12267989, z: -0.00049227703}
+      rotation: {x: 0.04583334, y: -0.0022216567, z: -0.04836466, w: 0.99777514}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandIndex2
+      parentName: Granny_Rig:Bind_LeftHandIndex1
+      position: {x: -0.00058570725, y: 0.028953452, z: -7.2697187e-10}
+      rotation: {x: 0.16708376, y: -0, z: -0, w: 0.9859427}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandIndex3
+      parentName: Granny_Rig:Bind_LeftHandIndex2
+      position: {x: 0.000228992, y: 0.02568439, z: -7.919887e-11}
+      rotation: {x: 0.042380564, y: -0, z: -0, w: 0.9991015}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_LeftHandIndex4
+      parentName: Granny_Rig:Bind_LeftHandIndex3
+      position: {x: 0.000356716, y: 0.022485375, z: 1.792349e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Neck
+      parentName: Granny_Rig:Bind_Spine2
+      position: {x: -0, y: 0.13121746, z: -0.000000008742226}
+      rotation: {x: 0.06293334, y: -0, z: -0, w: 0.9980177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_Head
+      parentName: Granny_Rig:Bind_Neck
+      position: {x: -0, y: 0.10151092, z: 0.003992104}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Bind_HeadTop_End
+      parentName: Granny_Rig:Bind_Head
+      position: {x: -0, y: 0.28032562, z: 0.011024321}
+      rotation: {x: 6.938894e-18, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_GRP
+      parentName: Granny_Love_Animation(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_Body
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_Glasses
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_Head
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_Right_Eye
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_Teeth
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Granny_Rig:Mesh_left_Eye
+      parentName: Granny_Rig:Mesh_GRP
+      position: {x: -0.000000095367426, y: 0.005, z: -0.011753387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
