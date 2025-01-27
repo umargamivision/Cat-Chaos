@@ -4,11 +4,13 @@ using UnityEngine;
 using DG.Tweening;
 using Ommy.FadeSystem;
 using System.Collections;
+using System.ComponentModel.Design;
 public class PlayerController : Singleton<PlayerController>
 {
     public StateManager stateManager;
     public CinemachineVirtualCamera playerCam;
     public FirstPersonController firstPersonController;
+    public VaccumCleaner vaccumCleaner;
     public Grabber grabber;
     public Transform grannyAttackLookPoint;
     public bool gotoGrannyHand;
@@ -53,7 +55,10 @@ public class PlayerController : Singleton<PlayerController>
             });
         }
     }
-
+    public void SetupVacuumCleaner(bool active)
+    {
+        vaccumCleaner.gameObject.SetActive(active);
+    }
     private void SetCameraAimToHardLookAt()
     {
         var aim = playerCam.GetCinemachineComponent<CinemachineComposer>();

@@ -39,7 +39,7 @@ namespace Ommy.FadeSystem
             return currentFadeCoroutine;
         }
 
-        public  void FadeInOut()
+        public void FadeInOut()
         {
             StartFadeCoroutine(0.0f, 1.0f);
             StartCoroutine(WaitAndStartFadeOut());
@@ -62,7 +62,7 @@ namespace Ommy.FadeSystem
 
             while (timer < fadeDuration)
             {
-                timer += Time.deltaTime;
+                timer += Time.unscaledDeltaTime;
                 float alpha = Mathf.Lerp(startAlpha, targetAlpha, timer / fadeDuration);
                 currentColor.a = alpha;
                 fadeOverlay.color = currentColor;
@@ -73,7 +73,7 @@ namespace Ommy.FadeSystem
         IEnumerator WaitAndStartFadeOut()
         {
             yield return currentFadeCoroutine;
-            yield return new WaitForSeconds(fadeOutDely);
+            yield return new WaitForSecondsRealtime(fadeOutDely);
             StartFadeCoroutine(1.0f, 0.0f);
         }
     }

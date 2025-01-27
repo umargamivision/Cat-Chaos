@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Ommy.Singleton;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuestManager : Singleton<QuestManager>
 {
@@ -16,6 +17,7 @@ public class QuestManager : Singleton<QuestManager>
         f.task.OnComplete.AddListener((int param) =>
         {
             UpdateQuest();
+
         }));
         UpdateQuest();
     }

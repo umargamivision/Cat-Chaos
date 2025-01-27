@@ -24,6 +24,7 @@ public class GrannyChasingState : GrannyBaseState
     }
     public void OnCoolDown()
     {
+        grannyStateManager.onGrannyCoolDown.Invoke();
         grannyStateManager.SwitchState(grannyStateManager.grannyPatrollingState);
     }
     public override void ExitState(GrannyStateManager stateManager)

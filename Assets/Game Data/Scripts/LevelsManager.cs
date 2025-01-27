@@ -61,7 +61,7 @@ public class LevelsManager : MonoBehaviour
     }
     public void OnTaskComplete()
     {
-        UIManager.Instance.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
+        GamePlayManager.Instance.OnTaskComplete(currentLevelData);
     }
     public IEnumerator NextLevel()
     {

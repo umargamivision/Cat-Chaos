@@ -3,7 +3,12 @@ guid: f182e125c309d9248976578a75d2b898
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Living_Room_-_Texture
+    second: {fileID: 2800000, guid: 6c3417c3d50494a909e146b657a62a8e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

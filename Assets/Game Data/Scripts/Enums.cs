@@ -23,4 +23,5 @@ public enum ItemType
     poop,
     crab,
     bird,
+    piggyBank,
 }

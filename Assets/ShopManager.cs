@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>
 {
+    public GameObject notEnoughCurrencyLog;
     public List<ShopItem> shopItems;
     [Header("UI Objects")]
     public Image previewImg;
@@ -149,6 +150,7 @@ public class ShopManager : Singleton<ShopManager>
     }
     public void NotEnoughCurrency(CurrencyType currencyType)
     {
+        notEnoughCurrencyLog.SetActive(true);
         Debug.Log("Not Enough Currency " + currencyType);
     }
     public void GetItAd()

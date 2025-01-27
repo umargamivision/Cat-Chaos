@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Door : MonoBehaviour, IDoor
+public class Door : MonoBehaviour, ISwitch
 {
     public bool hasKey = true;
     public bool isOpen = false;
@@ -63,7 +63,7 @@ public class Door : MonoBehaviour, IDoor
         onClose.Invoke();
     }
 }
-public interface IDoor
+public interface ISwitch
 {
     public void Open();
     public void Close();

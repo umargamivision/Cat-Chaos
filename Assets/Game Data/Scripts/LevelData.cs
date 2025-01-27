@@ -16,9 +16,10 @@ public class LevelData
         public List<Item> items;
     }
     //public TimelineType startTimeline,endTimeline;
-    public PlayableDirector startDirector,endDirector;
+    public PlayableDirector startDirector, endDirector;
     public int levelNo;
     public int requireXP;
+    public TaskProp currentTask;
     public List<TaskProp> tasks;
     public UnityEvent OnLevelComplete, OnTaskComplete;
     [Space(10)]
@@ -38,11 +39,13 @@ public class LevelData
     }
     public TaskProp CurrentTaskProp()
     {
-        return tasks.Find(f=>!f.task.complete);
+        var TP = tasks.Find(f => !f.task.complete);
+        if (TP != null) currentTask = TP;
+        return currentTask;
     }
-    private void Reset() 
+    private void Reset()
     {
-        ResetLevel();    
+        ResetLevel();
     }
     public void SubscribeEvents()
     {
@@ -82,7 +85,15 @@ public class LevelData
         if (progress >= 1)
         {
             hasCompleted = true;
-            OnLevelComplete.Invoke();
+            if (endDirector != null)
+            {
+                TimelineManager.Instance.onDone += () => OnLevelComplete.Invoke();
+                TimelineManager.Instance.PlayTimeline(endDirector);
+            }
+            else
+            {
+                OnLevelComplete.Invoke();
+            }
         }
     }
 }

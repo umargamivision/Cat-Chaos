@@ -8,19 +8,22 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 public class UIManager : Singleton<UIManager>
 {
+    public CurrencyCollectionAnimation currencyCollectionAnimation;
     [Header("Panels")]
+    public GameObject newObjectivePanel;
     public GameObject gamePlay;
     public GameObject completePanel, failPanel, pausePanel,settingPanel,shopPanel;
 
     [Header("Texts")]
     public TMP_Text levelNoTxt;
+    public TMP_Text newObjectiveTxt;
 
     [Header("Images")]
     public Image levelFillImg;
 
     [Header("Buttons")]
     public GameObject grabButton;
-    public Button doorButton;
+    public Button doorButton, lampButton;
     public Button tearButton;
 
     public void Pause(bool pause)
@@ -28,8 +31,27 @@ public class UIManager : Singleton<UIManager>
         Time.timeScale = pause? 0:1;
         pausePanel.SetActive(pause);
     }
+    public void SetNewObjective(string objective)
+    {
+        newObjectivePanel.SetActive(true);
+        newObjectiveTxt.text = objective;
+    }
+    public void NoThanks2XClick()
+    {
+        Time.timeScale=1;
+        //currencyCollectionAnimation.AnimateCash();
+        completePanel.SetActive(false);
+    }
+    public void Reward2XClick()
+    {
+        Time.timeScale=1;
+        currencyCollectionAnimation.CollectCash();
+        completePanel.SetActive(false);
+
+    }
     public void LevelComplete()
     {
+        Time.timeScale=0;
         completePanel.SetActive(true);
     }
     public void LevelFail()
@@ -44,12 +66,25 @@ public class UIManager : Singleton<UIManager>
     {
         GamePlayManager.Instance.ShowIndicators(true);
     }
-    public void OnDoorDetected(IDoor door)
+    public void OnSwitchDetect(ISwitch iSwitch)
     {
-        doorButton.gameObject.SetActive(door!=null);
-        if(door==null) return;
-        doorButton.onClick.RemoveAllListeners();
-        doorButton.onClick.AddListener(door.Toggle);
+        if(iSwitch as Door)
+        {
+            doorButton.gameObject.SetActive(true);
+            doorButton.onClick.RemoveAllListeners();
+            doorButton.onClick.AddListener((iSwitch as Door).Toggle);
+        }
+        else if(iSwitch as LampController)
+        {
+            lampButton.gameObject.SetActive(true);
+            lampButton.onClick.RemoveAllListeners();
+            lampButton.onClick.AddListener((iSwitch as LampController).Toggle);
+        }
+        else
+        {
+            doorButton.gameObject.SetActive(false);
+            lampButton.gameObject.SetActive(false);
+        }
     }
     public void OnClothTearDetected(ClothTear cloth)
     {

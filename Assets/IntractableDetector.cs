@@ -14,7 +14,7 @@ public class IntractableDetector : MonoBehaviour
     private Ray ray;
     public UnityEvent<RaycastHit> onRayCast;
     public UnityEvent<IGrabbable> onGrabableHit;
-    public UnityEvent<IDoor> onDoorDetected;
+    public UnityEvent<ISwitch> onDoorDetected;
     public UnityEvent<ClothTear> onClothTearDetected;
     private void Update()
     {
@@ -26,7 +26,7 @@ public class IntractableDetector : MonoBehaviour
         ray.origin = origin.position;
         ray.direction = origin.forward;
 
-        IDoor iDoor = null;
+        ISwitch iSwitch = null;
         IGrabbable iGrabbable = null;
         ClothTear clothTear = null;
 
@@ -35,8 +35,8 @@ public class IntractableDetector : MonoBehaviour
             iGrabbable = raycastHit.collider.GetComponent<IGrabbable>();
             onGrabableHit.Invoke(iGrabbable);
 
-            iDoor = raycastHit.collider.GetComponent<IDoor>();
-            onDoorDetected.Invoke(iDoor);
+            iSwitch = raycastHit.collider.GetComponent<ISwitch>();
+            onDoorDetected.Invoke(iSwitch);
         
             clothTear = raycastHit.collider.GetComponent<ClothTear>();
             onClothTearDetected.Invoke(clothTear);
@@ -44,7 +44,7 @@ public class IntractableDetector : MonoBehaviour
         else
         {
             onGrabableHit.Invoke(iGrabbable);
-            onDoorDetected.Invoke(iDoor);
+            onDoorDetected.Invoke(iSwitch);
             onClothTearDetected.Invoke(clothTear);
         }
     }

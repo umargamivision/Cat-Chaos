@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class GrannyStateManager : MonoBehaviour
@@ -18,8 +19,10 @@ public class GrannyStateManager : MonoBehaviour
     public GrannyPatrollingState grannyPatrollingState = new GrannyPatrollingState();
     public GrannyChasingState grannyChasingState = new GrannyChasingState();
     public GrannyAttackState grannyAttackState = new GrannyAttackState();
+    public UnityEvent onGrannyCoolDown;
     [Header("Debug")]
     public float distanceWithPlayer;
+
     public void Start()
     {
         currentState = grannyPatrollingState;

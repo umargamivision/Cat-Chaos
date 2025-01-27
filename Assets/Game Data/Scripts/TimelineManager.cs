@@ -6,9 +6,12 @@ using Ommy.Singleton;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class TimelineManager : Singleton<TimelineManager>
 {
+    public bool isPlaying;
+    public Action onDone;
     public UnityEvent onPlay, onStop;
     public List<TimelineProp> timelineProps;
     public TimelineProp currentTL;
@@ -29,13 +32,16 @@ public class TimelineManager : Singleton<TimelineManager>
     }
     public void PlayTimeline(PlayableDirector playableDirector)
     {
-        if(playableDirector==null) return;
+        if (playableDirector == null) return;
         playableDirector.played += OnPlay;
         playableDirector.paused += OnPause;
         playableDirector.stopped += OnStop;
-
-        currentTL.playableDirector=playableDirector;
+        currentTL.playableDirector = playableDirector;
         currentTL.Play();
+    }
+    public void OnComplete()
+    {
+        onDone?.Invoke();
     }
     public void StopTimeLine()
     {
@@ -56,7 +62,7 @@ public class TimelineManager : Singleton<TimelineManager>
     {
         yield return ScreenFader.Instance.FadeOut();
         currentTL.playableDirector.time = currentTL.playableDirector.duration;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         yield return ScreenFader.Instance.FadeIn();
     }
     public void OnPause(PlayableDirector playableDirector)
@@ -92,5 +98,6 @@ public enum TimelineType
     PoopInFoodBox,
     sleepOnBed,
     sleepOnGrannyBed,
-    grannyBringPigeon
+    grannyBringPigeon,
+    grannyWatchingTV,
 }

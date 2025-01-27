@@ -18,9 +18,9 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public LevelsManager levelsManager;
     public UIManager uIManager;
     public TimelineManager timelineManager;
-    private void Start() 
+    private void Start()
     {
-        Time.timeScale=1;    
+        Time.timeScale = 1;
     }
     public void SetupLevel(LevelData levelData)
     {
@@ -30,7 +30,13 @@ public class GamePlayManager : Singleton<GamePlayManager>
     }
     public void OnCompleteLevel(LevelData levelData)
     {
-        timelineManager.PlayTimeline(levelData.endDirector);
+        uIManager.LevelComplete();
+        //timelineManager.PlayTimeline(levelData.endDirector);
+    }
+    public void OnTaskComplete(LevelData currentLevelData)
+    {
+        uIManager.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
+        uIManager.SetNewObjective(currentLevelData.CurrentTaskProp().task.discription);
     }
     public void ResetData()
     {
@@ -49,7 +55,6 @@ public class GamePlayManager : Singleton<GamePlayManager>
         uIManager.LevelComplete();
         Debug.Log("game complete");
     }
-
     public void ShowIndicators(bool show)
     {
         levelsManager.ShowIndicators(show);
