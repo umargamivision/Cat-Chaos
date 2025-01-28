@@ -32,7 +32,12 @@ public class VaccumCleaner : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(vaccumPoint.position, directionToCollider, out hit, vaccumRange, objectLayerMask))
                 {
-                    if (!vaccumObjects.Contains(collider.transform))
+                    var vacuumPIgeon =collider.GetComponent<VacuumPIgeon>();
+                    if(vacuumPIgeon != null)
+                    {
+                        vacuumPIgeon.OnVacuumDetect();
+                    }
+                    if (!vaccumObjects.Contains(collider.transform)&& vacuumPIgeon.canVacuum)
                     {
                         vaccumObjects.Add(collider.transform);
                         MoveTovaccumPoint(collider.transform);

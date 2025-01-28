@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b6d2b96932480c89f308b98afb0e2, type: 3}
   m_Name: Task goto
   m_EditorClassIdentifier: 
-  complete: 0
+  completeTimeline: 0
+  complete: 1
   countsForCompletion: 1
-  taskCounts: 0
+  taskCounts: 1
   xp: 25
-  discription: goto the second floor and sit on the chair
+  discription: goto the second floor
   prerequisites:
   - {fileID: 11400000, guid: ab7b3220bb0ff49b4ad64ec17ae9f593, type: 2}
   - {fileID: 11400000, guid: f19ab6cf0fce34ca68219bc358a1f471, type: 2}

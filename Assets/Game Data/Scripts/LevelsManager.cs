@@ -35,6 +35,7 @@ public class LevelsManager : MonoBehaviour
         currentLevelData.OnTaskComplete.AddListener(OnTaskComplete);
 
         GamePlayManager.Instance.SetupLevel(currentLevelData);
+        levelDatas.ForEach(f=>f.tasks.ForEach(i=>i.SetIndicators(false)));
         foreach (var item in levelObjects)
         {
             item.SetActive(false);
@@ -57,7 +58,7 @@ public class LevelsManager : MonoBehaviour
     }
     public void ShowIndicators(bool show)
     {
-        currentLevelData.CurrentTaskProp().items.ForEach(f=>f.ShowIndicator(show));
+        currentLevelData.CurrentTaskProp().indicators.ForEach(f=>f.gameObject.SetActive(show));
     }
     public void OnTaskComplete()
     {

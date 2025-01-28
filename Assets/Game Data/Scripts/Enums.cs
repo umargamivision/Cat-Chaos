@@ -24,4 +24,11 @@ public enum ItemType
     crab,
     bird,
     piggyBank,
+    toyBox,
+    pan,
+    pan2,
+    book,
+    wineBottle,
+    milkPack,
+    tosterMachine,
 }

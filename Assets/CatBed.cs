@@ -21,7 +21,7 @@ public class CatBed : MonoBehaviour
         if (sleep)
         {
             StartCoroutine(SleepTime());
-            TimelineManager.Instance.PlayTimeline(playableDirector, () =>
+            TimelineManager.Instance.PlayTimeline(TimelineType.sleepOnBed, () =>
             {
                 onSleep.Invoke();
             });

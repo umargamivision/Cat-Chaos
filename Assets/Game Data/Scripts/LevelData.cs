@@ -12,8 +12,16 @@ public class LevelData
     {
         public string name;
         public Task task;
-        public List<Item> items;
+        public List<GameObject> indicators;
         public UnityEvent onStart;
+        public void SetIndicators(bool show)
+        {
+            foreach (var item in indicators)
+            {
+                if(item!=null)
+                item.SetActive(show);
+            }
+        }
     }
     //public TimelineType startTimeline,endTimeline;
     //public PlayableDirector startDirector, endDirector;
@@ -41,7 +49,7 @@ public class LevelData
     public TaskProp CurrentTaskProp()
     {
         var TP = tasks.Find(f => !f.task.complete);
-        if (TP != null) 
+        if (TP != null)
         {
             currentTask = TP;
         }
@@ -85,11 +93,12 @@ public class LevelData
         currentXP += xp;
         XPManager.Instance.AddXP(xp); // Add XP to global pool
         UpdateProgress();
+        currentTask.SetIndicators(false);
         OnTaskComplete.Invoke();
         if (progress >= 1)
         {
             hasCompleted = true;
-            if (endDirector != null)
+            if (endDirector != TimelineType.none)
             {
                 TimelineManager.Instance.PlayTimeline(endDirector,
                     () =>

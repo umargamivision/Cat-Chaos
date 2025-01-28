@@ -42,6 +42,7 @@ public class TimelineManager : Singleton<TimelineManager>
     }
     void Play(Action onDone)
     {
+        currentDialogueIndex = 0;
         currentTL.playableDirector.played += OnPlay;
         currentTL.playableDirector.paused += OnPause;
         currentTL.playableDirector.stopped += OnStop;
@@ -106,9 +107,9 @@ public class TimelineManager : Singleton<TimelineManager>
 public enum TimelineType
 {
     none,
-    timeline1,
-    timeline2,
-    timeline3,
+    grannyBeatMom,
+    grannyGotAngry,
+    grannySlip,
     PoopInFoodBox,
     sleepOnBed,
     sleepOnGrannyBed,

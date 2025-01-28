@@ -14,8 +14,9 @@ public class Item : MonoBehaviour
     [InspectorButton]
     public void Set_Item(bool isBreakable)
     {
+        gameObject.layer = LayerMask.NameToLayer("Item");
         navigationElement = GetComponentInChildren<HUDNavigationElement>();
-        navigationElement.enabled = false;
+        if(navigationElement)navigationElement.enabled = false;
         if(navigationElement==null)
         {
             //navigationElement = gameObject.AddComponent<HUDNavigationElement>();

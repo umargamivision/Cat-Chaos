@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6995708652212663790}
   - component: {fileID: 3214579457158454781}
   - component: {fileID: 6490930406893738041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cat_plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5138903422280352904}
   - component: {fileID: 6750950570348427182}
   - component: {fileID: 6783523360833720006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4319833091552986189}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.179762, y: 0.9261756, z: 0.92216617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -159,7 +159,19 @@ MonoBehaviour:
       m_Calls: []
   OnThrowCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6783523360833720006}
+        m_TargetAssemblyTypeName: Breakable, Assembly-CSharp
+        m_MethodName: BreakObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isGrabbed: 0
   canGrab: 0
   setScaleOnGrab: 0
@@ -249,7 +261,31 @@ MonoBehaviour:
     type: 3}
   onBreak:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 00802b84f698a409e80ee0e263768d5f, type: 2}
+        m_TargetAssemblyTypeName: Task, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GrannyController, Assembly-CSharp
+        m_MethodName: ChasePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &8447462441188153113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,12 +352,22 @@ PrefabInstance:
     - target: {fileID: 8649557436895897049, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
       propertyPath: m_Name
       value: HUD Element Pivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
@@ -340,7 +386,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8447462441188153113}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a5fc50cb592fe4f95457eb6d66e520, type: 3}
   m_Name: 
