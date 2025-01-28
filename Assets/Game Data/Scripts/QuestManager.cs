@@ -29,6 +29,11 @@ public class QuestManager : Singleton<QuestManager>
         if(LD==null) return;
         Task task = LD.task;
         if(task == null) return;
-        if (!task.complete) mainQuestUIs[0].UpdateTask(task,1);
+        if (!task.complete) 
+        {
+            mainQuestUIs[0].UpdateTask(task,0.1f);
+            LD.onStart.Invoke();
+            UIManager.Instance.SetNewObjective(task.discription);
+        }
     }
 }

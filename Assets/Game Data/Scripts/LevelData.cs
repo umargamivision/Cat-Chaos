@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -12,11 +10,14 @@ public class LevelData
     [Serializable]
     public class TaskProp
     {
+        public string name;
         public Task task;
         public List<Item> items;
+        public UnityEvent onStart;
     }
     //public TimelineType startTimeline,endTimeline;
-    public PlayableDirector startDirector, endDirector;
+    //public PlayableDirector startDirector, endDirector;
+    public TimelineType startDirector, endDirector;
     public int levelNo;
     public int requireXP;
     public TaskProp currentTask;
@@ -40,7 +41,10 @@ public class LevelData
     public TaskProp CurrentTaskProp()
     {
         var TP = tasks.Find(f => !f.task.complete);
-        if (TP != null) currentTask = TP;
+        if (TP != null) 
+        {
+            currentTask = TP;
+        }
         return currentTask;
     }
     private void Reset()
@@ -87,8 +91,11 @@ public class LevelData
             hasCompleted = true;
             if (endDirector != null)
             {
-                TimelineManager.Instance.onDone += () => OnLevelComplete.Invoke();
-                TimelineManager.Instance.PlayTimeline(endDirector);
+                TimelineManager.Instance.PlayTimeline(endDirector,
+                    () =>
+                    {
+                        OnLevelComplete.Invoke();
+                    });
             }
             else
             {

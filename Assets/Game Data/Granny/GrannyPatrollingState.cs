@@ -8,6 +8,7 @@ public class GrannyPatrollingState : GrannyBaseState
 {
     public override void EnterState(GrannyStateManager stateManager)
     {
+        stateManager.malee.SetActive(false);
         stateManager.navMeshAgent.speed = stateManager.patrollingSpeed;
     }
     public override void ExitState(GrannyStateManager stateManager)

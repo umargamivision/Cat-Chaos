@@ -16,11 +16,16 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public GrannyController grannyController;
     public QuestManager questManager;
     public LevelsManager levelsManager;
+    public CatBed catBed;
     public UIManager uIManager;
     public TimelineManager timelineManager;
     private void Start()
     {
         Time.timeScale = 1;
+    }
+    public void SetCatSleep(bool sleep)
+    {
+        catBed.Sleep(sleep);
     }
     public void SetupLevel(LevelData levelData)
     {
@@ -36,7 +41,6 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public void OnTaskComplete(LevelData currentLevelData)
     {
         uIManager.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
-        uIManager.SetNewObjective(currentLevelData.CurrentTaskProp().task.discription);
     }
     public void ResetData()
     {
@@ -58,10 +62,5 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public void ShowIndicators(bool show)
     {
         levelsManager.ShowIndicators(show);
-    }
-
-    public void Sleep()
-    {
-        //timelineManager.PlayTimeline()
     }
 }

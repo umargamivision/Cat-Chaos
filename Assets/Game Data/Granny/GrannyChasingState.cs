@@ -10,6 +10,7 @@ public class GrannyChasingState : GrannyBaseState
     public override void EnterState(GrannyStateManager stateManager)
     {
         grannyStateManager = stateManager;
+        stateManager.malee.SetActive(true);
         stateManager.animator.SetTrigger("AngryPointingGesture"); // Normalize speed to be between 0 and 1
         stateManager.navMeshAgent.speed = stateManager.chaseSpeed;
         if(chaseCoolDownCoroutine!=null)

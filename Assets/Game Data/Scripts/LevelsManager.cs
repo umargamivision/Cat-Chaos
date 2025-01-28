@@ -53,7 +53,7 @@ public class LevelsManager : MonoBehaviour
         SaveData.Instance.Level++;
         SaveSystem.SaveProgress();
         currentLevel = SaveData.Instance.Level;
-        currentLevelData = levelDatas[currentLevel];
+        currentLevelData = levelDatas[currentLevel] ;
     }
     public void ShowIndicators(bool show)
     {

@@ -25,6 +25,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject grabButton;
     public Button doorButton, lampButton;
     public Button tearButton;
+    public Button sleepButton;
 
     public void Pause(bool pause)
     {
@@ -39,7 +40,7 @@ public class UIManager : Singleton<UIManager>
     public void NoThanks2XClick()
     {
         Time.timeScale=1;
-        //currencyCollectionAnimation.AnimateCash();
+        currencyCollectionAnimation.CollectCash();
         completePanel.SetActive(false);
     }
     public void Reward2XClick()
@@ -65,6 +66,10 @@ public class UIManager : Singleton<UIManager>
     public void HintClick()
     {
         GamePlayManager.Instance.ShowIndicators(true);
+    }
+    public void onCatBedDetected(CatBed catBed)
+    {
+        sleepButton.gameObject.SetActive(catBed!=null);
     }
     public void OnSwitchDetect(ISwitch iSwitch)
     {
@@ -99,7 +104,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void SleepClick()
     {
-        GamePlayManager.Instance.Sleep();
+        GamePlayManager.Instance.SetCatSleep(true);
     }
     public void ShopClick()
     {

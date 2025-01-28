@@ -7,36 +7,49 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class TimelineManager : Singleton<TimelineManager>
 {
+    public int currentDialogueIndex;
     public bool isPlaying;
-    public Action onDone;
+    public Button skipButton;
     public UnityEvent onPlay, onStop;
     public List<TimelineProp> timelineProps;
     public TimelineProp currentTL;
-    public void PlayTimeline(TimelineType timelineType)
+    public DialogueManager dialogueManager;
+    Action onDone;
+    public void PlayTimeline(TimelineType timelineType, Action onDone = null)
     {
         var TL = timelineProps.Find(f => f.timelineType == timelineType);
         if (TL != null)
         {
             currentTL = TL;
-
-            TL.playableDirector.played += OnPlay;
-            TL.playableDirector.paused += OnPause;
-            TL.playableDirector.stopped += OnStop;
-
-            Debug.Log(TL.timelineType + " start playing");
-            currentTL.Play();
+            Play(onDone);
         }
     }
-    public void PlayTimeline(PlayableDirector playableDirector)
+    public void UpdateDialogue()
+    {
+        if(currentDialogueIndex>=currentTL.dialogues.Length) return;
+        dialogueManager.SetDialogue(currentTL.dialogues[currentDialogueIndex]);
+        currentDialogueIndex++;
+    }
+    public void PlayTimeline(PlayableDirector playableDirector, Action onDone = null)
     {
         if (playableDirector == null) return;
-        playableDirector.played += OnPlay;
-        playableDirector.paused += OnPause;
-        playableDirector.stopped += OnStop;
         currentTL.playableDirector = playableDirector;
+        Play(onDone);
+    }
+    void Play(Action onDone)
+    {
+        currentTL.playableDirector.played += OnPlay;
+        currentTL.playableDirector.paused += OnPause;
+        currentTL.playableDirector.stopped += OnStop;
+
+        Debug.Log(" start playing");
+
+        this.onDone = onDone;
+
         currentTL.Play();
     }
     public void OnComplete()
@@ -80,6 +93,7 @@ public class TimelineManager : Singleton<TimelineManager>
     [Serializable]
     public class TimelineProp
     {
+        public string[] dialogues;
         public TimelineType timelineType;
         public PlayableDirector playableDirector;
         [InspectorButton]

@@ -16,6 +16,7 @@ public class GrannyStateManager : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Animator animator;
     public GrannyBaseState currentState;
+    public GameObject malee;
     public GrannyPatrollingState grannyPatrollingState = new GrannyPatrollingState();
     public GrannyChasingState grannyChasingState = new GrannyChasingState();
     public GrannyAttackState grannyAttackState = new GrannyAttackState();
