@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,11 +11,16 @@ public class SpecialOffer : MonoBehaviour
     public bool readyToShow;
     public SpecialItemType specialItemType;
     public float showEvery = 5f;
+    [TextArea(3, 10)]
+    public string fireDis,electricDis,beeDis;
+    public TMP_Text offerText;
     public GameObject offerPanel;
     public GameObject[] specialOfferObjs;
     public UnityEvent<SpecialItemType> onAvailOffer;
-    public void Start()
+    public void RestartTimer()
     {
+        if(coroutine!=null)
+        StopCoroutine(coroutine);
         coroutine = StartCoroutine(ShowSpecialOffer());
     }
     public Coroutine coroutine;
@@ -42,6 +48,13 @@ public class SpecialOffer : MonoBehaviour
         {
             Time.timeScale = 0;
             StopCoroutine(coroutine);
+            offerText.text = specialItemType switch
+            {
+                SpecialItemType.Bee => beeDis,
+                SpecialItemType.Fire => fireDis,
+                SpecialItemType.Electric => electricDis,
+                _ => throw new ArgumentOutOfRangeException()
+            };
             offerPanel.SetActive(true);
             specialOfferObjs.ToList().ForEach(x => x.SetActive(false));
             specialOfferObjs[(int)specialItemType].SetActive(true);

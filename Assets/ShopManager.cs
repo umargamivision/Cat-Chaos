@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ommy.Audio;
 using Ommy.SaveData;
 using Ommy.Singleton;
 using UnityEngine;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>
 {
+    public CurrencyCollectionAnimation currencyCollectionAnimation;
     public GameObject notEnoughCurrencyLog;
     public List<ShopItem> shopItems;
     [Header("UI Objects")]
@@ -67,6 +69,7 @@ public class ShopManager : Singleton<ShopManager>
     }
     public void OnShopItemClick(ShopItemUI shopItemUI)
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         UpdatePanel(shopItemUI);
     }
     public void UpdatePanel(ShopItemUI _shopItemUI)
@@ -103,11 +106,20 @@ public class ShopManager : Singleton<ShopManager>
     }
     public void Equip()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         SetButtonActive(equipped);
         SelectShopItem(selectedItemUI.shopItem);
     }
+    public void GetAdFish(int fish)
+    {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
+        GameManager.Instance.Fishs += fish;
+        currencyCollectionAnimation.CollectCash();
+    }
     public void GetIt()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
+
         CurrencyType currencyType = selectedItemUI.shopItem.currencyType;
         if (currencyType == CurrencyType.fish)
         {
@@ -153,12 +165,10 @@ public class ShopManager : Singleton<ShopManager>
         notEnoughCurrencyLog.SetActive(true);
         Debug.Log("Not Enough Currency " + currencyType);
     }
-    public void GetItAd()
-    {
-
-    }
     public void CloseClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
+
         gameObject.SetActive(false);
     }
 }

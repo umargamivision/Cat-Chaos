@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ommy.Audio;
 using Ommy.FadeSystem;
 using Ommy.Singleton;
 using UnityEngine;
@@ -68,6 +69,7 @@ public class TimelineManager : Singleton<TimelineManager>
     }
     public void SkipTimelineClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         if (currentTL != null)
         {
             StartCoroutine(SkipTimeline());

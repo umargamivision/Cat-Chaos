@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class IntractableDetector : MonoBehaviour
 {
+    public Grabbable currentGrabbable;
     public LayerMask layerMask;
     [SerializeField] private Transform origin;
 
@@ -38,6 +39,10 @@ public class IntractableDetector : MonoBehaviour
             currentDetectedObject = raycastHit.collider.GetComponent<IDetectable>();
 
             iGrabbable = raycastHit.collider.GetComponent<IGrabbable>();
+            if (iGrabbable != null)
+            {
+                UpdateCurrentGrabbable(iGrabbable);
+            }
             onGrabableHit.Invoke(iGrabbable);
 
             iSwitch = raycastHit.collider.GetComponent<ISwitch>();
@@ -58,6 +63,12 @@ public class IntractableDetector : MonoBehaviour
             onClothTearDetected.Invoke(clothTear);
             onCatBedDetected.Invoke(catBed);
         }
+    }
+    public void UpdateCurrentGrabbable(IGrabbable grabbable)
+    {
+        if(currentGrabbable==grabbable)return;
+        if(currentGrabbable)currentGrabbable.OnFocus(false);
+        currentGrabbable = grabbable as Grabbable;
     }
     private void OnDrawGizmosSelected()
     {

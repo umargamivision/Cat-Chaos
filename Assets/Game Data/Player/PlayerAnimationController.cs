@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using Cinemachine;
+using Ommy.Audio;
 using UnityEngine;
 public class StateManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class StateManager : MonoBehaviour
     public const string JumpParam = "jump";
     public const string AttackParam = "push";
     public const string GrabParam = "grab";
+    public AudioClip jumpSound;
+    public AudioClip attackSound;
+    public AudioClip walkSound;
+    public AudioClip deathSound;
     private void Start()
     {
         // Initialize states
@@ -103,6 +108,7 @@ public class StateManager : MonoBehaviour
         public void Enter()
         {
             Debug.Log("Entering Walk State");
+            AudioManager.Instance?.PlaySFX(stateManager.walkSound);
             stateManager.animator.SetBool(StateManager.WalkParam, true);
         }
 
@@ -132,6 +138,7 @@ public class StateManager : MonoBehaviour
         public void Enter()
         {
             Debug.Log("Entering Jump State");
+            AudioManager.Instance?.PlaySFX(stateManager.jumpSound);
             stateManager.animator.SetTrigger(StateManager.JumpParam);
             // Add jump force
         }
@@ -187,6 +194,7 @@ public class StateManager : MonoBehaviour
         public void Enter()
         {
             Debug.Log("Entering Attack State");
+            AudioManager.Instance?.PlaySFX(stateManager.attackSound);
             stateManager.animator.SetTrigger(StateManager.AttackParam);
             // Trigger attack animation
         }
@@ -215,6 +223,7 @@ public class StateManager : MonoBehaviour
 
         public void Enter()
         {
+            AudioManager.Instance?.PlaySFX(stateManager.deathSound);
             Debug.Log("Entering Death State");
             stateManager.animator.speed=0;
             // Trigger attack animation

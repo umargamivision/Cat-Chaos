@@ -46,6 +46,7 @@ public class CatBed : MonoBehaviour
     {
         SaveSystem.LoadProgress();
         var SBType = SaveData.Instance.shopItemDatas.Find(f => f.hasSelected == true);
+        if(SBType!=null)
         bedMat.color = bedColor[(int)SBType.shopItemType];
     }
 }

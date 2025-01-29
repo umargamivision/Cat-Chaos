@@ -4,10 +4,10 @@ using Ommy.SaveData;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using Ommy.Singleton;
 
-public class LevelsManager : MonoBehaviour
+public class LevelsManager : Singleton<LevelsManager>
 {
-    [Range(0,8)]
     public int totalLevels=8;
     public float loadNextLevelDelay;
     //public int currentLevel => SaveData.Instance.Level;
@@ -59,6 +59,7 @@ public class LevelsManager : MonoBehaviour
         if(SaveData.Instance.Level>=totalLevels)
         {
             SaveData.Instance.Level=0;
+            GameManager.Instance.isGameCompleted=true;
             onCompleteAllLevels.Invoke();
         }
         SaveSystem.SaveProgress();
@@ -67,7 +68,14 @@ public class LevelsManager : MonoBehaviour
     }
     public void ShowIndicators(bool show)
     {
-        currentLevelData.CurrentTaskProp().indicators.ForEach(f=>f.gameObject.SetActive(show));
+        foreach (var item in currentLevelData.CurrentTaskProp().indicators)
+        {
+            if(item!=null)
+            item.gameObject.SetActive(show);
+        }
+        // currentLevelData.CurrentTaskProp().indicators.ForEach(f=>
+        // if()f?.gameObject.SetActive(show)
+        // );
     }
     public void OnTaskComplete()
     {

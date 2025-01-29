@@ -16,57 +16,62 @@ public class Item : MonoBehaviour
     {
         gameObject.layer = LayerMask.NameToLayer("Item");
         navigationElement = GetComponentInChildren<HUDNavigationElement>();
-        if(navigationElement)navigationElement.enabled = false;
-        if(navigationElement==null)
+        if (navigationElement) navigationElement.enabled = false;
+        if (navigationElement == null)
         {
             //navigationElement = gameObject.AddComponent<HUDNavigationElement>();
         }
-        grabbable=GetComponent<Grabbable>();
-        if(grabbable==null)
+        grabbable = GetComponent<Grabbable>();
+        if (grabbable == null)
         {
-            grabbable=gameObject.AddComponent<Grabbable>();
+            grabbable = gameObject.AddComponent<Grabbable>();
         }
-        breakable=GetComponent<Breakable>();
-        if(breakable==null && isBreakable)
+        breakable = GetComponent<Breakable>();
+        if (breakable == null && isBreakable)
         {
-            breakable=gameObject.AddComponent<Breakable>();
+            breakable = gameObject.AddComponent<Breakable>();
         }
-        var rb=GetComponent<Rigidbody>();
-        if(rb==null)
+        var rb = GetComponent<Rigidbody>();
+        if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
         }
-        grabbable.rb=rb;
-        if(grabbable.outline==null)
+        grabbable.rb = rb;
+        if (grabbable.outline == null)
         {
             var outL = GetComponent<QuickOutline>();
-            if(outL==null)
+            if (outL == null)
             {
                 outL = gameObject.AddComponent<QuickOutline>();
-                outL.OutlineColor=Color.green;
+                outL.OutlineColor = Color.green;
                 outL.OutlineWidth = 8;
                 outL.OutlineMode = QuickOutline.Mode.OutlineVisible;
             }
             grabbable.outline = outL;
         }
         // Set MeshCollider 
-        var collider=GetComponent<MeshCollider>();
-        if(collider == null)
+        var anyCollider = GetComponent<Collider>();
+        if (anyCollider == null)
         {
-            collider = gameObject.AddComponent<MeshCollider>();
-            collider.convex=true;
-        }
-        if(collider.sharedMesh==null)
-        {
-            collider.sharedMesh=GetComponentInChildren<MeshFilter>().sharedMesh;
-            //collider.sharedMesh=GetComponentInChildren<MeshFilter>().mesh;
+
+            var collider = GetComponent<MeshCollider>();
+            if (collider == null)
+            {
+                collider = gameObject.AddComponent<MeshCollider>();
+                collider.convex = true;
+            }
+            if (collider.sharedMesh == null)
+            {
+                collider.sharedMesh = GetComponentInChildren<MeshFilter>().sharedMesh;
+                //collider.sharedMesh=GetComponentInChildren<MeshFilter>().mesh;
+            }
         }
     }
     public void ShowIndicator(bool show)
     {
-        if(navigationElement!=null)
+        if (navigationElement != null)
         {
-            navigationElement.enabled = show; 
+            navigationElement.enabled = show;
         }
     }
 }

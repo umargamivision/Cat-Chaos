@@ -55,6 +55,10 @@ public class GamePlayManager : Singleton<GamePlayManager>
         {
             can = false;
         }
+        if(levelsManager.currentLevel==0)
+        {
+            can = false;
+        }
         return can;
     }
     public void AvailSpecialOffer(SpecialItemType specialItemType)
@@ -71,6 +75,10 @@ public class GamePlayManager : Singleton<GamePlayManager>
     }
     public void SetupLevel(LevelData levelData)
     {
+        if(levelsManager.currentLevel>=1)
+        {
+            specialOffer.RestartTimer();
+        }
         questManager.Init(levelData);
         timelineManager.PlayTimeline(levelData.startDirector);
         uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);

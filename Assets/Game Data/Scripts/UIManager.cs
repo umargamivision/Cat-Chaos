@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using Ommy.SaveData;
+using Ommy.Audio;
 public class UIManager : Singleton<UIManager>
 {
     public CurrencyCollectionAnimation currencyCollectionAnimation;
@@ -30,6 +32,7 @@ public class UIManager : Singleton<UIManager>
     public void Pause(bool pause)
     {
         Time.timeScale = pause? 0:1;
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         pausePanel.SetActive(pause);
     }
     public void SetNewObjective(string objective)
@@ -39,16 +42,29 @@ public class UIManager : Singleton<UIManager>
     }
     public void NoThanks2XClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
+        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+CurrencyManager.Instance.levelCompleteReward);
         completePanel.SetActive(false);
+        if(GameManager.Instance.isGameCompleted)
+        {
+            GameManager.Instance.isGameCompleted = false;
+            GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene,0);
+        }
     }
     public void Reward2XClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
+        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+(2*CurrencyManager.Instance.levelCompleteReward));
         completePanel.SetActive(false);
-
+        if(GameManager.Instance.isGameCompleted)
+        {
+            GameManager.Instance.isGameCompleted = false;
+            GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene,0);
+        }
     }
     public void LevelComplete()
     {
@@ -61,10 +77,12 @@ public class UIManager : Singleton<UIManager>
     }
     public void HomeClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         SceneManager.LoadScene("MainMenu");
     }
     public void HintClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         GamePlayManager.Instance.ShowIndicators(true);
     }
     public void onCatBedDetected(CatBed catBed)
@@ -101,14 +119,17 @@ public class UIManager : Singleton<UIManager>
     }
     public void SettingClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         settingPanel.SetActive(true);
     }
     public void SleepClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         GamePlayManager.Instance.SetCatSleep(true);
     }
     public void ShopClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         shopPanel.SetActive(true);
     }
     public void UpdateLevelBar(int levelNo, float fillAmount)
@@ -118,6 +139,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void RestartClick()
     {
+        AudioManager.Instance?.PlaySFX(SFX.Click);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ResetLevel()

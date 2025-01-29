@@ -28,8 +28,8 @@ public class CurrencyCollectionAnimation : MonoBehaviour
 
         foreach (var cash in cashObjects)
         {
-            var spreadRadius = transform.position + (Vector3)(Random.insideUnitCircle * radius);
-            _sequence.Join(cash.transform.DOMove(spreadRadius, Random.Range(0.2f, cashSpeed)));
+            var spreadRadius = transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle * radius);
+            _sequence.Join(cash.transform.DOMove(spreadRadius, UnityEngine.Random.Range(0.2f, cashSpeed)));
         }
 
         _sequence.OnComplete(
@@ -38,7 +38,7 @@ public class CurrencyCollectionAnimation : MonoBehaviour
                 print("sequence completed");
                 foreach (var cash in cashObjects)
                 {
-                    cash.transform.DOMove(cashCollectBar.transform.position, Random.Range(0.2f, 0.6f)).OnComplete(() =>
+                    cash.transform.DOMove(cashCollectBar.transform.position, UnityEngine.Random.Range(0.2f, 0.6f)).OnComplete(() =>
                     {
                         cash.gameObject.SetActive(false);
                         DOTween.Kill(cashCollectBar.transform);

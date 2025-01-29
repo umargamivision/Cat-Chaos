@@ -14,12 +14,21 @@ namespace Ommy.Audio
     }
     public enum SFX
     {
-        posMachineDail,
-        coinReturn,
-        noteReturn,
-        deductPayment,
-        click,
-        confirm,
+        Click = 0,
+        TaskComplete = 1,
+        LevelComplete = 2,
+        Reward2XClick = 3,
+        NoThanks2XClick = 4,
+        Breakable = 5,
+        Door = 6,
+        Lamp = 7,
+        Tear = 8,
+        Sleep = 9,
+        Grab = 10,
+        Cash = 11,
+        GrannyHit = 12,
+        GrannyAnger = 13,
+        Jump = 14,
     }//enum end
 
     [System.Serializable]
@@ -93,11 +102,11 @@ namespace Ommy.Audio
             else
             {
                 for (int i = 0; i < length - _sfxClips.Count; i++)
-                    _sfxClips.Add(new SFXClip((SFX)0));
+                    _sfxClips.Add(new SFXClip((SFX)(_sfxClips.Count + i)));
 
                 for (int i = 0; i < length; i++)
                 {
-                    if (_sfxClips[i].SFX != (SFX)i)
+                    if (i < _sfxClips.Count && _sfxClips[i].SFX != (SFX)i)
                         _sfxClips[i] = new SFXClip((SFX)i);
                 }//loop end
             }//else end
