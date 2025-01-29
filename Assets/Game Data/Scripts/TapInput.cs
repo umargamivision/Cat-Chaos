@@ -1,21 +1,19 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class TapDetector : MonoBehaviour
 {
     [Header("Tap Detection Settings")]
-    [SerializeField] private float maxTapThreshold = 50f; // Maximum distance for a tap in pixels
-    [SerializeField] private float maxTapTime = 0.2f; // Maximum time for a tap in seconds
+    [SerializeField] private float maxTapThreshold = 50f;
+    [SerializeField] private float maxTapTime = 0.2f;
 
-    [Header("Ignored UI Elements")]
-    [SerializeField] private List<GameObject> ignoredUIElements; // List of UI elements to ignore
+    [Header("Tap Area")]
+    public RectTransform tapArea; // The UI area where taps are detected
 
     [Header("Events")]
-    public UnityEvent<Vector2> OnTap; // Invoked with screen position of the tap
+    public UnityEvent<Vector2> OnTap;
 
     private Vector2 initialTouchPosition;
     private float touchStartTime;
@@ -28,83 +26,72 @@ public class TapDetector : MonoBehaviour
 
     private void DetectTap()
     {
-        if (Input.touchCount > 0) // Check for touch input
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
-            if (IsTouchOverIgnoredUI(touch.position))
-                return; // Ignore tap if over specific UI element
+            if (!IsTouchOnTapArea(touch.position)) return;
 
             switch (touch.phase)
             {
-                case TouchPhase.Began: // Touch started
+                case TouchPhase.Began:
                     isTouching = true;
                     initialTouchPosition = touch.position;
                     touchStartTime = Time.time;
                     break;
 
-                case TouchPhase.Ended: // Touch ended
+                case TouchPhase.Ended:
                     if (isTouching)
                     {
                         isTouching = false;
-
-                        Vector2 finalTouchPosition = touch.position;
-                        float distance = Vector2.Distance(initialTouchPosition, finalTouchPosition);
+                        float distance = Vector2.Distance(initialTouchPosition, touch.position);
                         float duration = Time.time - touchStartTime;
 
                         if (distance <= maxTapThreshold && duration <= maxTapTime)
                         {
-                            OnTap?.Invoke(finalTouchPosition); // Trigger tap event with the tap position
+                            OnTap?.Invoke(touch.position);
                         }
                     }
                     break;
             }
         }
-        else if (Input.GetMouseButtonDown(0)) // Mouse input for editor or desktop
+        else if (Input.GetMouseButtonDown(0))
         {
-            if (IsTouchOverIgnoredUI(Input.mousePosition))
-                return; // Ignore click if over specific UI element
+            if (!IsTouchOnTapArea(Input.mousePosition)) return;
 
             isTouching = true;
             initialTouchPosition = Input.mousePosition;
             touchStartTime = Time.time;
         }
-        else if (Input.GetMouseButtonUp(0) && isTouching) // Mouse button released
+        else if (Input.GetMouseButtonUp(0) && isTouching)
         {
-            if (IsTouchOverIgnoredUI(Input.mousePosition))
-                return; // Ignore click if over specific UI element
+            if (!IsTouchOnTapArea(Input.mousePosition)) return;
 
             isTouching = false;
-
-            Vector2 finalTouchPosition = Input.mousePosition;
-            float distance = Vector2.Distance(initialTouchPosition, finalTouchPosition);
+            float distance = Vector2.Distance(initialTouchPosition, Input.mousePosition);
             float duration = Time.time - touchStartTime;
 
             if (distance <= maxTapThreshold && duration <= maxTapTime)
             {
-                OnTap?.Invoke(finalTouchPosition); // Trigger tap event with the tap position
+                OnTap?.Invoke(Input.mousePosition);
             }
         }
     }
 
-    private bool IsTouchOverIgnoredUI(Vector2 screenPosition)
+    private bool IsTouchOnTapArea(Vector2 screenPosition)
     {
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = screenPosition
-        };
+        PointerEventData pointerData = new PointerEventData(EventSystem.current) { position = screenPosition };
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
 
-        List<RaycastResult> raycastResults = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerData, raycastResults);
-
-        foreach (RaycastResult result in raycastResults)
+        foreach (RaycastResult result in results)
         {
-            if (ignoredUIElements.Contains(result.gameObject))
-            {
-                return true; // Touch is over an ignored UI element
-            }
+        // Ensure tapArea is the topmost UI element
+        if (results.Count > 0 && results[0].gameObject == tapArea.gameObject)
+        {
+            return true;
         }
-
+        }
         return false;
     }
 }

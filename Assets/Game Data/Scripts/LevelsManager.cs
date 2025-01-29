@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using Ommy.SaveData;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class LevelsManager : MonoBehaviour
 {
+    [Range(0,8)]
+    public int totalLevels=8;
     public float loadNextLevelDelay;
     //public int currentLevel => SaveData.Instance.Level;
     public int currentLevel;
@@ -13,6 +16,7 @@ public class LevelsManager : MonoBehaviour
     public List<LevelData> levelDatas;
     //public LevelData currentLevelData => levelDatas[currentLevel];
     public LevelData currentLevelData;
+    public UnityEvent onCompleteAllLevels;
     private void OnEnable() 
     {
         SetupLevel();
@@ -52,6 +56,11 @@ public class LevelsManager : MonoBehaviour
     public void UpdateCurrentLevel()
     {
         SaveData.Instance.Level++;
+        if(SaveData.Instance.Level>=totalLevels)
+        {
+            SaveData.Instance.Level=0;
+            onCompleteAllLevels.Invoke();
+        }
         SaveSystem.SaveProgress();
         currentLevel = SaveData.Instance.Level;
         currentLevelData = levelDatas[currentLevel] ;

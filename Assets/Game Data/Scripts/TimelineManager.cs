@@ -13,6 +13,7 @@ public class TimelineManager : Singleton<TimelineManager>
 {
     public int currentDialogueIndex;
     public bool isPlaying;
+    public GameObject timelineCanvas;
     public Button skipButton;
     public UnityEvent onPlay, onStop;
     public List<TimelineProp> timelineProps;

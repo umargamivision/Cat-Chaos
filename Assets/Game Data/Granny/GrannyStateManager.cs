@@ -12,6 +12,9 @@ public class GrannyStateManager : MonoBehaviour
     public float attackDistance=5;
     public float chaseDistanceLimit;
     public int chaseCoolDownTime;
+    public int burnRunCoolDown=10;
+    public int beeAttackCoolDown=10;
+    public int shockedCoolDown=4;
     public WayPointSystem wayPointSystem;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
@@ -20,7 +23,11 @@ public class GrannyStateManager : MonoBehaviour
     public GrannyPatrollingState grannyPatrollingState = new GrannyPatrollingState();
     public GrannyChasingState grannyChasingState = new GrannyChasingState();
     public GrannyAttackState grannyAttackState = new GrannyAttackState();
+    public GrannyBeeState grannyBeeState = new GrannyBeeState();
+    public GrannyOnFireState grannyOnFireState = new GrannyOnFireState();
+    public GrannyShockedState grannyShockedState = new GrannyShockedState();
     public UnityEvent onGrannyCoolDown;
+    public UnityEvent<GrannyBaseState> onStateChange;
     [Header("Debug")]
     public float distanceWithPlayer;
 
@@ -46,6 +53,11 @@ public class GrannyStateManager : MonoBehaviour
             }
         }
     }
+    public void StartSpecialReaction(int index)
+    {
+        animator.SetFloat("HitReactionBlendTree_Index",index);
+        animator.SetTrigger("ReactionHit_Start");
+    }
     public void OnCollisionEnter(Collision other) 
     {
         currentState.OnCollisionEnter(this, other);    
@@ -54,5 +66,6 @@ public class GrannyStateManager : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
+        onStateChange.Invoke(state);
     }
 }

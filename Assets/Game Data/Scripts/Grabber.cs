@@ -14,7 +14,7 @@ public class Grabber : Singleton<Grabber>
     [SerializeField] private float grabDuration = 0.5f;
     public UnityEvent<bool> OnDetectGrabbable;
 
-    private Grabbable currentGrabbable, detectedGrabbable;
+    public Grabbable currentGrabbable, detectedGrabbable;
 
     public Camera playerCamera;
 

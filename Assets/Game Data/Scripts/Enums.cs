@@ -31,4 +31,5 @@ public enum ItemType
     wineBottle,
     milkPack,
     tosterMachine,
+    beeComb,
 }

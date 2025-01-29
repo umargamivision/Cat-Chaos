@@ -19,7 +19,7 @@ MonoBehaviour:
   xp: 25
   discription: Hide from granny for 30 secs
   prerequisites:
-  - {fileID: 11400000, guid: 8ac182251d7ee4fd083a547fc43c5c8f, type: 2}
+  - {fileID: 11400000, guid: fd9de7f24c8064190b1424682716ce3c, type: 2}
   OnExecute:
     m_PersistentCalls:
       m_Calls: []

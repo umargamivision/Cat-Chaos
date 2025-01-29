@@ -18,8 +18,7 @@ MonoBehaviour:
   taskCounts: 0
   xp: 25
   discription: Make Granny Angry
-  prerequisites:
-  - {fileID: 11400000}
+  prerequisites: []
   OnExecute:
     m_PersistentCalls:
       m_Calls: []

@@ -12,6 +12,7 @@ public class IntractableDetector : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float detectionLength = 5f;
     private Ray ray;
+    public IDetectable currentDetectedObject;
     public UnityEvent<RaycastHit> onRayCast;
     public UnityEvent<IGrabbable> onGrabableHit;
     public UnityEvent<ISwitch> onDoorDetected;
@@ -34,6 +35,8 @@ public class IntractableDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out raycastHit, detectionLength, layerMask))
         {
+            currentDetectedObject = raycastHit.collider.GetComponent<IDetectable>();
+
             iGrabbable = raycastHit.collider.GetComponent<IGrabbable>();
             onGrabableHit.Invoke(iGrabbable);
 
@@ -48,6 +51,8 @@ public class IntractableDetector : MonoBehaviour
         }
         else
         {
+            currentDetectedObject = null;
+
             onGrabableHit.Invoke(iGrabbable);
             onDoorDetected.Invoke(iSwitch);
             onClothTearDetected.Invoke(clothTear);
@@ -61,4 +66,9 @@ public class IntractableDetector : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawLine(origin.position, origin.position + origin.forward * detectionLength);
     }
+}
+public interface IDetectable
+{
+    Transform transform { get; }
+    void OnDetected();
 }

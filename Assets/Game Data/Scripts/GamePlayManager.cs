@@ -19,13 +19,55 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public CatBed catBed;
     public UIManager uIManager;
     public TimelineManager timelineManager;
+    public SpecialOffer specialOffer;
     private void Start()
     {
         Time.timeScale = 1;
     }
+    private void Update() 
+    {
+        specialOffer.canShowOffer = CanShowOffer();    
+    }
+    public bool CanShowOffer()
+    {
+        var can = true;
+        if(playerController.grabber.currentGrabbable!=null)
+        {
+            can = false;
+        }
+        if(playerController.vaccumCleaner.gameObject.activeInHierarchy)
+        {
+            can = false;
+        }
+        if(playerController.electricGun.gameObject.activeInHierarchy)
+        {
+            can = false;
+        }
+        if(playerController.fireSpray.gameObject.activeInHierarchy)
+        {
+            can = false;
+        }
+        if(uIManager.completePanel.activeInHierarchy)
+        {
+            can = false;
+        }
+        if(timelineManager.timelineCanvas.activeInHierarchy)
+        {
+            can = false;
+        }
+        return can;
+    }
+    public void AvailSpecialOffer(SpecialItemType specialItemType)
+    {
+        playerController.ActivateSpecialWeapon(specialItemType);
+    }
     public void SetCatSleep(bool sleep)
     {
         catBed.Sleep(sleep);
+    }
+    public void ShootGranny(SpecialItemType specialItemType)
+    {
+        grannyController.ShootGranny(specialItemType);
     }
     public void SetupLevel(LevelData levelData)
     {
@@ -63,4 +105,6 @@ public class GamePlayManager : Singleton<GamePlayManager>
     {
         levelsManager.ShowIndicators(show);
     }
+
+
 }

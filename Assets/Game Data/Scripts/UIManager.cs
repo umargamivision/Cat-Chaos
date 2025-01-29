@@ -93,10 +93,11 @@ public class UIManager : Singleton<UIManager>
     }
     public void OnClothTearDetected(ClothTear cloth)
     {
-        tearButton.gameObject.SetActive(cloth!=null);
-        if(cloth==null) return;
-        tearButton.onClick.RemoveAllListeners();
-        tearButton.onClick.AddListener(cloth.TearIt);
+        //tearButton.gameObject.SetActive(cloth!=null);
+        // if(cloth==null) return;
+        // tearButton.onClick.RemoveAllListeners();
+        // tearButton.onClick.RemoveListener(cloth.TearIt);
+        // tearButton.onClick.AddListener(cloth.TearIt);
     }
     public void SettingClick()
     {
