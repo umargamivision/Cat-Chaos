@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Task goto
   m_EditorClassIdentifier: 
   completeTimeline: 0
-  complete: 1
+  complete: 0
   countsForCompletion: 1
-  taskCounts: 1
+  taskCounts: 0
   xp: 25
-  discription: goto the second floor
+  discription: Go to the second Floor
   prerequisites:
   - {fileID: 11400000, guid: ab7b3220bb0ff49b4ad64ec17ae9f593, type: 2}
   - {fileID: 11400000, guid: f19ab6cf0fce34ca68219bc358a1f471, type: 2}

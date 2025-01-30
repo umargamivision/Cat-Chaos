@@ -41,7 +41,7 @@ public sealed class SaveData
     public int Level  = 0;
     public int Fishs  = 0;
     public int Keys = 0;
-    public int GameTutorial = 0;
+    public bool GameTutorial = true;
     public int CurrentGameTutorialStep = 0;
     public List<ShopItemData> shopItemDatas;
 
@@ -59,6 +59,7 @@ public sealed class SaveData
         Music  = data.Music;
         SFX    = data.SFX;
         Haptic = data.Haptic;
+        GameTutorial = data.GameTutorial;
 
         Level  = data.Level;
         Fishs  = data.Fishs;

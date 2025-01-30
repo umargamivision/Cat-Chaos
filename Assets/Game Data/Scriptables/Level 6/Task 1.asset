@@ -17,7 +17,7 @@ MonoBehaviour:
   countsForCompletion: 4
   taskCounts: 0
   xp: 25
-  discription: Tear the fabric of all 4 dining chairs
+  discription: Sit and tear the fabric of all 4 chairs
   prerequisites: []
   OnExecute:
     m_PersistentCalls:

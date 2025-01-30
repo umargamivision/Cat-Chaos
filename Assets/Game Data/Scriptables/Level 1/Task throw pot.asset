@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b6d2b96932480c89f308b98afb0e2, type: 3}
   m_Name: Task throw pot
   m_EditorClassIdentifier: 
+  completeTimeline: 0
   complete: 0
   countsForCompletion: 2
   taskCounts: 0
   xp: 25
-  discription: throw 2 pots
+  discription: Throw 2 pots
+  prerequisites: []
+  OnExecute:
+    m_PersistentCalls:
+      m_Calls: []
   OnComplete:
     m_PersistentCalls:
       m_Calls: []

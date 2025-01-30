@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3b6d2b96932480c89f308b98afb0e2, type: 3}
   m_Name: Task break objects
   m_EditorClassIdentifier: 
+  completeTimeline: 0
   complete: 0
   countsForCompletion: 3
-  taskCounts: 0
+  taskCounts: 1
   xp: 25
-  discription: break 3 bottle
+  discription: Break 3 milk bottles
   prerequisites:
   - {fileID: 11400000, guid: f19ab6cf0fce34ca68219bc358a1f471, type: 2}
   OnExecute:

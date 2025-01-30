@@ -20,12 +20,12 @@ public class FirstPersonController : MonoBehaviour
     private bool m_MoveWithMouse = true;
     public Vector2 lookClamp = new Vector2(-90, 90);
     private CharacterController m_CharacterController;
-    private float m_XRotation = 0f;
+    private float m_XRotation = -50;
     private Vector3 m_Velocity;
     private bool m_IsGrounded;
-    private void OnEnable() 
+    private void OnEnable()
     {
-        InputManager.Instance.inputEvents.Find((f)=>f.inputType==InputType.Jump).OnInvoke.AddListener(Jump);    
+        InputManager.Instance.inputEvents.Find((f) => f.inputType == InputType.Jump).OnInvoke.AddListener(Jump);
     }
     void Start()
     {
@@ -43,7 +43,7 @@ public class FirstPersonController : MonoBehaviour
     void Update()
     {
         Look();
-        if(Move())
+        if (Move())
         {
             stateManager.ChangeState(stateManager.walk);
         }
@@ -56,6 +56,7 @@ public class FirstPersonController : MonoBehaviour
     private void Look()
     {
         Vector2 lookInput = GetLookInput();
+        //if(lookInput.x==0 || lookInput.y==0) return;
 
         m_XRotation -= lookInput.y;
         m_XRotation = Mathf.Clamp(m_XRotation, lookClamp.x, lookClamp.y);
@@ -63,7 +64,13 @@ public class FirstPersonController : MonoBehaviour
         m_PlayerCamera.localRotation = Quaternion.Euler(m_XRotation, 0, 0);
         transform.Rotate(Vector3.up * lookInput.x, Space.World);
     }
-
+    public void LookAt(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        m_PlayerCamera.localRotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
+        transform.rotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0);
+    }
     private bool Move()
     {
         bool isMoving;
@@ -76,7 +83,7 @@ public class FirstPersonController : MonoBehaviour
 
         // Get movement input
         Vector3 movementInput = GetMovementInput();
-        isMoving = movementInput.magnitude>0;
+        isMoving = movementInput.magnitude > 0;
         Vector3 move = transform.right * movementInput.x + transform.forward * movementInput.z;
 
         m_CharacterController.Move(move * m_MovementSpeed * Time.deltaTime);

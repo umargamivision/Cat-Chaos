@@ -5,6 +5,7 @@ using DG.Tweening;
 using Ommy.FadeSystem;
 using System.Collections;
 using System.ComponentModel.Design;
+using System;
 public class PlayerController : Singleton<PlayerController>
 {
     public StateManager stateManager;
@@ -70,6 +71,28 @@ public class PlayerController : Singleton<PlayerController>
     public void SetPositionAndRotation(Transform target)
     {
         transform.SetPositionAndRotation(target.position, target.rotation);
+    }
+    public void SetLookAt(Transform target)
+    {
+        LookAt(target);
+    }
+    public void LookAt(Transform target)
+    {
+        firstPersonController.enabled = false;
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        //playerCam.transform.parent.localRotation = Quaternion.Euler(-50, 0, 0);
+        playerCam.transform.parent.DOLocalRotate(Vector3.right*-50,0.5f);
+        //transform.rotation = Quaternion.Euler(0, rotation.eulerAngles.y, 0);
+        transform.DORotate(Vector3.up*rotation.eulerAngles.y,0.5f).OnComplete(()=>
+        {
+           firstPersonController.enabled = true;
+        });
+    }
+    IEnumerator TimerAction(float time, Action action)
+    {
+        yield return new WaitForSeconds(time);
+        action();
     }
     public void Attack()
     {
