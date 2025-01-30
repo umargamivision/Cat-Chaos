@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ommy.Audio;
 using Ommy.Singleton;
 using UnityEditor;
 using UnityEngine;
@@ -82,14 +83,17 @@ public class GamePlayManager : Singleton<GamePlayManager>
         questManager.Init(levelData);
         timelineManager.PlayTimeline(levelData.startDirector);
         uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
+        AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Play");
     }
     public void OnCompleteLevel(LevelData levelData)
     {
         uIManager.LevelComplete();
+        AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Complete");
         //timelineManager.PlayTimeline(levelData.endDirector);
     }
     public void OnTaskComplete(LevelData currentLevelData)
     {
+        AudioManager.Instance?.PlaySFX(SFX.TaskComplete);
         uIManager.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
     }
     public void ResetData()
@@ -106,6 +110,7 @@ public class GamePlayManager : Singleton<GamePlayManager>
     }
     public void LevelComplete()
     {
+        AudioManager.Instance?.PlaySFX(SFX.LevelComplete);
         uIManager.LevelComplete();
         Debug.Log("game complete");
     }

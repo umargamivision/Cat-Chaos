@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
+using Ommy.Audio;
 public class CurrencyCollectionAnimation : MonoBehaviour
 {
     public float cashSpeed;
@@ -18,6 +19,7 @@ public class CurrencyCollectionAnimation : MonoBehaviour
     }
     IEnumerator AnimateCash()
     {
+        AudioManager.Instance?.PlaySFX(SFX.FishReward);
         cashObjects.ForEach(f=>
         {
             f.SetActive(true);

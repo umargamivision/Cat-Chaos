@@ -113,6 +113,10 @@ public class ShopManager : Singleton<ShopManager>
     public void GetAdFish(int fish)
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
+        AdsManager.ShowRewardedAd(()=>OnAdFishSucess(fish), "Fish");
+    }
+    public void OnAdFishSucess(int fish)
+    {
         GameManager.Instance.Fishs += fish;
         currencyCollectionAnimation.CollectCash();
     }
@@ -159,6 +163,11 @@ public class ShopManager : Singleton<ShopManager>
         shopItemUI.shopItem.shopItemData.hasUnlocked = true;
         shopItemUI.OnUnlocked();
         SaveShopData();
+        AdsManager.SendFirebaseEevents
+        (
+            shopItemUI.shopItem.shopItemData.shopItemType.ToString()
+            + "_Unlock"
+        );
     }
     public void NotEnoughCurrency(CurrencyType currencyType)
     {

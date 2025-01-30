@@ -45,6 +45,7 @@ public sealed class Grabbable : IGrabbable
             isGrabbed = false;
             rb.isKinematic = false;
             transform.parent = null;
+            state=State.Idle;
         }
     }
     public override void Throw(Vector3 direction, float force)
@@ -67,6 +68,7 @@ public abstract class IGrabbable : MonoBehaviour
         Idle,Throw,Grab
     }
     public State state;
+    public AudioClip throwClip;
     public UnityEvent OnGrab;
     public UnityEvent OnThrow;
     public UnityEvent OnThrowCollision;
@@ -76,7 +78,10 @@ public abstract class IGrabbable : MonoBehaviour
     private void OnCollisionEnter(Collision other) 
     {
         if(state == State.Throw)
-        OnThrowCollision.Invoke();    
+        {
+            if(throwClip)AudioManager.Instance?.PlaySFX(throwClip);
+            OnThrowCollision.Invoke();  
+        }
     }
     public abstract void Throw(Vector3 direction, float force);
     public IGrabbable(bool canGrab)

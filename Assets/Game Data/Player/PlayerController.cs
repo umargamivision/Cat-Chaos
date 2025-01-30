@@ -6,6 +6,7 @@ using Ommy.FadeSystem;
 using System.Collections;
 using System.ComponentModel.Design;
 using System;
+using Ommy.Audio;
 public class PlayerController : Singleton<PlayerController>
 {
     public StateManager stateManager;
@@ -104,6 +105,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void GrannyCatch()
     {
+        AudioManager.Instance?.PlaySFX(SFX.PlayerDeath);
         firstPersonController.enabled = false;
 
         // Change Aim to "Hard Look At"
@@ -143,10 +145,15 @@ public class PlayerController : Singleton<PlayerController>
         playerCam.m_LookAt = null;
         transform.transform.DORotate(new Vector3(0, 0, 90), 0.5f).OnComplete(() =>
         {
-            StartCoroutine(DeathAndRespawn());
+            if(deathAndRespawnCoroutine!=null)
+            {
+                StopCoroutine(deathAndRespawnCoroutine);
+            }
+            deathAndRespawnCoroutine = StartCoroutine(DeathAndRespawn());
         });
         Debug.Log("Damage taken from granny");
     }
+    public Coroutine deathAndRespawnCoroutine;
     public IEnumerator DeathAndRespawn()
     {
         yield return ScreenFader.Instance.FadeOut();

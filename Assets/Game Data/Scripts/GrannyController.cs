@@ -4,11 +4,19 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using JetBrains.Annotations;
 using Ommy.Animation;
+using Ommy.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 public class GrannyController : MonoBehaviour, IDetectable
 {
     public float hitDetectForce = 1;
+    [Header("Audio Clips")]
+    public AudioSource audioSource;
+    public AudioClip footstepClip;
+    public AudioClip burnClip;
+    public AudioClip beeAttackClip;
+    public AudioClip shockClip;
+    public AudioClip[] angryClips;
     public StateMachineEventListner stateMachineEventListner;
     public PlayerController playerController;
     public GrannyStateManager grannyStateManager;
@@ -29,6 +37,28 @@ public class GrannyController : MonoBehaviour, IDetectable
             case StateMachineEventType.GrannyAttackDone:
                 GiveCatDamage();
             break;
+            case StateMachineEventType.FootStep:
+                //audioSource.PlayOneShot(footstepClip);
+            break;
+            case StateMachineEventType.FireRun:
+                PlaySound(burnClip);
+            break;
+            case StateMachineEventType.BeeAttack:
+                PlaySound(beeAttackClip);
+            break;
+            case StateMachineEventType.Shocked:
+                PlaySound(shockClip);
+            break;
+            case StateMachineEventType.GrannyAnger:
+                PlaySound(angryClips[UnityEngine.Random.Range(0,angryClips.Length)]);
+            break;
+        }
+    }
+    public void PlaySound(AudioClip audioClip)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(audioClip);
         }
     }
     [InspectorButton]

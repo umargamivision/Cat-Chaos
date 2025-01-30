@@ -19,6 +19,7 @@ public class IntractableDetector : MonoBehaviour
     public UnityEvent<ISwitch> onDoorDetected;
     public UnityEvent<ClothTear> onClothTearDetected;
     public UnityEvent<CatBed> onCatBedDetected;
+    public UnityEvent<SpecialItem> onSpecialItemDetected;
     private void Update()
     {
         PerformDetection();
@@ -33,6 +34,7 @@ public class IntractableDetector : MonoBehaviour
         IGrabbable iGrabbable = null;
         ClothTear clothTear = null;
         CatBed catBed = null;
+        SpecialItem specialItem = null;
 
         if (Physics.Raycast(ray, out raycastHit, detectionLength, layerMask))
         {
@@ -53,6 +55,9 @@ public class IntractableDetector : MonoBehaviour
             
             catBed = raycastHit.collider.GetComponent<CatBed>();
             onCatBedDetected.Invoke(catBed);
+
+            specialItem = raycastHit.collider.GetComponent<SpecialItem>();
+            onSpecialItemDetected.Invoke(specialItem);
         }
         else
         {
@@ -62,6 +67,7 @@ public class IntractableDetector : MonoBehaviour
             onDoorDetected.Invoke(iSwitch);
             onClothTearDetected.Invoke(clothTear);
             onCatBedDetected.Invoke(catBed);
+            onSpecialItemDetected.Invoke(specialItem);
         }
     }
     public void UpdateCurrentGrabbable(IGrabbable grabbable)

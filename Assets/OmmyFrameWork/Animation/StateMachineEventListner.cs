@@ -24,9 +24,15 @@ namespace Ommy.Animation
         //             break;
         //     }
         // }
+        public void InvokeEvent(StateMachineEventType stateMachineEventType)
+        {
+            OnEventInvoke.Invoke(stateMachineEventType);
+        }
+        
     }
     public enum StateMachineEventType
     {
-        GrannyAttackDone,GrannyAttackStart,
+        GrannyAttackDone, GrannyAttackStart, FootStep, GrannyAnger, BeeAttack,
+        Shocked, FireRun
     }
 }

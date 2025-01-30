@@ -11,7 +11,7 @@ public class LevelData
     public class TaskProp
     {
         public string name;
-        public Task task;
+        public Omar.Task task;
         public List<GameObject> indicators;
         public UnityEvent onStart;
         public void SetIndicators(bool show)

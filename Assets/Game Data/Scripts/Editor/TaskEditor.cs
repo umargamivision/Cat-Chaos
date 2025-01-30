@@ -1,11 +1,11 @@
 using UnityEditor;
 using UnityEngine;
-[CustomEditor(typeof(Task))]
+[CustomEditor(typeof(Omar.Task))]
 public class TaskEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        Task task = (Task)target;
+        Omar.Task task = (Omar.Task)target;
 
         // Show default fields
         DrawDefaultInspector();

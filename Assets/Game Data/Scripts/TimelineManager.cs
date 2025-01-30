@@ -70,10 +70,16 @@ public class TimelineManager : Singleton<TimelineManager>
     public void SkipTimelineClick()
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
+        AdsManager.ShowRewardedAd(OnSkipTimeline, "Cutscene_skip");
+    }
+    public void OnSkipTimeline()
+    {
         if (currentTL != null)
         {
             StartCoroutine(SkipTimeline());
         }
+        AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Cutscene_Skip");
+
     }
     IEnumerator SkipTimeline()
     {

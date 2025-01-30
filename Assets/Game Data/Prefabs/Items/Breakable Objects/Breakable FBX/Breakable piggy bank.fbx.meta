@@ -3,7 +3,17 @@ guid: c741552189951482db9d6d4e96d0c92f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T_Pig_Df
+    second: {fileID: 2100000, guid: 6bbb6719eeac768499d47b3bbe1e53aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: T_Pig_Df1
+    second: {fileID: 2100000, guid: 6bbb6719eeac768499d47b3bbe1e53aa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

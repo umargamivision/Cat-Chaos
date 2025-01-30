@@ -8,6 +8,7 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using Ommy.SaveData;
 using Ommy.Audio;
+using UnityEngine.Rendering.Universal;
 public class UIManager : Singleton<UIManager>
 {
     public CurrencyCollectionAnimation currencyCollectionAnimation;
@@ -28,9 +29,16 @@ public class UIManager : Singleton<UIManager>
     public Button doorButton, lampButton;
     public Button tearButton;
     public Button sleepButton;
+    public Button grabSpecialItem;
 
     public void Pause(bool pause)
     {
+        if(pause)
+        {
+            AdsManager.SendFirebaseEevents("Pause_Clk");
+            AdsManager.ShowInterstitilAd("Inter_pause_btn");
+        }
+
         Time.timeScale = pause? 0:1;
         AudioManager.Instance?.PlaySFX(SFX.Click);
         pausePanel.SetActive(pause);
@@ -55,6 +63,10 @@ public class UIManager : Singleton<UIManager>
     }
     public void Reward2XClick()
     {
+        AdsManager.ShowRewardedAd(Reward2XSuccess,"Lvl_cmplt");
+    }
+    public void Reward2XSuccess()
+    {
         AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
@@ -65,9 +77,11 @@ public class UIManager : Singleton<UIManager>
             GameManager.Instance.isGameCompleted = false;
             GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene,0);
         }
+
     }
     public void LevelComplete()
     {
+        AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
         Time.timeScale=0;
         completePanel.SetActive(true);
     }
@@ -83,11 +97,23 @@ public class UIManager : Singleton<UIManager>
     public void HintClick()
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
+        AdsManager.ShowRewardedAd(OnHintSuccess,"Hint");
+    }
+    public void OnHintSuccess()
+    {
+        AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Hint_Clk");
         GamePlayManager.Instance.ShowIndicators(true);
     }
     public void onCatBedDetected(CatBed catBed)
     {
         sleepButton.gameObject.SetActive(catBed!=null);
+    }
+    public void OnSpecialItemDetected(SpecialItem specialItem)
+    {
+        grabSpecialItem.gameObject.SetActive(specialItem!=null);
+        if(specialItem==null) return;
+        grabSpecialItem.onClick.RemoveAllListeners();
+        grabSpecialItem.onClick.AddListener(specialItem.GrabClick);
     }
     public void OnSwitchDetect(ISwitch iSwitch)
     {
@@ -129,6 +155,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void ShopClick()
     {
+        AdsManager.SendFirebaseEevents("Pause_Shop_Clk");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         shopPanel.SetActive(true);
     }

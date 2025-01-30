@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
 using DG.Tweening;
+using Ommy.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,10 +11,12 @@ public class ElectricGun : MonoBehaviour
     public Vector3 activePos, deactivePos;
     public float deactiveAfterShoot=1f;
     public ParticleSystem vfx;
+    public AudioClip shootSound;
     public UnityEvent<SpecialItemType> onShoot;
     [InspectorButton]
     public void Shoot()
     {
+        AudioManager.Instance?.PlaySFX(shootSound);
         vfx.Play(true);
         StartCoroutine(DeactivateAfterShoot());
         PlayerController.Instance.ShootingSpecialWeapon(SpecialItemType.Electric);

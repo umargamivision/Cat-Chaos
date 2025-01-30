@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cinemachine;
 using DG.Tweening;
+using Ommy.Audio;
 using Ommy.Singleton;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +29,12 @@ public class Grabber : Singleton<Grabber>
 
         Vector3 throwDirection = (worldPosition - grabberPoint.position).normalized;
         currentGrabbable.Throw(throwDirection, throwForce);
+        ClearCurrentGrabbable();
+    }
+    public void ReleaseGrabbable()
+    {
+        if (currentGrabbable == null) return;
+        currentGrabbable.Release();
         ClearCurrentGrabbable();
     }
 
@@ -68,6 +75,7 @@ public class Grabber : Singleton<Grabber>
         if (Physics.Raycast(screenRay, out RaycastHit hitInfo))
         {
             // Throw toward the hit point (tap location)
+            AudioManager.Instance?.PlaySFX(SFX.throwItem);
             ThrowGrabbableToward(hitInfo.point);
         }
     }

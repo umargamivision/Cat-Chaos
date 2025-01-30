@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public TMP_Text currencyText;
     public void Start()
     {
+        AdsManager.ShowBanner("Banner");
         Time.timeScale = 1;
         AudioManager.Instance?.StartGame();
 
@@ -20,6 +21,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayClick()
     {
+        AdsManager.ShowInterstitilAd("Inter_play_btn");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene, GameManager.Instance.loadingDely);
     }
@@ -30,8 +32,9 @@ public class MainMenu : MonoBehaviour
     }
     public void ShopClick()
     {
-        AudioManager.Instance?.PlaySFX(SFX.Click);
         shopPanel.SetActive(true);
+        AudioManager.Instance?.PlaySFX(SFX.Click);
+        AdsManager.SendFirebaseEevents("MainMenu_Shop_Clk");
     }
     public void UpdateCurrency(int currency)
     {

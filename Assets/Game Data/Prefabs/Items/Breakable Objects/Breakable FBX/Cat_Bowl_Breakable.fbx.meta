@@ -3,7 +3,12 @@ guid: 9ad40713de3374ca08ccb543bb7cd0fa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RGB_b4ccdbdc9bcb41c1a3190dc4e02d3d2b_Kitchen_Breakfast_Texture1
+    second: {fileID: 2100000, guid: 0f4efb7753b225348b3fce6059fc3513, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

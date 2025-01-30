@@ -62,6 +62,7 @@ public class GameManager : Singleton<GameManager>
     }
     private IEnumerator LoadSceneAsync(string name, float delay)
     {
+        AdsManager.ShowMrec(name==mainMenuScene? "Mrec_ply_btn":"Mrec_go_home");
         loadingCanvas.SetActive(true);
         loadingFill.DOFillAmount(1, delay);
         yield return new WaitForSeconds(delay);
@@ -71,6 +72,7 @@ public class GameManager : Singleton<GameManager>
         {
             yield return null;
         }
+        AdsManager.HideMrec();
         loadingCanvas.SetActive(false);
     }
 }

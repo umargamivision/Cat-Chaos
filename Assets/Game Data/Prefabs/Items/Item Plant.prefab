@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2833973426422144542, guid: cf56bbc2453564dc68aa429a96a12c50, type: 3}
+  - {fileID: 2100000, guid: 86abd1c35b08c2a419fe3f2677701491, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  throwClip: {fileID: 0}
   OnGrab:
     m_PersistentCalls:
       m_Calls: []

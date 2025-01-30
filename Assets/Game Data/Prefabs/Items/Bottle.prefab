@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  throwClip: {fileID: 8300000, guid: 8a3f5952155b94ca5a1d6b7e9c1b43c0, type: 3}
   OnGrab:
     m_PersistentCalls:
       m_Calls: []

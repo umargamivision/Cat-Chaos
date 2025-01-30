@@ -157,7 +157,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 503
 --- !u!114 &199621183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.25769043, y: 0.79520035}
+  m_AnchoredPosition: {x: 0.25769043, y: 0.79519653}
   m_SizeDelta: {x: -9.6174, y: -12.2269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &671881436
@@ -1236,11 +1236,11 @@ RectTransform:
   - {fileID: 671881435}
   m_Father: {fileID: 1957513381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.1, y: -383.7}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -130, y: 93}
   m_SizeDelta: {x: 747, y: 69}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1448398849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 503
 --- !u!114 &1711687207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,13 +1409,63 @@ PrefabInstance:
     - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
         type: 3}
       propertyPath: _sfxClips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[1]._sfx
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[2]._sfx
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[3]._sfx
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[4]._sfx
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[5]._sfx
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
         type: 3}
       propertyPath: _sfxClips.Array.data[0]._clip
       value: 
       objectReference: {fileID: 8300000, guid: 5519622b419c141319abfdd99f5eb6bc, type: 3}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[1]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9174f0f32a438405faeb344a387ca969, type: 3}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[2]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 09f15adc4106a4914a754f49c2ba5c7d, type: 3}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[3]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cc882f28dd5d48e3be530c9ce0ac5b6, type: 3}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[4]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 96274d1a0122c4bafa502cefaa0ad189, type: 3}
+    - target: {fileID: 943587515831394950, guid: 597a7f9a1c74ad0439b42857c548f14b,
+        type: 3}
+      propertyPath: _sfxClips.Array.data[5]._clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a25ef29a23bdc42ddae990d0c7d3d7ea, type: 3}
     - target: {fileID: 3409731864355045135, guid: 597a7f9a1c74ad0439b42857c548f14b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1609,7 +1659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28a6651fdacb34835a0b3a53e8e6aa91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0f15684b5ad14aa08724759253f833a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2115,6 +2165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876637180052681321, guid: 67c3550ba263e4ba88befa0b893b1545,
+        type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 3019146239854006748, guid: 67c3550ba263e4ba88befa0b893b1545,
         type: 3}

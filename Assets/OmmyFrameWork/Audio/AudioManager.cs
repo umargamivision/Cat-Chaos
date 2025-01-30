@@ -17,18 +17,9 @@ namespace Ommy.Audio
         Click = 0,
         TaskComplete = 1,
         LevelComplete = 2,
-        Reward2XClick = 3,
-        NoThanks2XClick = 4,
-        Breakable = 5,
-        Door = 6,
-        Lamp = 7,
-        Tear = 8,
-        Sleep = 9,
-        Grab = 10,
-        Cash = 11,
-        GrannyHit = 12,
-        GrannyAnger = 13,
-        Jump = 14,
+        FishReward = 3,
+        throwItem = 4,
+        PlayerDeath = 5,
     }//enum end
 
     [System.Serializable]
@@ -145,9 +136,12 @@ namespace Ommy.Audio
         /// <summary>
         /// Call to play specific SFX clip against enum.
         /// </summary>
-        public void PlaySFX(SFX sfx, float volume = 1f) =>
-            _sfxSource.PlayOneShot(_sfxClips[(int)sfx].Clip, volume);
-
+        // public void PlaySFX(SFX sfx, float volume = 1f) =>
+        //     _sfxSource.PlayOneShot(_sfxClips[(int)sfx].Clip, volume);
+        public void PlaySFX(SFX sfx, float volume = 1f)
+        {
+            _sfxSource.PlayOneShot(_sfxClips.Find(f => f.SFX == sfx).Clip, volume);
+        }
         /// <summary>
         /// Call to play custom Audio Clip.
         /// </summary>

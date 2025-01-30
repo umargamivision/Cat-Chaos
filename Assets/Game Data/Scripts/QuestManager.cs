@@ -27,7 +27,7 @@ public class QuestManager : Singleton<QuestManager>
         
         var LD = levelData.CurrentTaskProp();
         if(LD==null) return;
-        Task task = LD.task;
+        Omar.Task task = LD.task;
         if(task == null) return;
         if (!task.complete) 
         {
