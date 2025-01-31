@@ -15,6 +15,7 @@ public class GrannyStateManager : MonoBehaviour
     public int burnRunCoolDown=10;
     public int beeAttackCoolDown=10;
     public int shockedCoolDown=4;
+    public Transform grannyDistanceCheckPoint;
     public WayPointSystem wayPointSystem;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
@@ -67,5 +68,10 @@ public class GrannyStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
         onStateChange.Invoke(state);
+    }
+    private void OnDrawGizmos() 
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(grannyDistanceCheckPoint.position,attackDistance);
     }
 }

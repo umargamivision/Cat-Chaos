@@ -1,64 +1,47 @@
-Shader "Custom/URP_Dissolve_Particle" {
+Shader "Shader Graphs/Fx_dissolve_particle_apb" {
     Properties {
-        _MainTex ("Main Texture", 2D) = "white" {}
-        _DissolveThreshold ("Dissolve Threshold", Range(0, 1)) = 0.5
-        _EdgeColor ("Edge Color", Color) = (1, 0, 0, 1)
+        [NoScaleOffset] Main_tex ("Texture", 2D) = "white" {}
+        Vector1_930B327D ("Highlight_Min", Float) = -10
+        Vector1_270105AC ("Highlight_Max", Float) = -1
+        [ToggleUI] Boolean_9C0948F4 ("Use SoftParticleFactor?", Float) = 1
+        Vector1_2C5A3101 ("Emission_Power", Float) = 1
     }
     SubShader {
-        Tags { "RenderPipeline" = "UniversalRenderPipeline" }
+        Tags { "RenderPipeline" = "UniversalPipeline" "Queue" = "Transparent" }
         Pass {
-            Name "MainPass"
+            Name "UniversalForward"
             Tags { "LightMode" = "UniversalForward" }
-
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
-            // Declare texture and sampler
-            TEXTURE2D(_MainTex);
-            SAMPLER(sampler_MainTex);
-
-            float _DissolveThreshold;
-            float4 _EdgeColor;
-
             struct Attributes {
-                float4 positionOS : POSITION; // Object space position
-                float2 uv : TEXCOORD0;       // UV coordinates
+                float4 positionOS : POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             struct Varyings {
-                float4 positionHCS : SV_POSITION; // Homogeneous clip space position
-                float2 uv : TEXCOORD0;           // UV coordinates
+                float4 positionHCS : SV_POSITION;
+                float2 uv : TEXCOORD0;
             };
 
-            Varyings vert(Attributes v) {
-                Varyings o;
+            sampler2D Main_tex;
+            CBUFFER_START(UnityPerMaterial)
+            float4 _Main_tex_ST;
+            CBUFFER_END
 
-                // Transform object space to world space, then to clip space
-                float4 positionWS = mul(unity_ObjectToWorld, v.positionOS); // Object to World
-                o.positionHCS = mul(UnityGetViewProjectionMatrix(), positionWS); // World to Clip
-
-                o.uv = v.uv;
-                return o;
+            Varyings vert(Attributes IN) {
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                OUT.uv = TRANSFORM_TEX(IN.uv, _Main_tex);
+                return OUT;
             }
 
-            half4 frag(Varyings i) : SV_Target {
-                // Sample the texture
-                float4 texColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
-
-                // Simulate dissolve by comparing the dissolve threshold
-                float dissolveFactor = texColor.r; // Use the red channel for dissolve
-                if (dissolveFactor < _DissolveThreshold) {
-                    // Return edge color if below threshold
-                    return _EdgeColor;
-                }
-
-                // Return original texture color if above threshold
-                return texColor;
+            half4 frag(Varyings IN) : SV_Target {
+                return tex2D(Main_tex, IN.uv);
             }
             ENDHLSL
         }
     }
-    Fallback "Hidden/InternalErrorShader"
 }

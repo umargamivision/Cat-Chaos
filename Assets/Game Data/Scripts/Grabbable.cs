@@ -79,6 +79,7 @@ public abstract class IGrabbable : MonoBehaviour
     {
         if(state == State.Throw)
         {
+            state=State.Idle;
             if(throwClip)AudioManager.Instance?.PlaySFX(throwClip);
             OnThrowCollision.Invoke();  
         }

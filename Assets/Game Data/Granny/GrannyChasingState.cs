@@ -39,7 +39,7 @@ public class GrannyChasingState : GrannyBaseState
         //stateManager.animator.SetFloat("MoveSpeed",stateManager.navMeshAgent.speed); // Normalize speed to be between 0 and 1
         Vector3 playerPos = PlayerController.Instance.transform.position;
         stateManager.navMeshAgent.SetDestination(playerPos);
-        if (Vector3.Distance(stateManager.transform.position,playerPos)<stateManager.attackDistance)
+        if (Vector3.Distance(stateManager.grannyDistanceCheckPoint.position,playerPos)<stateManager.attackDistance)
         {
             stateManager.SwitchState(stateManager.grannyAttackState);
             //stateManager.wayPointSystem.OnReachWayPoint();

@@ -23,12 +23,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Main_tex:
+        m_Texture: {fileID: 2800000, guid: a35634759f99d05478e7809f763b678f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 38bddd6069fef499fa5c131d2b8b3f8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Boolean_9C0948F4: 1
+    - Vector1_270105AC: 1
+    - Vector1_2C5A3101: 1
+    - Vector1_930B327D: -10
     - _DissolveThreshold: 0.5
     - _EmissionPower: 1
     - _HighlightMax: -1
