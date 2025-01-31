@@ -10,6 +10,7 @@ using UnityEngine.Events;
 
 public class SpecialOffer : Singleton<SpecialOffer>
 {
+    int appearNo=0;
     public AudioClip offerClip;
     public bool canShowOffer;
     public bool readyToShow;
@@ -62,6 +63,7 @@ public class SpecialOffer : Singleton<SpecialOffer>
                 _ => throw new ArgumentOutOfRangeException()
             };
             AudioManager.Instance?.PlaySFX(offerClip);
+            appearNo++;
             offerPanel.SetActive(true);
             specialOfferObjs.ToList().ForEach(x => x.SetActive(false));
             specialOfferObjs[(int)specialItemType].SetActive(true);
@@ -104,11 +106,10 @@ public class SpecialOffer : Singleton<SpecialOffer>
     }
     public void ShowInterIfCan()
     {
-        int levelNo = SaveData.Instance.Level;
         bool all = AdsManager.Inter_nothanks_popup == 0;
         bool odd = AdsManager.Inter_nothanks_popup == 1;
         bool even = AdsManager.Inter_nothanks_popup == 2;
-        if (levelNo % 2 == 0 && even || levelNo % 2 != 0 && odd || all)
+        if (appearNo % 2 == 0 && even || appearNo % 2 != 0 && odd || all)
         {
             AdsManager.ShowInterstitilAd("Inter_Ingame_popup");
         }

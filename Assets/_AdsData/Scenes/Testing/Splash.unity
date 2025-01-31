@@ -610,6 +610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572206330406447245, guid: ccb65adc845e845748ae66b824c6f16f,
         type: 3}
+      propertyPath: remote_Data.Array.data[3].DefaultValue_Number
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572206330406447245, guid: ccb65adc845e845748ae66b824c6f16f,
+        type: 3}
       propertyPath: remote_Data.Array.data[1].onFetched.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
