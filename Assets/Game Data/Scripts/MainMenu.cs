@@ -36,6 +36,10 @@ public class MainMenu : MonoBehaviour
         AudioManager.Instance?.PlaySFX(SFX.Click);
         AdsManager.SendFirebaseEevents("MainMenu_Shop_Clk");
     }
+    public void UpdateCurrency()
+    {
+        UpdateCurrency(GameManager.Instance.Fishs);
+    }
     public void UpdateCurrency(int currency)
     {
         currencyText.text = currency.ToString();

@@ -20,6 +20,9 @@ public class GrannyAnger : MonoBehaviour
     {
         angerLevel++;
         fill.DOFillAmount((float)angerLevel/angerThresould,0.5f);
-        if(angerLevel>=angerThresould) onGrannyAnger.Invoke();
+        if(angerLevel>=angerThresould) 
+        {
+            onGrannyAnger.Invoke();
+        }
     }
 }

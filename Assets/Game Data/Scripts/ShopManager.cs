@@ -5,6 +5,7 @@ using Ommy.Audio;
 using Ommy.SaveData;
 using Ommy.Singleton;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ShopManager : Singleton<ShopManager>
@@ -113,12 +114,14 @@ public class ShopManager : Singleton<ShopManager>
     public void GetAdFish(int fish)
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        AdsManager.ShowRewardedAd(()=>OnAdFishSucess(fish), "Fish");
+        AdsManager.ShowRewardedAd(()=>OnAdFishSucess(), "Fish");
     }
-    public void OnAdFishSucess(int fish)
+    public UnityEvent onAddFishes;
+    public void OnAdFishSucess()
     {
-        GameManager.Instance.Fishs += fish;
+        GameManager.Instance.Fishs += 50;
         currencyCollectionAnimation.CollectCash();
+        onAddFishes.Invoke();
     }
     public void GetIt()
     {

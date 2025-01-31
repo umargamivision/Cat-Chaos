@@ -25,13 +25,13 @@ public class CurrencyCollectionAnimation : MonoBehaviour
             f.SetActive(true);
             f.transform.position = cashCollectMidPoint.transform.position;
         });
-        var _sequence = DOTween.Sequence();
-        _sequence = DOTween.Sequence();
+        var _sequence = DOTween.Sequence().SetUpdate(true);
+        //_sequence = DOTween.Sequence().SetUpdate(true);
 
         foreach (var cash in cashObjects)
         {
             var spreadRadius = transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle * radius);
-            _sequence.Join(cash.transform.DOMove(spreadRadius, UnityEngine.Random.Range(0.2f, cashSpeed)));
+            _sequence.Join(cash.transform.DOMove(spreadRadius, UnityEngine.Random.Range(0.2f, cashSpeed)).SetUpdate(true));
         }
 
         _sequence.OnComplete(
@@ -40,7 +40,7 @@ public class CurrencyCollectionAnimation : MonoBehaviour
                 print("sequence completed");
                 foreach (var cash in cashObjects)
                 {
-                    cash.transform.DOMove(cashCollectBar.transform.position, UnityEngine.Random.Range(0.2f, 0.6f)).OnComplete(() =>
+                    cash.transform.DOMove(cashCollectBar.transform.position, UnityEngine.Random.Range(0.2f, 0.6f)).SetUpdate(true).OnComplete(() =>
                     {
                         cash.gameObject.SetActive(false);
                         DOTween.Kill(cashCollectBar.transform);

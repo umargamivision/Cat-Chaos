@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2872095825415828704}
   - component: {fileID: 8649557436895897049}
+  - component: {fileID: 2932952172327586291}
   m_Layer: 0
   m_Name: HUD Element Pivot
   m_TagString: Untagged
@@ -107,3 +108,18 @@ MonoBehaviour:
   IsInCompassBarRadius: 0
   IsInIndicatorRadius: 0
   IsInMinimapRadius: 0
+--- !u!114 &2932952172327586291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161912114048660242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a43665f71eff42a98e7197816de9f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offWhenPlayerClose: 1
+  closeDistanceRequired: 1
+  distanceToPlayer: 0

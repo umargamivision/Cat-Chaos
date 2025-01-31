@@ -56,6 +56,7 @@ public class LevelsManager : Singleton<LevelsManager>
     public void UpdateCurrentLevel()
     {
         SaveData.Instance.Level++;
+        SaveData.Instance.levelNoForEvent++;
         if(SaveData.Instance.Level>=totalLevels)
         {
             SaveData.Instance.Level=0;

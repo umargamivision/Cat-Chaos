@@ -15,7 +15,7 @@ namespace Samples.Purchasing.Core.InitializeGamingServices
         void Awake()
         {
             // Uncomment this line to initialize Unity Gaming Services.
-             Initialize(OnSuccess, OnError);
+            Initialize(OnSuccess, OnError);
         }
 
         void Initialize(Action onSuccess, Action<string> onError)

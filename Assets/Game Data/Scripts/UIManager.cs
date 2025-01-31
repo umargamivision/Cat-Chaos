@@ -70,7 +70,7 @@ public class UIManager : Singleton<UIManager>
         AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
-        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+(2*CurrencyManager.Instance.levelCompleteReward));
+        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+(3*CurrencyManager.Instance.levelCompleteReward));
         completePanel.SetActive(false);
         if(GameManager.Instance.isGameCompleted)
         {
@@ -91,8 +91,9 @@ public class UIManager : Singleton<UIManager>
     }
     public void HomeClick()
     {
+        Time.timeScale = 1;
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.LoadScene(GameManager.Instance.mainMenuScene,3);
     }
     public void HintClick()
     {
@@ -101,7 +102,8 @@ public class UIManager : Singleton<UIManager>
     }
     public void OnHintSuccess()
     {
-        AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Hint_Clk");
+        GameManager.SendLevelEvent("_Hint_Clk");
+        //AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Hint_Clk");
         GamePlayManager.Instance.ShowIndicators(true);
     }
     public void onCatBedDetected(CatBed catBed)

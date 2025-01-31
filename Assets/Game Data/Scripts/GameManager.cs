@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     private new void Awake()
     {
         base.Awake(); // Ensure Singleton initialization if needed.
+        SaveSystem.LoadProgress();
         Application.targetFrameRate = 30;
     }
     [InspectorButton]
@@ -38,10 +39,12 @@ public class GameManager : Singleton<GameManager>
     {
         get
         {
+            SaveSystem.LoadProgress();
             return SaveData.Instance.Fishs;
         }
         set
         {
+            SaveSystem.SaveProgress();
             SaveData.Instance.Fishs = value;
         }
     }
@@ -55,6 +58,19 @@ public class GameManager : Singleton<GameManager>
         {
             SaveData.Instance.Keys = value;
         }
+    }
+    public static void SendLevelEvent(string eventName)
+    {
+        var eventlevelNo = GetLevelNoForEvent();
+        if(eventlevelNo>30)
+        {
+            return;
+        }
+        AdsManager.SendFirebaseEevents("Level_"+(1+eventlevelNo)+eventName);
+    }
+    public static int GetLevelNoForEvent()
+    {
+        return SaveData.Instance.levelNoForEvent;
     }
     public void LoadScene(string name, float delay)
     {

@@ -39,6 +39,7 @@ public sealed class SaveData
     public bool Haptic = true;
     [Space]
     public int Level  = 0;
+    public int levelNoForEvent = 0;
     public int Fishs  = 0;
     public int Keys = 0;
     public bool GameTutorial = true;
@@ -62,6 +63,7 @@ public sealed class SaveData
         GameTutorial = data.GameTutorial;
 
         Level  = data.Level;
+        levelNoForEvent = data.levelNoForEvent;
         Fishs  = data.Fishs;
         playerFireRateUpgradeIndex = data.playerFireRateUpgradeIndex;
         playerDamageRateUpgradeIndex = data.playerDamageRateUpgradeIndex;

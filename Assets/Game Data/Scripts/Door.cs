@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using JetBrains.Annotations;
+using Ommy.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,7 @@ public class Door : MonoBehaviour, ISwitch
     public bool isOpen = false;
     public bool localRotation;
     public bool triggerOtherDoor;
+    public AudioClip doorOpenClip;
     public Vector3 openRotation = new Vector3(0, 90, 0);
     public Vector3 closeRotation = new Vector3(0, 0, 0);
     public UnityEvent onOpen, onClose;
@@ -45,6 +47,8 @@ public class Door : MonoBehaviour, ISwitch
             if(localRotation)transform.DOLocalRotate(openRotation, 1.0f); // Rotate door to open position
             else transform.DORotate(openRotation, 1.0f); // Rotate door to open position
         }
+        if(doorOpenClip!=null)
+        AudioManager.Instance?.PlaySFX(doorOpenClip);
         Debug.Log("Door is opened");
         isOpen = true;
         onOpen.Invoke();

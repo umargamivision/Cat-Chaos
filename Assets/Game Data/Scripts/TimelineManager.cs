@@ -78,7 +78,8 @@ public class TimelineManager : Singleton<TimelineManager>
         {
             StartCoroutine(SkipTimeline());
         }
-        AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Cutscene_Skip");
+        GameManager.SendLevelEvent("_Cutscene_Skip");
+        //AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Cutscene_Skip");
 
     }
     IEnumerator SkipTimeline()

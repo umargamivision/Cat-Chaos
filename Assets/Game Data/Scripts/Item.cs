@@ -67,11 +67,19 @@ public class Item : MonoBehaviour
             }
         }
     }
+    private void OnEnable() 
+    {
+        grabbable.OnGrab.AddListener(()=>ShowIndicator(false));
+    }
+    private void OnDisable() 
+    {
+        grabbable.OnGrab.RemoveListener(()=>ShowIndicator(false));    
+    }
     public void ShowIndicator(bool show)
     {
         if (navigationElement != null)
         {
-            navigationElement.enabled = show;
+            navigationElement.gameObject.SetActive(show);
         }
     }
 }
