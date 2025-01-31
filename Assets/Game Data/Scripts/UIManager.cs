@@ -53,7 +53,11 @@ public class UIManager : Singleton<UIManager>
         AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
-        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+CurrencyManager.Instance.levelCompleteReward);
+
+        int fishs = GameManager.Instance.GetFishes();
+        fishs=fishs+2;
+    
+        CurrencyManager.Instance.UpdateCurrency(fishs);
         completePanel.SetActive(false);
         if(GameManager.Instance.isGameCompleted)
         {
@@ -70,7 +74,9 @@ public class UIManager : Singleton<UIManager>
         AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
-        CurrencyManager.Instance.UpdateCurrency(GameManager.Instance.Fishs+(3*CurrencyManager.Instance.levelCompleteReward));
+        int fishs = GameManager.Instance.GetFishes();
+        fishs=fishs+6;
+        CurrencyManager.Instance.UpdateCurrency(fishs);
         completePanel.SetActive(false);
         if(GameManager.Instance.isGameCompleted)
         {

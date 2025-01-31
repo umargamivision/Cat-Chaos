@@ -25,39 +25,25 @@ public class GameManager : Singleton<GameManager>
         SaveSystem.LoadProgress();
         Application.targetFrameRate = 30;
     }
-    [InspectorButton]
-    public void SetFishs(int value)
+    public int GetKeys()
     {
-        Fishs = value;
+        SaveSystem.LoadProgress();
+        return SaveData.Instance.Keys;
     }
-    [InspectorButton]
     public void SetKeys(int value)
     {
-        Keys = value;
+        SaveData.Instance.Keys = value;
+        SaveSystem.SaveProgress();
     }
-    public int Fishs
+    public int GetFishes()
     {
-        get
-        {
-            SaveSystem.LoadProgress();
-            return SaveData.Instance.Fishs;
-        }
-        set
-        {
-            SaveSystem.SaveProgress();
-            SaveData.Instance.Fishs = value;
-        }
+        SaveSystem.LoadProgress();
+        return SaveData.Instance.Fishs;
     }
-    public int Keys
+    public void SetFishes(int value)
     {
-        get
-        {
-            return SaveData.Instance.Keys;
-        }
-        set
-        {
-            SaveData.Instance.Keys = value;
-        }
+        SaveData.Instance.Fishs = value;
+        SaveSystem.SaveProgress();
     }
     public static void SendLevelEvent(string eventName)
     {

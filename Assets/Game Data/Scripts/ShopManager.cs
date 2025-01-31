@@ -20,6 +20,7 @@ public class ShopManager : Singleton<ShopManager>
     [Header("Buttons")]
     public GameObject equip;
     public GameObject equipped, getIt, getItAd, get50Fish;
+    public  UnityEvent onUnlockItem;
     public void OnEnable()
     {
         OnEnableDelay();
@@ -119,7 +120,9 @@ public class ShopManager : Singleton<ShopManager>
     public UnityEvent onAddFishes;
     public void OnAdFishSucess()
     {
-        GameManager.Instance.Fishs += 50;
+        int fishs = GameManager.Instance.GetFishes();
+        fishs += 50;
+        GameManager.Instance.SetFishes(fishs);
         currencyCollectionAnimation.CollectCash();
         onAddFishes.Invoke();
     }
@@ -130,9 +133,11 @@ public class ShopManager : Singleton<ShopManager>
         CurrencyType currencyType = selectedItemUI.shopItem.currencyType;
         if (currencyType == CurrencyType.fish)
         {
-            if (GameManager.Instance.Fishs >= selectedItemUI.shopItem.currencyValue)
+            if (GameManager.Instance.GetFishes() >= selectedItemUI.shopItem.currencyValue)
             {
-                GameManager.Instance.Fishs -= selectedItemUI.shopItem.currencyValue;
+                int fishs = GameManager.Instance.GetFishes();
+                fishs -= selectedItemUI.shopItem.currencyValue;
+                GameManager.Instance.SetFishes(fishs);
                 UnlockShopItem(selectedItemUI);
                 SetButtonActive(equip);
             }
@@ -143,9 +148,11 @@ public class ShopManager : Singleton<ShopManager>
         }
         else if (currencyType == CurrencyType.key)
         {
-            if (GameManager.Instance.Keys >= selectedItemUI.shopItem.currencyValue)
+            if (GameManager.Instance.GetKeys() >= selectedItemUI.shopItem.currencyValue)
             {
-                GameManager.Instance.Keys -= selectedItemUI.shopItem.currencyValue;
+                int keys = GameManager.Instance.GetKeys();
+                keys = keys-selectedItemUI.shopItem.currencyValue;
+                GameManager.Instance.SetKeys(keys);
                 SetButtonActive(equip);
                 UnlockShopItem(selectedItemUI);
             }
@@ -171,6 +178,7 @@ public class ShopManager : Singleton<ShopManager>
             shopItemUI.shopItem.shopItemData.shopItemType.ToString()
             + "_Unlock"
         );
+        onUnlockItem.Invoke();
     }
     public void NotEnoughCurrency(CurrencyType currencyType)
     {

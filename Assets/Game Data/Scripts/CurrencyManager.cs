@@ -7,15 +7,18 @@ using UnityEngine;
 
 public class CurrencyManager : Singleton<CurrencyManager>
 {
-    public int levelCompleteReward = 2;
     public TMP_Text currencyText;
     private void OnEnable() 
     {
-        UpdateCurrency(GameManager.Instance.Fishs);
+        UpdateCurrency(GameManager.Instance.GetFishes());
+    }
+    public void UpdateCurrency()
+    {
+        UpdateCurrency(GameManager.Instance.GetFishes());
     }
     public void UpdateCurrency(int currency)
     {
-        GameManager.Instance.Fishs = currency;
+        GameManager.Instance.SetFishes(currency);
         currencyText.text = currency.ToString();
     }
 }

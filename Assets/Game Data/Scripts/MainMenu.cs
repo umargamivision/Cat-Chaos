@@ -13,14 +13,17 @@ public class MainMenu : MonoBehaviour
     public TMP_Text currencyText;
     public void Start()
     {
+        AdsManager.SendFirebaseEevents("MainMenu");
         AdsManager.ShowBanner("Banner");
         Time.timeScale = 1;
         AudioManager.Instance?.StartGame();
 
-        UpdateCurrency(GameManager.Instance.Fishs);
+        UpdateCurrency(GameManager.Instance.GetFishes());
+        InvokeRepeating(nameof(UpdateCurrency), 0, 1);
     }
     public void PlayClick()
     {
+        AdsManager.SendFirebaseEevents("Chapter_1_Clk");
         AdsManager.ShowInterstitilAd("Inter_play_btn");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene, GameManager.Instance.loadingDely);
@@ -38,7 +41,7 @@ public class MainMenu : MonoBehaviour
     }
     public void UpdateCurrency()
     {
-        UpdateCurrency(GameManager.Instance.Fishs);
+        UpdateCurrency(GameManager.Instance.GetFishes());
     }
     public void UpdateCurrency(int currency)
     {
