@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayClick()
     {
-        AdsManager.SendFirebaseEevents("Chapter_1_Clk");
+        AdsManager.SendFirebaseEevents("PlayButton");
         AdsManager.ShowInterstitilAd("Inter_play_btn");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         GameManager.Instance.LoadScene(GameManager.Instance.gameplayScene, GameManager.Instance.loadingDely);

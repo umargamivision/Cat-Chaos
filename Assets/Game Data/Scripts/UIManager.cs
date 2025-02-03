@@ -169,7 +169,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void UpdateLevelBar(int levelNo, float fillAmount)
     {
-        levelNoTxt.text = $"Level "+levelNo;
+        levelNoTxt.text = $"Level "+(1+levelNo);
         levelFillImg.DOFillAmount(fillAmount,0.2f);
     }
     public void RestartClick()

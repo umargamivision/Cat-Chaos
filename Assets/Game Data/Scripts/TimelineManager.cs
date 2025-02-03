@@ -78,7 +78,18 @@ public class TimelineManager : Singleton<TimelineManager>
         {
             StartCoroutine(SkipTimeline());
         }
-        GameManager.SendLevelEvent("_Cutscene_Skip");
+        if(currentTL.timelineType == TimelineType.grannyBeatMom)
+        {
+            GameManager.SendLevelEvent("_Cutscene_1_Skip");
+        }
+        else if(currentTL.timelineType == TimelineType.grannyGotAngry)
+        {
+            GameManager.SendLevelEvent("_Cutscene_2_Skip");
+        }
+        else
+        {
+            GameManager.SendLevelEvent("_Cutscene_Skip");
+        }
         //AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Cutscene_Skip");
 
     }

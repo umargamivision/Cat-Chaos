@@ -102,6 +102,7 @@ public class GrannyController : MonoBehaviour, IDetectable
     }
     public void GiveCatDamage()
     {
+        grannyStateManager.holdState = false;
         playerController.TakeGrannyDamage();
     }
 

@@ -173,12 +173,23 @@ public class ShopManager : Singleton<ShopManager>
         shopItemUI.shopItem.shopItemData.hasUnlocked = true;
         shopItemUI.OnUnlocked();
         SaveShopData();
-        AdsManager.SendFirebaseEevents
-        (
-            shopItemUI.shopItem.shopItemData.shopItemType.ToString()
-            + "_Unlock"
-        );
+        SetAnalyticsEvent(shopItemUI.shopItem.shopItemData.shopItemType);
         onUnlockItem.Invoke();
+    }
+    public void SetAnalyticsEvent(ShopItemType shopItemType)
+    {
+        switch (shopItemType)
+        {
+            case ShopItemType.bad2:
+                AdsManager.SendFirebaseEevents("Bed_2_Unlock");
+                break;
+            case ShopItemType.bad3:
+                AdsManager.SendFirebaseEevents("Bed_3_Unlock");
+                break;
+            case ShopItemType.bad4:
+                AdsManager.SendFirebaseEevents("Bed_4_Unlock");
+                break;
+        }
     }
     public void NotEnoughCurrency(CurrencyType currencyType)
     {

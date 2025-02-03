@@ -83,7 +83,8 @@ public class GamePlayManager : Singleton<GamePlayManager>
         }
         questManager.Init(levelData);
         timelineManager.PlayTimeline(levelData.startDirector);
-        uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
+        //uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
+        uIManager.UpdateLevelBar(SaveData.Instance.levelNoForEvent, levelData.progress);
         GameManager.SendLevelEvent("_Play");
         //AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Play");
     }
@@ -97,7 +98,8 @@ public class GamePlayManager : Singleton<GamePlayManager>
     public void OnTaskComplete(LevelData currentLevelData)
     {
         AudioManager.Instance?.PlaySFX(SFX.TaskComplete);
-        uIManager.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
+        //uIManager.UpdateLevelBar(currentLevelData.levelNo, currentLevelData.progress);
+        uIManager.UpdateLevelBar(SaveData.Instance.levelNoForEvent, currentLevelData.progress);
     }
     public void ResetData()
     {

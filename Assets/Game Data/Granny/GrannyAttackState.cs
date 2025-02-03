@@ -6,6 +6,7 @@ public class GrannyAttackState : GrannyBaseState
 {
     public override void EnterState(GrannyStateManager stateManager)
     {
+        stateManager.holdState = true;
         stateManager.malee.SetActive(true);
         stateManager.navMeshAgent.velocity = Vector3.zero;
         stateManager.navMeshAgent.speed = 0;

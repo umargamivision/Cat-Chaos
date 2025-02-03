@@ -63,8 +63,10 @@ public class GrannyStateManager : MonoBehaviour
     {
         currentState.OnCollisionEnter(this, other);    
     }
+    public bool holdState;
     public void SwitchState(GrannyBaseState state)
     {
+        if(holdState) return;
         currentState = state;
         state.EnterState(this);
         onStateChange.Invoke(state);
