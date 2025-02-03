@@ -18,6 +18,7 @@ public class PlayerController : Singleton<PlayerController>
     public Transform grannyAttackLookPoint;
     public bool gotoGrannyHand;
     public Transform grannyCatchPoint;
+    public GameObject legsObject;
     public Transform spawnPoint;
     [Header("Special Weapons")]
     public ElectricGun electricGun;
@@ -64,6 +65,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void Respawn()
     {
+        legsObject.SetActive(true);
         firstPersonController.enabled = true;
         SetPositionAndRotation(spawnPoint);
         playerCam.transform.localEulerAngles = Vector3.right * 135;
@@ -114,6 +116,7 @@ public class PlayerController : Singleton<PlayerController>
         // Set LookAt target
         playerCam.LookAt = grannyAttackLookPoint;
 
+        legsObject.SetActive(false);
         // Move the player to the granny's catch point
         if (gotoGrannyHand)
         {

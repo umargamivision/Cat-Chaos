@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Ommy.Audio;
 using Ommy.FadeSystem;
+using Ommy.SaveData;
 using Ommy.Singleton;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,7 +33,7 @@ public class TimelineManager : Singleton<TimelineManager>
     }
     public void UpdateDialogue()
     {
-        if(currentDialogueIndex>=currentTL.dialogues.Length) return;
+        if (currentDialogueIndex >= currentTL.dialogues.Length) return;
         dialogueManager.SetDialogue(currentTL.dialogues[currentDialogueIndex]);
         currentDialogueIndex++;
     }
@@ -78,13 +79,39 @@ public class TimelineManager : Singleton<TimelineManager>
         {
             StartCoroutine(SkipTimeline());
         }
-        if(currentTL.timelineType == TimelineType.grannyBeatMom)
+
+        if (SaveData.Instance.levelNoForEvent%8 == 0)
         {
-            GameManager.SendLevelEvent("_Cutscene_1_Skip");
+            if (currentTL.timelineType == TimelineType.grannyBeatMom)
+            {
+                GameManager.SendLevelEvent("_Cutscene_1_Skip");
+            }
+            else if (currentTL.timelineType == TimelineType.grannyGotAngry)
+            {
+                GameManager.SendLevelEvent("_Cutscene_2_Skip");
+            }
         }
-        else if(currentTL.timelineType == TimelineType.grannyGotAngry)
+        else if (SaveData.Instance.levelNoForEvent%8 == 2)
         {
-            GameManager.SendLevelEvent("_Cutscene_2_Skip");
+            if (currentTL.timelineType == TimelineType.grannyWatchingTV)
+            {
+                GameManager.SendLevelEvent("_Cutscene_1_Skip");
+            }
+            else if (currentTL.timelineType == TimelineType.grannySlip)
+            {
+                GameManager.SendLevelEvent("_Cutscene_2_Skip");
+            }
+        }
+        else if (SaveData.Instance.levelNoForEvent%8 == 5)
+        {
+            if (currentTL.timelineType == TimelineType.PoopInFoodBox)
+            {
+                GameManager.SendLevelEvent("_Cutscene_1_Skip");
+            }
+            else if (currentTL.timelineType == TimelineType.sleepOnGrannyBed)
+            {
+                GameManager.SendLevelEvent("_Cutscene_2_Skip");
+            }
         }
         else
         {

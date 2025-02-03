@@ -20,7 +20,7 @@ public class ShopManager : Singleton<ShopManager>
     [Header("Buttons")]
     public GameObject equip;
     public GameObject equipped, getIt, getItAd, get50Fish;
-    public  UnityEvent onUnlockItem;
+    public  UnityEvent onUnlockItem, onEquipItem;
     public void OnEnable()
     {
         OnEnableDelay();
@@ -111,6 +111,7 @@ public class ShopManager : Singleton<ShopManager>
         AudioManager.Instance?.PlaySFX(SFX.Click);
         SetButtonActive(equipped);
         SelectShopItem(selectedItemUI.shopItem);
+        onEquipItem.Invoke();
     }
     public void GetAdFish(int fish)
     {

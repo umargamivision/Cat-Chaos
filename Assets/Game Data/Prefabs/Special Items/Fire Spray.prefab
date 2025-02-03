@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialItemType: 1
+  reactiveTimer: 30
   itemCollider: {fileID: 1075526318261700144}
   itemModel: {fileID: 1749043910644104213}
 --- !u!1001 &4925523718938649109
@@ -338,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 481368, guid: 14c30d753948b4abab230e6f2fab34ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.575
+      value: -0.417
       objectReference: {fileID: 0}
     - target: {fileID: 481368, guid: 14c30d753948b4abab230e6f2fab34ea, type: 3}
       propertyPath: m_LocalPosition.z

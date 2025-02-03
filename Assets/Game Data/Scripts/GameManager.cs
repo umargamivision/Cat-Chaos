@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager>
     public static void SendLevelEvent(string eventName)
     {
         var eventlevelNo = GetLevelNoForEvent();
-        if(eventlevelNo>30)
+        if(eventlevelNo>24)
         {
             return;
         }
