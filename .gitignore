@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_9_0.bundle
 Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_9_0.so
+/cat-chaos.apk_BackUpThisFolder_ButDontShipItWithYourGame

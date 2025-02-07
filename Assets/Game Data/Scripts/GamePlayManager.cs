@@ -77,7 +77,7 @@ public class GamePlayManager : Singleton<GamePlayManager>
     }
     public void SetupLevel(LevelData levelData)
     {
-        if(levelsManager.currentLevel>=1)
+        if(SaveData.Instance.levelNoForEvent>=1)
         {
             specialOffer.RestartTimer();
         }
