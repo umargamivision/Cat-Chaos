@@ -116,7 +116,7 @@ public class ShopManager : Singleton<ShopManager>
     public void GetAdFish(int fish)
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        AdsManager.ShowRewardedAd(()=>OnAdFishSucess(), "Fish");
+        //AdsManager.ShowRewardedAd(()=>OnAdFishSucess(), "Fish");
     }
     public UnityEvent onAddFishes;
     public void OnAdFishSucess()
@@ -182,13 +182,13 @@ public class ShopManager : Singleton<ShopManager>
         switch (shopItemType)
         {
             case ShopItemType.bad2:
-                AdsManager.SendFirebaseEevents("Bed_2_Unlock");
+                //AdsManager.SendFirebaseEevents("Bed_2_Unlock");
                 break;
             case ShopItemType.bad3:
-                AdsManager.SendFirebaseEevents("Bed_3_Unlock");
+                //AdsManager.SendFirebaseEevents("Bed_3_Unlock");
                 break;
             case ShopItemType.bad4:
-                AdsManager.SendFirebaseEevents("Bed_4_Unlock");
+                //AdsManager.SendFirebaseEevents("Bed_4_Unlock");
                 break;
         }
     }

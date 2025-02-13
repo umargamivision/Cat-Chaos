@@ -25,7 +25,7 @@ public class SpecialOffer : Singleton<SpecialOffer>
 
     public void RestartTimer()
     {
-        showEvery = AdsManager.RC_Inter_Ingame_popup;
+        //showEvery =  //AdsManager.RC_Inter_Ingame_popup;
         if (coroutine != null)
             StopCoroutine(coroutine);
         coroutine = StartCoroutine(ShowSpecialOffer());
@@ -79,7 +79,7 @@ public class SpecialOffer : Singleton<SpecialOffer>
             SpecialItemType.Electric => "Gun_ingame_popup",
             _ => throw new ArgumentOutOfRangeException()
         };
-        AdsManager.ShowRewardedAd(AvailOfferSuccess, placementName);
+        //AdsManager.ShowRewardedAd(AvailOfferSuccess, placementName);
     }
     public void GrabItem(SpecialItemType specialItemType)
     {
@@ -98,22 +98,22 @@ public class SpecialOffer : Singleton<SpecialOffer>
     public void CancelOffer()
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        ShowInterIfCan();
+        //ShowInterIfCan();
         Time.timeScale = 1;
         coroutine = StartCoroutine(ShowSpecialOffer());
         offerPanel.SetActive(false);
         Debug.Log("Special Offer Cancelled");
     }
-    public void ShowInterIfCan()
-    {
-        bool all = AdsManager.Inter_nothanks_popup == 0;
-        bool odd = AdsManager.Inter_nothanks_popup == 1;
-        bool even = AdsManager.Inter_nothanks_popup == 2;
-        if (appearNo % 2 == 0 && even || appearNo % 2 != 0 && odd || all)
-        {
-            AdsManager.ShowInterstitilAd("Inter_Ingame_popup");
-        }
-    }
+    // public void ShowInterIfCan()
+    // {
+    //     bool all = //AdsManager.Inter_nothanks_popup == 0;
+    //     bool odd = //AdsManager.Inter_nothanks_popup == 1;
+    //     bool even = //AdsManager.Inter_nothanks_popup == 2;
+    //     if (appearNo % 2 == 0 && even || appearNo % 2 != 0 && odd || all)
+    //     {
+    //         //AdsManager.ShowInterstitilAd("Inter_Ingame_popup");
+    //     }
+    // }
 }
 public enum SpecialItemType
 {

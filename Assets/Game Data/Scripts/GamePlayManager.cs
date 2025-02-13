@@ -86,13 +86,13 @@ public class GamePlayManager : Singleton<GamePlayManager>
         //uIManager.UpdateLevelBar(levelData.levelNo, levelData.progress);
         uIManager.UpdateLevelBar(SaveData.Instance.levelNoForEvent, levelData.progress);
         GameManager.SendLevelEvent("_Play");
-        //AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Play");
+        ////AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Play");
     }
     public void OnCompleteLevel(LevelData levelData)
     {
         uIManager.LevelComplete();
         GameManager.SendLevelEvent("_Complete");
-        //AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Complete");
+        ////AdsManager.SendFirebaseEevents("Level_"+(1+levelsManager.currentLevel)+"_Complete");
         //timelineManager.PlayTimeline(levelData.endDirector);
     }
     public void OnTaskComplete(LevelData currentLevelData)

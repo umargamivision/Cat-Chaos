@@ -35,8 +35,8 @@ public class UIManager : Singleton<UIManager>
     {
         if(pause)
         {
-            AdsManager.SendFirebaseEevents("Pause_Clk");
-            AdsManager.ShowInterstitilAd("Inter_pause_btn");
+            //AdsManager.SendFirebaseEevents("Pause_Clk");
+            //AdsManager.ShowInterstitilAd("Inter_pause_btn");
         }
 
         Time.timeScale = pause? 0:1;
@@ -67,7 +67,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void Reward2XClick()
     {
-        AdsManager.ShowRewardedAd(Reward2XSuccess,"Lvl_cmplt");
+        //AdsManager.ShowRewardedAd(Reward2XSuccess,"Lvl_cmplt");
     }
     public void Reward2XSuccess()
     {
@@ -87,7 +87,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void LevelComplete()
     {
-        AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
+        //AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
         Time.timeScale=0;
         completePanel.SetActive(true);
     }
@@ -104,12 +104,12 @@ public class UIManager : Singleton<UIManager>
     public void HintClick()
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        AdsManager.ShowRewardedAd(OnHintSuccess,"Hint");
+        //AdsManager.ShowRewardedAd(OnHintSuccess,"Hint");
     }
     public void OnHintSuccess()
     {
         GameManager.SendLevelEvent("_Hint_Clk");
-        //AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Hint_Clk");
+        ////AdsManager.SendFirebaseEevents("Level_"+(1+LevelsManager.Instance.currentLevel)+"_Hint_Clk");
         GamePlayManager.Instance.ShowIndicators(true);
     }
     public void onCatBedDetected(CatBed catBed)
@@ -163,7 +163,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void ShopClick()
     {
-        AdsManager.SendFirebaseEevents("Pause_Shop_Clk");
+        //AdsManager.SendFirebaseEevents("Pause_Shop_Clk");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         shopPanel.SetActive(true);
     }

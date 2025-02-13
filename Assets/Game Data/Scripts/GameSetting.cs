@@ -18,7 +18,7 @@ public class GameSetting : MonoBehaviour
     }
     public void CloseClick()
     {
-        AdsManager.ShowInterstitilAd("Inter_setting_cls");
+        //AdsManager.ShowInterstitilAd("Inter_setting_cls");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         gameObject.SetActive(false);
     }

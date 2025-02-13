@@ -19,7 +19,7 @@ public class SpecialItem : MonoBehaviour
             SpecialItemType.Electric => "Gun_env",
             _ => throw new ArgumentOutOfRangeException()
         };
-        AdsManager.ShowRewardedAd(OnGrabSuccess, placementName);
+        //AdsManager.ShowRewardedAd(OnGrabSuccess, placementName);
     }
     public void OnGrabSuccess()
     {

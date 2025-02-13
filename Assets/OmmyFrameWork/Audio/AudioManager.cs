@@ -149,30 +149,30 @@ namespace Ommy.Audio
             _sfxSource.PlayOneShot(clip, volume);
         public void Handheld(Haptic hapicType)
         {
-            if (!hasHaptic) return;
-            switch (hapicType)
-            {
-                case Haptic.Standard:
-                    VibrationManager.Vibrate((int) hapicType);
-                    break;
-                case Haptic.Light:
-                    VibrationManager.Vibrate((int) hapicType);
-                    break;
-                case Haptic.Medium:
-                    VibrationManager.Vibrate((int) hapicType);
-                    break;
-                case Haptic.Heavy:
-                    VibrationManager.Vibrate((int) hapicType);
-                    break;
-            }
+            // if (!hasHaptic) return;
+            // switch (hapicType)
+            // {
+            //     case Haptic.Standard:
+            //         VibrationManager.Vibrate((int) hapicType);
+            //         break;
+            //     case Haptic.Light:
+            //         VibrationManager.Vibrate((int) hapicType);
+            //         break;
+            //     case Haptic.Medium:
+            //         VibrationManager.Vibrate((int) hapicType);
+            //         break;
+            //     case Haptic.Heavy:
+            //         VibrationManager.Vibrate((int) hapicType);
+            //         break;
+            // }
         }
-        public void Handheld(int milliseconds)
-        {
-            VibrationManager.Vibrate(milliseconds);
-        }
-        public void Handheld(long[] pattern, int loop)
-        {
-            VibrationManager.Vibrate(pattern, loop);
-        }
+        // public void Handheld(int milliseconds)
+        // {
+        //     VibrationManager.Vibrate(milliseconds);
+        // }
+        // public void Handheld(long[] pattern, int loop)
+        // {
+        //     VibrationManager.Vibrate(pattern, loop);
+        // }
     }//class end
 }

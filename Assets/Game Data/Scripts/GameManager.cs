@@ -18,7 +18,10 @@ public class GameManager : Singleton<GameManager>
     public int loadingDely;
     public Image loadingFill;
     public GameObject loadingCanvas;
-
+    private void Start() 
+    {
+        SceneManager.LoadScene(mainMenuScene);    
+    }
     private new void Awake()
     {
         base.Awake(); // Ensure Singleton initialization if needed.
@@ -52,7 +55,7 @@ public class GameManager : Singleton<GameManager>
         {
             return;
         }
-        AdsManager.SendFirebaseEevents("Level_"+(1+eventlevelNo)+eventName);
+        //AdsManager.SendFirebaseEevents("Level_"+(1+eventlevelNo)+eventName);
     }
     public static int GetLevelNoForEvent()
     {
@@ -64,7 +67,7 @@ public class GameManager : Singleton<GameManager>
     }
     private IEnumerator LoadSceneAsync(string name, float delay)
     {
-        AdsManager.ShowMrec(name==mainMenuScene? "Mrec_ply_btn":"Mrec_go_home");
+        //AdsManager.ShowMrec(name==mainMenuScene? "Mrec_ply_btn":"Mrec_go_home");
         loadingCanvas.SetActive(true);
         loadingFill.DOFillAmount(1, delay);
         yield return new WaitForSeconds(delay);
@@ -74,7 +77,7 @@ public class GameManager : Singleton<GameManager>
         {
             yield return null;
         }
-        AdsManager.HideMrec();
+        //AdsManager.HideMrec();
         loadingCanvas.SetActive(false);
     }
 }
