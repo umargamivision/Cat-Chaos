@@ -815,6 +815,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Android: CF_FORCE_MOBILE_MODE;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;gameanalytics_max_enabled;USE_FIREBASE;USE_REMOTE_CONFIG;USE_CRASHLYTICS;USE_GAMEANALYTICS;USE_ADJUST;USE_MAX;USE_MAX_OPENADS;tenjin_applovin_enabled
+    WebGL: ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
     Windows Store Apps: CF_FORCE_MOBILE_MODE
     iPhone: gameanalytics_enabled;CF_FORCE_MOBILE_MODE;gameanalytics_max_enabled
   additionalCompilerArguments: {}

@@ -17,6 +17,7 @@ public class TimelineManager : Singleton<TimelineManager>
     public bool isPlaying;
     public GameObject timelineCanvas;
     public Button skipButton;
+    public GameObject skipAdIcon;
     public UnityEvent onPlay, onStop;
     public List<TimelineProp> timelineProps;
     public TimelineProp currentTL;
@@ -24,6 +25,7 @@ public class TimelineManager : Singleton<TimelineManager>
     Action onDone;
     public void PlayTimeline(TimelineType timelineType, Action onDone = null)
     {
+        CanShowAdOnSkip();
         var TL = timelineProps.Find(f => f.timelineType == timelineType);
         if (TL != null)
         {
@@ -71,7 +73,20 @@ public class TimelineManager : Singleton<TimelineManager>
     public void SkipTimelineClick()
     {
         AudioManager.Instance?.PlaySFX(SFX.Click);
-        AdsManager.ShowRewardedAd(OnSkipTimeline, "Cutscene_skip");
+        if(CanShowAdOnSkip())
+            AdsManager.ShowRewardedAd(OnSkipTimeline, "Cutscene_skip");
+        else
+            OnSkipTimeline();
+    }
+    bool CanShowAdOnSkip()
+    {
+        if (SaveData.Instance.Level == 0)
+        {
+            skipAdIcon.SetActive(false);
+            return false;
+        }
+        skipAdIcon.SetActive(true);
+        return true;
     }
     public void OnSkipTimeline()
     {
