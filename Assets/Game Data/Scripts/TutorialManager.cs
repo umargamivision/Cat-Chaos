@@ -11,24 +11,16 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Tutorial UI Elements")]
     public List<GameObject> tutorialEnabledObjects,tutorialDisabledObjects; // List of UI elements like joystick, touchpad, etc.
-
-    [Header("Look Settings")]
-    public float lookRequirement = 1f;
-    private float currentLook;
-    private bool lookTutCompleted;
-
-    [Header("Movement Settings")]
-    public float moveRequirement = 1f;
-    private float currentMove;
-    private bool moveTutCompleted;
-
+    public GameObject playerLookAt;
     [Header("Events")]
     public UnityEvent onTutorialStart;
-    public UnityEvent onLooked;
-    public UnityEvent onMoved;
+    public UnityEvent onButtonsTutorialEnd;
     public UnityEvent onTutorialEnd;
-
-    private void Start()
+    private void OnEnable() 
+    {
+        TimelineManager.Instance.onComplete.AddListener(StartIfCan);    
+    }
+    private void StartIfCan()
     {
         if (SaveData.Instance.GameTutorial)
         {
@@ -39,49 +31,24 @@ public class TutorialManager : MonoBehaviour
             enabled = false;
         }
     }
-
-    private void Update()
-    {
-        if (!SaveData.Instance.GameTutorial)return;
-        if (!moveTutCompleted)
-        {
-            if (CheckMoved())
-            {
-                moveTutCompleted = true;
-                onMoved.Invoke();
-            }
-        }
-        else if (!lookTutCompleted)
-        {
-            if (CheckLooked())
-            {
-                lookTutCompleted = true;
-                onLooked.Invoke();
-                EndMoveLookTutorial();
-            }
-        }
-    }
-
     private void StartTutorial()
     {
         onTutorialStart?.Invoke();
-        SetTutorialObjectsActive(true); // Enable tutorial UI elements
+        Invoke(nameof(RotatePlayer),1f);
+        Invoke(nameof(ActiveTutorialPanel),2f);
+        //SetTutorialObjectsActive(true); // Enable tutorial UI elements
     }
-
-    private bool CheckLooked()
+    public void RotatePlayer()
     {
-        currentLook += Mathf.Abs(inputManager.GetAxis("Mouse X"));
-        return currentLook >= lookRequirement;
+        PlayerController.Instance.SetLookAt(playerLookAt.transform);
     }
-
-    private bool CheckMoved()
+    public void ActiveTutorialPanel()
     {
-        currentMove += Mathf.Abs(inputManager.GetAxis("Vertical"));
-        return currentMove >= moveRequirement;
+        SetTutorialObjectsActive(true);
     }
-
-    public void EndMoveLookTutorial()
+    public void EndButtonsTutorial()
     {
+        onButtonsTutorialEnd?.Invoke();
         SetTutorialObjectsActive(false); // Disable tutorial UI elements
         //enabled = false; // Disable script when tutorial is complete
     }

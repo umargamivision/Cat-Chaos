@@ -50,15 +50,24 @@ public class Grabber : Singleton<Grabber>
         currentGrabbable.Grab();
         currentGrabbable.transform.SetParent(grabberPoint);
 
+
+        if(grabDuration==0)
+        {
+            currentGrabbable.transform.localPosition = Vector3.zero;
+            currentGrabbable.transform.localPosition = currentGrabbable.grabPointOffset;
+            currentGrabbable.transform.eulerAngles = grabberPoint.eulerAngles;
+        }
+        else
+        {
         currentGrabbable.transform
-            .DOMove(grabberPoint.position, grabDuration)
+            .DOMove(grabberPoint.position+currentGrabbable.grabPointOffset, grabDuration)
             .SetEase(Ease.InOutSine);
 
         currentGrabbable.transform
             .DORotate(grabberPoint.eulerAngles, grabDuration)
             .SetEase(Ease.InOutSine);
+        }
     }
-
     public void OnGrab()
     {
         OnGrab(detectedGrabbable);

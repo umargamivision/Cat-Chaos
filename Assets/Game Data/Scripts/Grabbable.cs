@@ -10,6 +10,7 @@ public sealed class Grabbable : IGrabbable
 {
     public bool setScaleOnGrab;
     public Vector3 scaleOnGrab;
+    public Vector3 grabPointOffset;
     public QuickOutline outline;
     public Rigidbody rb;
     public Grabbable(bool canGrab) : base(canGrab)

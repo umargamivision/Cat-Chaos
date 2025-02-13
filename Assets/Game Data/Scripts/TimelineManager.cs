@@ -18,7 +18,7 @@ public class TimelineManager : Singleton<TimelineManager>
     public GameObject timelineCanvas;
     public Button skipButton;
     public GameObject skipAdIcon;
-    public UnityEvent onPlay, onStop;
+    public UnityEvent onPlay, onStop, onComplete;
     public List<TimelineProp> timelineProps;
     public TimelineProp currentTL;
     public DialogueManager dialogueManager;
@@ -55,11 +55,13 @@ public class TimelineManager : Singleton<TimelineManager>
         Debug.Log(" start playing");
 
         this.onDone = onDone;
+        onComplete.Invoke();
 
         currentTL.Play();
     }
     public void OnComplete()
     {
+        onComplete.Invoke();
         onDone?.Invoke();
     }
     public void StopTimeLine()

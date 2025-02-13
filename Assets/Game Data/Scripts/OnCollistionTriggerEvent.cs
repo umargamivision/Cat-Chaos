@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class OnCollistionTriggerEvent : MonoBehaviour
 {
+    public bool useTag;
+    public string tagToCheck;
     public UnityEvent onCollisionEnter;
     public UnityEvent onCollisionExit;
     public UnityEvent onCollisionStay;
@@ -14,31 +16,73 @@ public class OnCollistionTriggerEvent : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        onCollisionEnter?.Invoke();
+        if (useTag && collision.gameObject.CompareTag(tagToCheck))
+        {
+            onCollisionEnter?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onCollisionEnter?.Invoke();
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        onCollisionExit?.Invoke();
+        if (useTag && collision.gameObject.CompareTag(tagToCheck))
+        {
+            onCollisionExit?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onCollisionExit?.Invoke();
+        }
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        onCollisionStay?.Invoke();
+        if (useTag && collision.gameObject.CompareTag(tagToCheck))
+        {
+            onCollisionStay?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onCollisionStay?.Invoke();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        onTriggerEnter?.Invoke();
+        if (useTag && other.gameObject.CompareTag(tagToCheck))
+        {
+            onTriggerEnter?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onTriggerEnter?.Invoke();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        onTriggerExit?.Invoke();
+        if (useTag && other.gameObject.CompareTag(tagToCheck))
+        {
+            onTriggerExit?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onTriggerExit?.Invoke();
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        onTriggerStay?.Invoke();
+        if (useTag && other.gameObject.CompareTag(tagToCheck))
+        {
+            onTriggerStay?.Invoke();
+        }
+        else if (!useTag)
+        {
+            onTriggerStay?.Invoke();
+        }
     }
 }

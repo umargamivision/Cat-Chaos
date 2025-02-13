@@ -38,8 +38,8 @@ public class LevelsManager : Singleton<LevelsManager>
         currentLevelData.OnLevelComplete.AddListener(OnLevelComplete);
         currentLevelData.OnTaskComplete.AddListener(OnTaskComplete);
 
-        GamePlayManager.Instance.SetupLevel(currentLevelData);
         levelDatas.ForEach(f=>f.tasks.ForEach(i=>i.SetIndicators(false)));
+        GamePlayManager.Instance.SetupLevel(currentLevelData);
         foreach (var item in levelObjects)
         {
             item.SetActive(false);
