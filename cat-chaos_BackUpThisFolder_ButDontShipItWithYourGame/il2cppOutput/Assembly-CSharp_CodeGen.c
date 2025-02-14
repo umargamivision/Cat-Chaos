@@ -537,6 +537,8 @@ extern void U3CShowSpecialOfferU3Ed__15_System_Collections_IEnumerator_get_Curre
 extern void SpecialWeapons__ctor_mE05732A42CCCE90F5780AAEA12B460AB479B2B26 (void);
 extern void TapDetector_Update_m6561A68D7126C0AF04815B2F98F148227866DF52 (void);
 extern void TapDetector_DetectTap_m85ED5E100A1B1C9A4CF30941C263DC07B2316FF5 (void);
+extern void TapDetector_HandleTouch_m435E8A1DE1DE785542A3D6CA8F8200887A0ECCBC (void);
+extern void TapDetector_HandleMouseInput_m141B61F97BF8ECD97E4216F3327A35805453DADF (void);
 extern void TapDetector_IsTouchOnTapArea_mF9D57BDC9E0047B069B0C37A33E076CAD7647715 (void);
 extern void TapDetector__ctor_m623A283340EC0284F1965CECE097C7A12BABFEC1 (void);
 extern void TimelineManager_PlayTimeline_m670CDE5E9F3B1E96DB2A696411EC3CB9A066D91D (void);
@@ -2528,7 +2530,7 @@ extern void WaypointRoute_CreateRoute_m1E3CC1EF60B2F2E9422FCCC4B55FBD0E952D0D2C 
 extern void WaypointRoute_OnDrawGizmos_m7BFEC303F49A0F21DBF7A294DB6C6C6719232603 (void);
 extern void WaypointRoute__ctor_m6756E2066F64950FC7EE281EE4767E3D4359BC8D (void);
 extern void WaypointRouteIdentifier__ctor_m89D81A24426BC278AB388F181590C5AE0C867970 (void);
-static Il2CppMethodPointer s_methodPointers[2599] = 
+static Il2CppMethodPointer s_methodPointers[2601] = 
 {
 	CustomLOD_EnableLOD_m27DAD0446B5C385DCA673C78984E604C99FF9736,
 	CustomLOD_DisableLOD_m4B8CB66933056D6259CEC91B07D9F079467EB035,
@@ -3070,6 +3072,8 @@ static Il2CppMethodPointer s_methodPointers[2599] =
 	SpecialWeapons__ctor_mE05732A42CCCE90F5780AAEA12B460AB479B2B26,
 	TapDetector_Update_m6561A68D7126C0AF04815B2F98F148227866DF52,
 	TapDetector_DetectTap_m85ED5E100A1B1C9A4CF30941C263DC07B2316FF5,
+	TapDetector_HandleTouch_m435E8A1DE1DE785542A3D6CA8F8200887A0ECCBC,
+	TapDetector_HandleMouseInput_m141B61F97BF8ECD97E4216F3327A35805453DADF,
 	TapDetector_IsTouchOnTapArea_mF9D57BDC9E0047B069B0C37A33E076CAD7647715,
 	TapDetector__ctor_m623A283340EC0284F1965CECE097C7A12BABFEC1,
 	TimelineManager_PlayTimeline_m670CDE5E9F3B1E96DB2A696411EC3CB9A066D91D,
@@ -5134,10 +5138,10 @@ extern void U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF81
 extern void U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
 {
-	{ 0x060004D7, U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF810EDC02BB0A_AdjustorThunk },
-	{ 0x060004D8, U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk },
+	{ 0x060004D9, U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF810EDC02BB0A_AdjustorThunk },
+	{ 0x060004DA, U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[2599] = 
+static const int32_t s_InvokerIndices[2601] = 
 {
 	9471,
 	9471,
@@ -5678,6 +5682,8 @@ static const int32_t s_InvokerIndices[2599] =
 	9301,
 	9471,
 	9471,
+	9471,
+	7691,
 	9471,
 	5673,
 	9471,
@@ -7743,7 +7749,7 @@ static const Il2CppTokenRangePair s_rgctxIndices[3] =
 {
 	{ 0x020000EA, { 0, 6 } },
 	{ 0x0200017F, { 6, 6 } },
-	{ 0x060009BC, { 12, 2 } },
+	{ 0x060009BE, { 12, 2 } },
 };
 extern const uint32_t g_rgctx_GenericSingletonClass_1_tDED34598D52AA0927B53ED41518CD271C2B69B43;
 extern const uint32_t g_rgctx_T_tD4B3CB4FB0D328CECC8AD958A55553A968199501;
@@ -7780,7 +7786,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	2599,
+	2601,
 	s_methodPointers,
 	2,
 	s_adjustorThunks,

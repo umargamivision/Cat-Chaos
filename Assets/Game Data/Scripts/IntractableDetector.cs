@@ -38,6 +38,7 @@ public class IntractableDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out raycastHit, detectionLength, layerMask))
         {
+            //Debug.Log("ray hit with "+raycastHit.collider.name);
             currentDetectedObject = raycastHit.collider.GetComponent<IDetectable>();
 
             iGrabbable = raycastHit.collider.GetComponent<IGrabbable>();

@@ -38549,6 +38549,7 @@ struct TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610  : public MonoBehav
 	float ___maxTapThreshold;
 	float ___maxTapTime;
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___tapArea;
+	bool ___enableMultiTouch;
 	UnityEvent_1_t9A868DD8EBFC0D9D8134D903A170ECBDEE567932* ___OnTap;
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___initialTouchPosition;
 	float ___touchStartTime;

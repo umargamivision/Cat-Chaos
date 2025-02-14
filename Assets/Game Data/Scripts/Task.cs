@@ -59,7 +59,7 @@ namespace Omar
         {
             if (!CanExecute())
             {
-                Debug.LogWarning($"[Task] '{name}' cannot be executed. Prerequisites are incomplete.");
+                Debug.Log($"[Task] '{name}' cannot be executed. Prerequisites are incomplete.");
                 return;
             }
             taskCounts++;

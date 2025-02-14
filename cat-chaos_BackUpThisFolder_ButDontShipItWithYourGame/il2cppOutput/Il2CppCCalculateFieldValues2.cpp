@@ -19484,6 +19484,7 @@ struct TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610  : public MonoBehav
 	float ___maxTapThreshold;
 	float ___maxTapTime;
 	RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___tapArea;
+	bool ___enableMultiTouch;
 	UnityEvent_1_t9A868DD8EBFC0D9D8134D903A170ECBDEE567932* ___OnTap;
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___initialTouchPosition;
 	float ___touchStartTime;
@@ -27206,9 +27207,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7865[14] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7866[4] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7868[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7868[8] = 
 {
-	static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___maxTapThreshold)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___maxTapTime)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___tapArea)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___OnTap)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___initialTouchPosition)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___touchStartTime)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___isTouching)),};
+	static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___maxTapThreshold)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___maxTapTime)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___tapArea)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___enableMultiTouch)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___OnTap)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___initialTouchPosition)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___touchStartTime)),static_cast<int32_t>(offsetof(TapDetector_t0108FECE4AA967C90871E2923B19E1A2F5615610, ___isTouching)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7869[3] = 
 {
 	static_cast<int32_t>(offsetof(TimelineProp_tF6D9195464845165F09CF2395E00FB81FE0E3F9E, ___dialogues)),static_cast<int32_t>(offsetof(TimelineProp_tF6D9195464845165F09CF2395E00FB81FE0E3F9E, ___timelineType)),static_cast<int32_t>(offsetof(TimelineProp_tF6D9195464845165F09CF2395E00FB81FE0E3F9E, ___playableDirector)),};

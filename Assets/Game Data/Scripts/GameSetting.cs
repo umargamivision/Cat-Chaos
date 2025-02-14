@@ -34,6 +34,7 @@ public class GameSetting : MonoBehaviour
         soundOff.SetActive(!active);
         AudioManager.Instance?.SetSFXSetting(active);
         AudioManager.Instance?.PlaySFX(SFX.Click); 
+        SaveSystem.SaveProgress();
     }
     public void MusicClick(bool active)
     {
@@ -42,6 +43,7 @@ public class GameSetting : MonoBehaviour
         musicOff.SetActive(!active);
         AudioManager.Instance?.SetBGSetting(active);
         AudioManager.Instance?.PlaySFX(SFX.Click);
+        SaveSystem.SaveProgress();
     }
     public void HapticsClick(bool active)
     {
@@ -50,6 +52,7 @@ public class GameSetting : MonoBehaviour
         hapticsOff.SetActive(!active);
         AudioManager.Instance?.SetHapticSetting(active);
         AudioManager.Instance?.PlaySFX(SFX.Click);
+        SaveSystem.SaveProgress();
     }
     private void OnDisable() 
     {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8501192057809380130}
   - component: {fileID: 2555203997543861452}
   - component: {fileID: 5617765525277832660}
-  - component: {fileID: 3000759682571573788}
+  - component: {fileID: 1890357815695714114}
   m_Layer: 6
   m_Name: Poop item
   m_TagString: Untagged
@@ -29,15 +29,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8052401989987378051}
   serializedVersion: 2
-  m_LocalRotation: {x: 3.0735692e-17, y: 0.91204405, z: -3.073569e-17, w: -0.41009223}
+  m_LocalRotation: {x: 0, y: -0.91204494, z: 0, w: 0.41009036}
   m_LocalPosition: {x: 0, y: 0.017997108, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.49932495, y: 0.499325, z: 0.49932495}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5397997274755830309}
   - {fileID: 2361547534494302930}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -131.579, z: 0}
 --- !u!114 &2667377600796300883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,11 +76,36 @@ MonoBehaviour:
       m_Calls: []
   OnThrowCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 923e5e1f4bfe24250b4f47fefdc2360d, type: 2}
+        m_TargetAssemblyTypeName: Task, Assembly-CSharp
+        m_MethodName: Execute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GrannyController, Assembly-CSharp
+        m_MethodName: ChasePlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isGrabbed: 0
   canGrab: 0
   setScaleOnGrab: 0
   scaleOnGrab: {x: 0, y: 0, z: 0}
+  grabPointOffset: {x: 0, y: 0, z: 0}
   outline: {fileID: 5617765525277832660}
   rb: {fileID: 2555203997543861452}
 --- !u!54 &2555203997543861452
@@ -109,7 +134,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5617765525277832660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +153,8 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!64 &3000759682571573788
-MeshCollider:
+--- !u!65 &1890357815695714114
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,10 +171,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8167723158377434269, guid: a0c1f5684662448949ef9b116d3d967d, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.17149287, y: 0.114729434, z: 0.16913976}
+  m_Center: {x: 0.0004465348, y: 0.052635293, z: -0.0036564365}
 --- !u!1001 &512949764479874610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +232,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2932952172327586291, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: closeDistanceRequired
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8649557436895897049, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
       propertyPath: Settings
@@ -216,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 8649557436895897049, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
@@ -227,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9161912114048660242, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -246,7 +280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 512949764479874610}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a5fc50cb592fe4f95457eb6d66e520, type: 3}
   m_Name: 

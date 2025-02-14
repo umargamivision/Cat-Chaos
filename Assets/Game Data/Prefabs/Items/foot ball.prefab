@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2342417577803811259}
   - component: {fileID: 5708965203164599703}
   - component: {fileID: 8546983483081055752}
-  - component: {fileID: 3964993232471509644}
+  - component: {fileID: 5355433917044627629}
   m_Layer: 6
   m_Name: foot ball
   m_TagString: Item
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4114758393592213935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.2795506, y: 3.8253527, z: 2.3817558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   canGrab: 0
   setScaleOnGrab: 0
   scaleOnGrab: {x: 0, y: 0, z: 0}
+  grabPointOffset: {x: 0.3, y: 0, z: 0.1}
   outline: {fileID: 8546983483081055752}
   rb: {fileID: 5708965203164599703}
 --- !u!54 &5708965203164599703
@@ -128,8 +129,8 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!64 &3964993232471509644
-MeshCollider:
+--- !u!135 &5355433917044627629
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -146,10 +147,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2791935971139609324, guid: 45cd1bf6b32895f47a26bce22126a57d, type: 3}
+  serializedVersion: 3
+  m_Radius: 0.14
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8585777341609476850
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932952172327586291, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: closeDistanceRequired
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8649557436895897049, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}

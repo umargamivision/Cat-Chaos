@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6713215003859470848}
   - component: {fileID: 7751672741763088077}
   - component: {fileID: 6300594418764642329}
-  - component: {fileID: 2084900447561233199}
   - component: {fileID: 9151229579122613159}
+  - component: {fileID: 3185015307211023277}
   m_Layer: 6
   m_Name: basket ball
   m_TagString: Item
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3418838517701480272}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.594884, y: 3.9221826, z: 5.483761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   canGrab: 0
   setScaleOnGrab: 0
   scaleOnGrab: {x: 0, y: 0, z: 0}
+  grabPointOffset: {x: 0.3, y: 0, z: 0.1}
   outline: {fileID: 9151229579122613159}
   rb: {fileID: 6300594418764642329}
 --- !u!54 &6300594418764642329
@@ -103,35 +104,13 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &2084900447561233199
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3418838517701480272}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6792546166606044823, guid: 45cd1bf6b32895f47a26bce22126a57d, type: 3}
 --- !u!114 &9151229579122613159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +129,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!135 &3185015307211023277
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418838517701480272}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.21
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4990650567610527859
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +305,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932952172327586291, guid: 901d866a5681c46f494f1adac188ce34,
+        type: 3}
+      propertyPath: closeDistanceRequired
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8649557436895897049, guid: 901d866a5681c46f494f1adac188ce34,
         type: 3}
