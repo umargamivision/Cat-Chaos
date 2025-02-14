@@ -29,6 +29,17 @@ public class LevelsManager : Singleton<LevelsManager>
     {
         currentLevelData.ResetLevel();
     }
+    public void ShowDefaultIndicators(int levelNo)
+    {
+        if(SaveData.Instance.levelNoForEvent==levelNo)
+        {
+            currentLevelData.currentTask.indicators.ForEach(f=>f.gameObject.SetActive(true));
+        }
+        else
+        {
+            currentLevelData.currentTask.indicators.ForEach(f=>f.gameObject.SetActive(false));
+        }
+    }
     public void SetupLevel()
     {
         currentLevelData.UnSubscribeEvents();

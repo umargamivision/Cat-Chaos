@@ -26,6 +26,7 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Buttons")]
     public GameObject grabButton;
+    public GameObject hintButton;
     public Button doorButton, lampButton;
     public Button tearButton;
     public Button sleepButton;
@@ -47,6 +48,17 @@ public class UIManager : Singleton<UIManager>
     {
         newObjectivePanel.SetActive(true);
         newObjectiveTxt.text = objective;
+    }
+    public void HideHintButton(int levelNo)
+    {
+        if(SaveData.Instance.levelNoForEvent==levelNo)
+        {
+            hintButton.SetActive(false);
+        }
+        else
+        {
+            hintButton.SetActive(true);
+        }
     }
     public void NoThanks2XClick()
     {

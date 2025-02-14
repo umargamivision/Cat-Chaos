@@ -82,7 +82,7 @@ public class TimelineManager : Singleton<TimelineManager>
     }
     bool CanShowAdOnSkip()
     {
-        if (SaveData.Instance.Level == 0)
+        if (SaveData.Instance.levelNoForEvent == 0)
         {
             skipAdIcon.SetActive(false);
             return false;
