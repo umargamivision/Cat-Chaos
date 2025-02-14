@@ -57,10 +57,6 @@ public class GamePlayManager : Singleton<GamePlayManager>
         {
             can = false;
         }
-        if(levelsManager.currentLevel==0)
-        {
-            can = false;
-        }
         return can;
     }
     public void AvailSpecialOffer(SpecialItemType specialItemType)
@@ -77,7 +73,7 @@ public class GamePlayManager : Singleton<GamePlayManager>
     }
     public void SetupLevel(LevelData levelData)
     {
-        if(SaveData.Instance.levelNoForEvent>=1)
+        if(SaveData.Instance.levelNoForEvent>=0)
         {
             specialOffer.RestartTimer();
         }

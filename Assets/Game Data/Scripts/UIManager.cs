@@ -50,6 +50,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void NoThanks2XClick()
     {
+        AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
         AudioManager.Instance?.PlaySFX(SFX.Click);
         Time.timeScale=1;
         currencyCollectionAnimation.CollectCash();
@@ -87,7 +88,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void LevelComplete()
     {
-        AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
+        //AdsManager.ShowInterstitilAd("Inter_lvl_cmplt");
         Time.timeScale=0;
         completePanel.SetActive(true);
     }

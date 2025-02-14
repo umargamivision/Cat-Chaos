@@ -39,14 +39,15 @@ extern void GrannyChasingState_OnCoolDown_mD7B7F5AC1486D6CDEEAFDEA8406EEF6A88E61
 extern void GrannyChasingState_ExitState_mDDA889FE7E5AF711780864D5E2A7F9AB2F3B41E2 (void);
 extern void GrannyChasingState_OnCollisionEnter_m2E6E19DF372A9D1926FA6625902A0D0F29C2A90B (void);
 extern void GrannyChasingState_UpdateState_m44AB4077898190512883188439DE053D823B2552 (void);
+extern void GrannyChasingState_SetAttackState_mB5096082C5F373633219FB7618AF894F5CE582D3 (void);
 extern void GrannyChasingState_ChaseCoolDownTimer_m6BAF1AE1395637E52BB4E751715BEB7502DFFB4D (void);
 extern void GrannyChasingState__ctor_mE6E858589A6FA8D406AEB4ADE1CE6CE5C839BD82 (void);
-extern void U3CChaseCoolDownTimerU3Ed__7__ctor_m1A59257BA3AEA509736A0289532BA13E31840A0B (void);
-extern void U3CChaseCoolDownTimerU3Ed__7_System_IDisposable_Dispose_mE5918587A1F96BD96ACFFAB23C7A83FC1E8BF21E (void);
-extern void U3CChaseCoolDownTimerU3Ed__7_MoveNext_mB7BF982F5D219541B24CAEABEF58717C9EB9D2B6 (void);
-extern void U3CChaseCoolDownTimerU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m926AC63E6A251637447ED06CE2BDB1BC2EB7AC94 (void);
-extern void U3CChaseCoolDownTimerU3Ed__7_System_Collections_IEnumerator_Reset_mF3D820F4F344F255E817F800386AFC0FA9DECDC7 (void);
-extern void U3CChaseCoolDownTimerU3Ed__7_System_Collections_IEnumerator_get_Current_m0299EAE5DEFB8D685316E59D08F64AB80946C5E2 (void);
+extern void U3CChaseCoolDownTimerU3Ed__8__ctor_m0AFE6504B310B798FAB25D88C1D849273C2B5C11 (void);
+extern void U3CChaseCoolDownTimerU3Ed__8_System_IDisposable_Dispose_mFC450D096ED656584B52D8F8036AD7F0BC73ECF1 (void);
+extern void U3CChaseCoolDownTimerU3Ed__8_MoveNext_m0E2D22A13C6569EE90DF2C575EB0A25721C6F175 (void);
+extern void U3CChaseCoolDownTimerU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB48A131B6A2966B9CDA08503D5473FCC492A3A1A (void);
+extern void U3CChaseCoolDownTimerU3Ed__8_System_Collections_IEnumerator_Reset_m6A931538D63C35733E480486A0AEE42AA1B80AE5 (void);
+extern void U3CChaseCoolDownTimerU3Ed__8_System_Collections_IEnumerator_get_Current_m1F313B7C4D0CF486F36A976BF8F3E0566D184F88 (void);
 extern void GrannyOnFireState_OnCoolDown_m1A96EE3BBD28DE1B1BEB723AD60F9C21EDD8A548 (void);
 extern void GrannyOnFireState_CoolDownTimer_m1A38E6B395C6AA9A3CE989CEDBB749F34C9199ED (void);
 extern void GrannyOnFireState_EnterState_mBF7309109656DBC2AE7CBE8763E7AFA95A1CAEC5 (void);
@@ -80,6 +81,7 @@ extern void U3CCoolDownTimerU3Ed__3_System_Collections_IEnumerator_Reset_m22829D
 extern void U3CCoolDownTimerU3Ed__3_System_Collections_IEnumerator_get_Current_m34256248D62D4356524E940A67FDC808461C9A1C (void);
 extern void GrannyStateManager_Start_m07A4BAD99FFC92C77FA258A69FB46899744F191E (void);
 extern void GrannyStateManager_Update_m9A4D47449B02176EA8B24DDA4786B617D02000FF (void);
+extern void GrannyStateManager_LateUpdate_m495B71E775932202249CA7064A7EF925E635DA8E (void);
 extern void GrannyStateManager_CheckChaseThresould_m4AFAC9BFBAD0728445444F5B2DED3D8F58EB3355 (void);
 extern void GrannyStateManager_StartSpecialReaction_mD47693F13653F58CD1B3170BF510530E76880896 (void);
 extern void GrannyStateManager_OnCollisionEnter_m3D88BCC26066F3019D48B6BB75E236F880A0690C (void);
@@ -2526,7 +2528,7 @@ extern void WaypointRoute_CreateRoute_m1E3CC1EF60B2F2E9422FCCC4B55FBD0E952D0D2C 
 extern void WaypointRoute_OnDrawGizmos_m7BFEC303F49A0F21DBF7A294DB6C6C6719232603 (void);
 extern void WaypointRoute__ctor_m6756E2066F64950FC7EE281EE4767E3D4359BC8D (void);
 extern void WaypointRouteIdentifier__ctor_m89D81A24426BC278AB388F181590C5AE0C867970 (void);
-static Il2CppMethodPointer s_methodPointers[2597] = 
+static Il2CppMethodPointer s_methodPointers[2599] = 
 {
 	CustomLOD_EnableLOD_m27DAD0446B5C385DCA673C78984E604C99FF9736,
 	CustomLOD_DisableLOD_m4B8CB66933056D6259CEC91B07D9F079467EB035,
@@ -2559,14 +2561,15 @@ static Il2CppMethodPointer s_methodPointers[2597] =
 	GrannyChasingState_ExitState_mDDA889FE7E5AF711780864D5E2A7F9AB2F3B41E2,
 	GrannyChasingState_OnCollisionEnter_m2E6E19DF372A9D1926FA6625902A0D0F29C2A90B,
 	GrannyChasingState_UpdateState_m44AB4077898190512883188439DE053D823B2552,
+	GrannyChasingState_SetAttackState_mB5096082C5F373633219FB7618AF894F5CE582D3,
 	GrannyChasingState_ChaseCoolDownTimer_m6BAF1AE1395637E52BB4E751715BEB7502DFFB4D,
 	GrannyChasingState__ctor_mE6E858589A6FA8D406AEB4ADE1CE6CE5C839BD82,
-	U3CChaseCoolDownTimerU3Ed__7__ctor_m1A59257BA3AEA509736A0289532BA13E31840A0B,
-	U3CChaseCoolDownTimerU3Ed__7_System_IDisposable_Dispose_mE5918587A1F96BD96ACFFAB23C7A83FC1E8BF21E,
-	U3CChaseCoolDownTimerU3Ed__7_MoveNext_mB7BF982F5D219541B24CAEABEF58717C9EB9D2B6,
-	U3CChaseCoolDownTimerU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m926AC63E6A251637447ED06CE2BDB1BC2EB7AC94,
-	U3CChaseCoolDownTimerU3Ed__7_System_Collections_IEnumerator_Reset_mF3D820F4F344F255E817F800386AFC0FA9DECDC7,
-	U3CChaseCoolDownTimerU3Ed__7_System_Collections_IEnumerator_get_Current_m0299EAE5DEFB8D685316E59D08F64AB80946C5E2,
+	U3CChaseCoolDownTimerU3Ed__8__ctor_m0AFE6504B310B798FAB25D88C1D849273C2B5C11,
+	U3CChaseCoolDownTimerU3Ed__8_System_IDisposable_Dispose_mFC450D096ED656584B52D8F8036AD7F0BC73ECF1,
+	U3CChaseCoolDownTimerU3Ed__8_MoveNext_m0E2D22A13C6569EE90DF2C575EB0A25721C6F175,
+	U3CChaseCoolDownTimerU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB48A131B6A2966B9CDA08503D5473FCC492A3A1A,
+	U3CChaseCoolDownTimerU3Ed__8_System_Collections_IEnumerator_Reset_m6A931538D63C35733E480486A0AEE42AA1B80AE5,
+	U3CChaseCoolDownTimerU3Ed__8_System_Collections_IEnumerator_get_Current_m1F313B7C4D0CF486F36A976BF8F3E0566D184F88,
 	GrannyOnFireState_OnCoolDown_m1A96EE3BBD28DE1B1BEB723AD60F9C21EDD8A548,
 	GrannyOnFireState_CoolDownTimer_m1A38E6B395C6AA9A3CE989CEDBB749F34C9199ED,
 	GrannyOnFireState_EnterState_mBF7309109656DBC2AE7CBE8763E7AFA95A1CAEC5,
@@ -2600,6 +2603,7 @@ static Il2CppMethodPointer s_methodPointers[2597] =
 	U3CCoolDownTimerU3Ed__3_System_Collections_IEnumerator_get_Current_m34256248D62D4356524E940A67FDC808461C9A1C,
 	GrannyStateManager_Start_m07A4BAD99FFC92C77FA258A69FB46899744F191E,
 	GrannyStateManager_Update_m9A4D47449B02176EA8B24DDA4786B617D02000FF,
+	GrannyStateManager_LateUpdate_m495B71E775932202249CA7064A7EF925E635DA8E,
 	GrannyStateManager_CheckChaseThresould_m4AFAC9BFBAD0728445444F5B2DED3D8F58EB3355,
 	GrannyStateManager_StartSpecialReaction_mD47693F13653F58CD1B3170BF510530E76880896,
 	GrannyStateManager_OnCollisionEnter_m3D88BCC26066F3019D48B6BB75E236F880A0690C,
@@ -5130,10 +5134,10 @@ extern void U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF81
 extern void U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[2] = 
 {
-	{ 0x060004D5, U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF810EDC02BB0A_AdjustorThunk },
-	{ 0x060004D6, U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk },
+	{ 0x060004D7, U3CfirebaseAnalysisU3Ed__19_MoveNext_m06AF99A0947C75E849AB223C99FF810EDC02BB0A_AdjustorThunk },
+	{ 0x060004D8, U3CfirebaseAnalysisU3Ed__19_SetStateMachine_mB2F8D55AC17571A77570CEE63E6EBC83F14D34AE_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[2597] = 
+static const int32_t s_InvokerIndices[2599] = 
 {
 	9471,
 	9471,
@@ -5166,6 +5170,7 @@ static const int32_t s_InvokerIndices[2597] =
 	7561,
 	4333,
 	7561,
+	9471,
 	3390,
 	9471,
 	7516,
@@ -5205,6 +5210,7 @@ static const int32_t s_InvokerIndices[2597] =
 	9301,
 	9471,
 	9301,
+	9471,
 	9471,
 	9471,
 	9471,
@@ -7737,7 +7743,7 @@ static const Il2CppTokenRangePair s_rgctxIndices[3] =
 {
 	{ 0x020000EA, { 0, 6 } },
 	{ 0x0200017F, { 6, 6 } },
-	{ 0x060009BA, { 12, 2 } },
+	{ 0x060009BC, { 12, 2 } },
 };
 extern const uint32_t g_rgctx_GenericSingletonClass_1_tDED34598D52AA0927B53ED41518CD271C2B69B43;
 extern const uint32_t g_rgctx_T_tD4B3CB4FB0D328CECC8AD958A55553A968199501;
@@ -7774,7 +7780,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	2597,
+	2599,
 	s_methodPointers,
 	2,
 	s_adjustorThunks,

@@ -9,6 +9,7 @@ public class GrannyChasingState : GrannyBaseState
     Coroutine chaseCoolDownCoroutine;
     public override void EnterState(GrannyStateManager stateManager)
     {
+        Debug.Log("Granning Enter ChasingState");
         grannyStateManager = stateManager;
         stateManager.malee.SetActive(true);
         stateManager.animator.SetTrigger("AngryPointingGesture"); // Normalize speed to be between 0 and 1
@@ -30,20 +31,25 @@ public class GrannyChasingState : GrannyBaseState
     }
     public override void ExitState(GrannyStateManager stateManager)
     {
+        Debug.Log("Granning Exit ChasingState");
     }
     public override void OnCollisionEnter(GrannyStateManager stateManager, Collision collision)
     {
     }
     public override void UpdateState(GrannyStateManager stateManager)
     {
+        Debug.Log("Granning Update ChasingState");
         //stateManager.animator.SetFloat("MoveSpeed",stateManager.navMeshAgent.speed); // Normalize speed to be between 0 and 1
         Vector3 playerPos = PlayerController.Instance.transform.position;
         stateManager.navMeshAgent.SetDestination(playerPos);
         if (Vector3.Distance(stateManager.grannyDistanceCheckPoint.position,playerPos)<stateManager.attackDistance)
         {
             stateManager.SwitchState(stateManager.grannyAttackState);
-            //stateManager.wayPointSystem.OnReachWayPoint();
         }
+    }
+    public void SetAttackState()
+    {
+        grannyStateManager.SwitchState(grannyStateManager.grannyAttackState);
     }
     public IEnumerator ChaseCoolDownTimer(int coolDownTime, Action onCoolDown)
     {

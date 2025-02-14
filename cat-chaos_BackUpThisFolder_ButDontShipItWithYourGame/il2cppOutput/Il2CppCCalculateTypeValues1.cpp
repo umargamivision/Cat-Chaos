@@ -6994,7 +6994,7 @@ struct U3CCoolDownTimerU3Ed__3_t12C7C0FE297408A06F25AD9FE243F7D338A1E41C  : publ
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onCoolDown;
 	int32_t ___U3CchaseTimeU3E5__2;
 };
-struct U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257  : public RuntimeObject
+struct U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -50544,7 +50544,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize7769 = { sizeof(U3CCoolDownT
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7770;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7770 = { sizeof(GrannyBeeState_t4C952776E06177626F5B3E41D19BFF5824C44ABA), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7771;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7771 = { sizeof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7771 = { sizeof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7772;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7772 = { sizeof(GrannyChasingState_tE522416405AEDB1A34D9D5FA05779DFE9FC50AA8), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7773;

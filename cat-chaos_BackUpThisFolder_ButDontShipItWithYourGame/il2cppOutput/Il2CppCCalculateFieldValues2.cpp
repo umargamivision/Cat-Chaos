@@ -3284,7 +3284,7 @@ struct U3CCoolDownTimerU3Ed__3_t12C7C0FE297408A06F25AD9FE243F7D338A1E41C  : publ
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___onCoolDown;
 	int32_t ___U3CchaseTimeU3E5__2;
 };
-struct U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257  : public RuntimeObject
+struct U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -26938,7 +26938,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7770[2] =
 	static_cast<int32_t>(offsetof(GrannyBeeState_t4C952776E06177626F5B3E41D19BFF5824C44ABA, ___grannyStateManager)),static_cast<int32_t>(offsetof(GrannyBeeState_t4C952776E06177626F5B3E41D19BFF5824C44ABA, ___CoolDownCoroutine)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7771[5] = 
 {
-	static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257, ___coolDownTime)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257, ___onCoolDown)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__7_t48C0CB4B885A96F49C2077A058BC8921EE917257, ___U3CchaseTimeU3E5__2)),};
+	static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9, ___coolDownTime)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9, ___onCoolDown)),static_cast<int32_t>(offsetof(U3CChaseCoolDownTimerU3Ed__8_tBE9332434A62D652AA78FA908AD5D3111A6E13E9, ___U3CchaseTimeU3E5__2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7772[2] = 
 {
 	static_cast<int32_t>(offsetof(GrannyChasingState_tE522416405AEDB1A34D9D5FA05779DFE9FC50AA8, ___grannyStateManager)),static_cast<int32_t>(offsetof(GrannyChasingState_tE522416405AEDB1A34D9D5FA05779DFE9FC50AA8, ___chaseCoolDownCoroutine)),};

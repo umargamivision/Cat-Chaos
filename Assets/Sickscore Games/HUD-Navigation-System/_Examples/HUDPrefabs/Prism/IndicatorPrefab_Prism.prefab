@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 224247016285502806}
   - component: {fileID: 222586595407249692}
   - component: {fileID: 114493474990271406}
-  - component: {fileID: 114594962623399052}
+  - component: {fileID: 4361215580612950354}
   m_Layer: 5
   m_Name: Onscreen Distance Text
   m_TagString: Untagged
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6ebf2a689a7843348a97bb68140c32a8, type: 3}
-    m_FontSize: 11
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1234m
---- !u!114 &114594962623399052
+--- !u!114 &4361215580612950354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1171728967299072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}

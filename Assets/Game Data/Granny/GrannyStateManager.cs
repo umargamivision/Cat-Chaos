@@ -40,8 +40,11 @@ public class GrannyStateManager : MonoBehaviour
     public void Update()
     {
         //CheckChaseThresould();
-        currentState.UpdateState(this);
         animator.SetFloat("MoveSpeed", navMeshAgent.velocity.magnitude);
+    }
+    public void LateUpdate()
+    {
+        currentState.UpdateState(this);
     }
     public void CheckChaseThresould()
     {
